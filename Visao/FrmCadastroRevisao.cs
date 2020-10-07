@@ -310,5 +310,17 @@ namespace MyReview.Visao
                 lblCampoRevisao.Text = "Descrição:";
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (cmbModelos.Text != "" || cmbModelos.Text != null)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Selecione um modelo para clonar.");
+            }
+        }
     }
 }
