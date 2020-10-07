@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BB9251F8-52BC-4FA5-8270-6778F0735D75}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MyReview</RootNamespace>
+    <AssemblyName>MyReview</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>MyReview50.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controle\ControleRelatorio.cs" />
+    <Compile Include="Controle\ControleDocumentacao.cs" />
+    <Compile Include="Controle\ControleRevisao.cs" />
+    <Compile Include="Controle\ControleTarefas.cs" />
+    <Compile Include="Controle\ControleUsuario.cs" />
+    <Compile Include="Controle\ControleAtualizacao.cs" />
+    <Compile Include="Controle\Util.cs" />
+    <Compile Include="Controle\ControleConfig.cs" />
+    <Compile Include="Modelo\Documentacao.cs" />
+    <Compile Include="Modelo\Revisao.cs" />
+    <Compile Include="Modelo\Tarefa.cs" />
+    <Compile Include="Modelo\Usuario.cs" />
+    <Compile Include="Modelo\Config.cs" />
+    <Compile Include="Visao\FrmConfiguracao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\FrmConfiguracao.Designer.cs">
+      <DependentUpon>FrmConfiguracao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\FrmRelatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\FrmRelatorios.Designer.cs">
+      <DependentUpon>FrmRelatorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\FrmExibicaoTarefa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\FrmExibicaoTarefa.Designer.cs">
+      <DependentUpon>FrmExibicaoTarefa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\FrmMinhasTarefas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\FrmMinhasTarefas.Designer.cs">
+      <DependentUpon>FrmMinhasTarefas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\FrmListagemRevisao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\FrmListagemRevisao.Designer.cs">
+      <DependentUpon>FrmListagemRevisao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\FrmCadastroRevisao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\FrmCadastroRevisao.Designer.cs">
+      <DependentUpon>FrmCadastroRevisao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\FrmListagemUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\FrmListagemUsuarios.Designer.cs">
+      <DependentUpon>FrmListagemUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\FrmCadastroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\FrmCadastroUsuario.Designer.cs">
+      <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\FrmBarraTarefas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\FrmBarraTarefas.Designer.cs">
+      <DependentUpon>FrmBarraTarefas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\FrmConfigConexao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\FrmConfigConexao.Designer.cs">
+      <DependentUpon>FrmConfigConexao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Visao\FrmConfiguracao.resx">
+      <DependentUpon>FrmConfiguracao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visao\FrmRelatorios.resx">
+      <DependentUpon>FrmRelatorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visao\FrmExibicaoTarefa.resx">
+      <DependentUpon>FrmExibicaoTarefa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visao\FrmMinhasTarefas.resx">
+      <DependentUpon>FrmMinhasTarefas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visao\FrmCadastroRevisao.resx">
+      <DependentUpon>FrmCadastroRevisao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visao\FrmListagemRevisao.resx">
+      <DependentUpon>FrmListagemRevisao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visao\FrmListagemUsuarios.resx">
+      <DependentUpon>FrmListagemUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visao\FrmCadastroUsuario.resx">
+      <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visao\FrmBarraTarefas.resx">
+      <DependentUpon>FrmBarraTarefas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visao\FrmConfigConexao.resx">
+      <DependentUpon>FrmConfigConexao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Visao\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\MyReview.Modelo.Usuario.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button5.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MyReview50.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
