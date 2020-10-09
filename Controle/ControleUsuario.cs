@@ -32,7 +32,7 @@ namespace MyReview.Controle
             {
                 con.Open();
                 cmd.Connection = con;
-                cmd.CommandText = "Select usu_id, usu_usuario, CAST(AES_DECRYPT(usu_senha, @chave) AS char(255)), usu_tipo, usu_status  from usuario;";
+                cmd.CommandText = "Select usu_id, usu_usuario, AES_DECRYPT(usu_senha, @chave), usu_tipo, usu_status  from usuario;";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@chave", ut.chave);
                 cmd.ExecuteNonQuery();
@@ -66,7 +66,7 @@ namespace MyReview.Controle
                 {
                     con.Open();
                     cmd.Connection = con;
-                    cmd.CommandText = ("insert into usuario(usu_id, usu_usuario, USU_SENHA, usu_tipo, usu_datacad, usu_status) values(null, @usuario, CAST(AES_ENCRYPT(@senha, @chave) AS char(255)), @tipo, CURDATE( ), @status);");
+                    cmd.CommandText = ("insert into usuario(usu_id, usu_usuario, USU_SENHA, usu_tipo, usu_datacad, usu_status) values(null, @usuario, AES_ENCRYPT(@senha, @chave), @tipo, CURDATE( ), @status);");
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@chave", ut.chave);
                     cmd.Parameters.AddWithValue("@senha", usu.senha);
@@ -92,7 +92,7 @@ namespace MyReview.Controle
                 con.Open();
                 cmd.Connection = con;
                 cmd.Parameters.Clear();
-                cmd.CommandText = "Select usu_id, usu_usuario, CAST(AES_DECRYPT(usu_senha, @chave) AS char(255)), usu_tipo, usu_status  from usuario where usu_id = @id;";
+                cmd.CommandText = "Select usu_id, usu_usuario, AES_DECRYPT(usu_senha, @chave), usu_tipo, usu_status  from usuario where usu_id = @id;";
                 cmd.Parameters.AddWithValue("@id", id.ToString());
                 cmd.Parameters.AddWithValue("@chave", ut.chave);
                 read = cmd.ExecuteReader();
@@ -120,7 +120,7 @@ namespace MyReview.Controle
             {
                     con.Open();
                     cmd.Connection = con;
-                    cmd.CommandText = ("update usuario set usu_usuario = @usuario, USU_SENHA = CAST(AES_ENCRYPT(@senha, @chave) AS char(255)), usu_tipo = @tipo, usu_datacad = CURDATE( ), usu_status = @status WHERE usu_id = @id;");
+                    cmd.CommandText = ("update usuario set usu_usuario = @usuario, USU_SENHA = AES_ENCRYPT(@senha, @chave), usu_tipo = @tipo, usu_datacad = CURDATE( ), usu_status = @status WHERE usu_id = @id;");
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@chave", ut.chave);
                     cmd.Parameters.AddWithValue("@senha", usu.senha);

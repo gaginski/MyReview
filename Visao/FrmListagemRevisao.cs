@@ -22,29 +22,29 @@ namespace MyReview.Visao
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            FrmCriaRevisao r = new FrmCriaRevisao();
-
+            FrmCadastroRevisao r = new FrmCadastroRevisao();
             r.ShowDialog();
+            atualizaGrid();
         }
 
         private void FrmListagemRevisao_Load(object sender, EventArgs e)
         {
-            btnEditar.Enabled = false;
             btnExcluir.Enabled = false;
             atualizaGrid();
         }
         private void atualizaGrid()
         {
             grid.Rows.Clear();
-            grid.ColumnCount = 3;
+            grid.ColumnCount = 4;
             grid.Columns[0].Name = "ID";
             grid.Columns[1].Name = "Versão";
             grid.Columns[2].Name = "Status";
+            grid.Columns[3].Name = "Detalhes";
 
-            List < Revisao > list = contRev.selecionaRevisoes();
-            foreach(Revisao r in list)
+            List<Revisao> list = contRev.selecionaRevisoes();
+            foreach (Revisao r in list)
             {
-                String[] s = new String[]{ r.id.ToString(), r.versao, r.status};
+                String[] s = new String[] { r.id.ToString(), r.versao, r.status, r.descricao };
                 grid.Rows.Add(s);
             }
             for (int i = 0; i < grid.Columns.Count; i++)
@@ -52,5 +52,17 @@ namespace MyReview.Visao
                 grid.Columns[i].ReadOnly = true;
             }
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (grid.CurrentRow.Cells[0].Value != null)
+            {
+                FrmCadastroRevisao frm = new FrmCadastroRevisao();
+                frm.editar(int.Parse(grid.CurrentRow.Cells[0].Value.ToString()));
+                frm.ShowDialog();
+            }
+            else
+                MessageBox.Show("Selecione um registro!");
+         }
     }
 }

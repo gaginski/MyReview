@@ -40,52 +40,58 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 22);
+            this.label1.Location = new System.Drawing.Point(20, 27);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.Size = new System.Drawing.Size(77, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Data Inicial:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(121, 22);
+            this.label2.Location = new System.Drawing.Point(161, 27);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.Size = new System.Drawing.Size(72, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Data Final:";
             // 
             // txtInicial
             // 
-            this.txtInicial.Location = new System.Drawing.Point(19, 42);
+            this.txtInicial.Location = new System.Drawing.Point(25, 52);
+            this.txtInicial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtInicial.Mask = "00/00/0000 90:00";
             this.txtInicial.Name = "txtInicial";
-            this.txtInicial.Size = new System.Drawing.Size(99, 20);
+            this.txtInicial.Size = new System.Drawing.Size(131, 22);
             this.txtInicial.TabIndex = 3;
             this.txtInicial.ValidatingType = typeof(System.DateTime);
             // 
             // txtFinal
             // 
-            this.txtFinal.Location = new System.Drawing.Point(124, 42);
+            this.txtFinal.Location = new System.Drawing.Point(165, 52);
+            this.txtFinal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFinal.Mask = "00/00/0000 90:00";
             this.txtFinal.Name = "txtFinal";
-            this.txtFinal.Size = new System.Drawing.Size(99, 20);
+            this.txtFinal.Size = new System.Drawing.Size(131, 22);
             this.txtFinal.TabIndex = 4;
             this.txtFinal.ValidatingType = typeof(System.DateTime);
             // 
             // txtRelatorio
             // 
-            this.txtRelatorio.Location = new System.Drawing.Point(18, 70);
+            this.txtRelatorio.Location = new System.Drawing.Point(24, 86);
+            this.txtRelatorio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtRelatorio.Name = "txtRelatorio";
-            this.txtRelatorio.Size = new System.Drawing.Size(309, 198);
+            this.txtRelatorio.Size = new System.Drawing.Size(411, 243);
             this.txtRelatorio.TabIndex = 6;
             this.txtRelatorio.Text = "";
             // 
             // btnGerar
             // 
-            this.btnGerar.Location = new System.Drawing.Point(229, 42);
+            this.btnGerar.Location = new System.Drawing.Point(305, 52);
+            this.btnGerar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGerar.Name = "btnGerar";
-            this.btnGerar.Size = new System.Drawing.Size(98, 22);
+            this.btnGerar.Size = new System.Drawing.Size(131, 27);
             this.btnGerar.TabIndex = 7;
             this.btnGerar.Text = "&Gerar";
             this.btnGerar.UseVisualStyleBackColor = true;
@@ -93,17 +99,19 @@
             // 
             // FrmRelatorios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 284);
+            this.ClientSize = new System.Drawing.Size(464, 350);
             this.Controls.Add(this.btnGerar);
             this.Controls.Add(this.txtRelatorio);
             this.Controls.Add(this.txtFinal);
             this.Controls.Add(this.txtInicial);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmRelatorios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyReview - Gerar Relatório";

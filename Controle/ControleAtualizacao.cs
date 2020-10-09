@@ -46,7 +46,7 @@ namespace MyReview.Controle
                 {
                     read.Close();
                     cmd.Parameters.Clear();
-                    cmd.CommandText = ("insert into usuario(usu_id, usu_usuario, USU_SENHA, usu_tipo, usu_datacad, usu_status) values(null, 'VISUAL', CAST(AES_ENCRYPT('vssql', @chave) AS char(255)), 2, null, 'F');");
+                    cmd.CommandText = ("insert into usuario(usu_id, usu_usuario, USU_SENHA, usu_tipo, usu_datacad, usu_status) values(null, 'VISUAL', AES_ENCRYPT('vssql', @chave), 2, null, 'F');");
                     cmd.Parameters.AddWithValue("@chave", ut.chave);
                     cmd.ExecuteNonQuery();
                 }
@@ -60,7 +60,7 @@ namespace MyReview.Controle
                                                       + "tar_titulo VARCHAR(100),"
                                                       + "tar_codigoSia VARCHAR(10),"
                                                       + "tar_sia BOOLEAN,"
-                                                      + "tar_descricao VARCHAR(500));");
+                                                      + "tar_descricao VARCHAR(5000));");
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
                 #endregion

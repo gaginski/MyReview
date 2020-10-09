@@ -49,7 +49,6 @@ namespace MyReview.Visao
             txtVersao.Enabled = false;
             txtDataFim.Enabled = false;
             txtDataInicio.Enabled = false;
-            txtDescricaoTarefa.Enabled = false;
         }
 
         private void FrmExibicaoTarefa_Load(object sender, EventArgs e)

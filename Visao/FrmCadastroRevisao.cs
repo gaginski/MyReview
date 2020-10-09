@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace MyReview.Visao
 {
-    public partial class FrmCriaRevisao : Form
+    public partial class FrmCadastroRevisao : Form
     {
         Boolean editando = false;
         Tarefa tarefa = new Tarefa();
@@ -29,12 +29,12 @@ namespace MyReview.Visao
         List<Tarefa> listaAux = new List<Tarefa>();
 
 
-        public FrmCriaRevisao()
+        public FrmCadastroRevisao()
         {
             InitializeComponent();
             atualizaLista();
-            atualizaGrid();
-
+            atualizaGrid(true);
+            txtCodigoSia.Enabled = false;
             modelo.Columns.Add("Id");
             modelo.Columns.Add("Titulo");
             modelo.Rows.Add(0, "");
@@ -63,20 +63,25 @@ namespace MyReview.Visao
         {
             if (!txtTituloTarefa.Text.Equals(""))
             {
-                tarefa = new Tarefa();
-                tarefa.titulo = txtTituloTarefa.Text;
-                tarefa.descricao = txtDescricaoTarefa.Text;
-                tarefa.codigoSia = txtCodigoSia.Text;
-                tarefa.sia = true;
-                tarefa.idRevisao = revisao.id;
+                if ((chkSia.Checked && txtCodigoSia.Text != "") || (!chkSia.Checked))
+                {
+                    tarefa = new Tarefa();
+                    tarefa.titulo = txtTituloTarefa.Text;
+                    tarefa.descricao = txtDescricaoTarefa.Text;
+                    tarefa.codigoSia = txtCodigoSia.Text;
+                    tarefa.sia = true;
+                    tarefa.idRevisao = revisao.id;
 
-                tarefa = contTar.salvaTarefa(tarefa);
+                    tarefa = contTar.salvaTarefa(tarefa);
 
-                txtTituloTarefa.Text = null;
-                txtDescricaoTarefa.Text = null;
-                txtCodigoSia.Text = null;
-                lista.Add(tarefa);
-                atualizaGrid();
+                    txtTituloTarefa.Text = null;
+                    txtDescricaoTarefa.Text = null;
+                    txtCodigoSia.Text = null;
+                    lista.Add(tarefa);
+                    atualizaGrid(true);
+                }
+                else
+                    MessageBox.Show("Informe a tarefa do SIA");
             }
             else
                 MessageBox.Show("Informe o título da Tarefa");
@@ -141,17 +146,14 @@ namespace MyReview.Visao
             }
 
             /*Remove da lista principal os itens da lista auxiliar */
-            int cont = 0;
-            foreach (Tarefa aux in lista)
-            {
+            for(int cont = 0; cont < lista.Count; cont++) { 
                 for (int i = 0; i < listaAux.Count; i++)
                 {
-                    if (aux.id == listaAux[i].id)
+                    if (lista[cont].id == listaAux[i].id)
                     {
                         lista.RemoveAt(cont);
                     }
                 }
-                cont++;
             }
 
             /*concatena lista principal com a auxiliar*/
@@ -176,10 +178,12 @@ namespace MyReview.Visao
             responsavel.DisplayMember = "Login";
             responsavel.DataSource = dt;
         }
-        private void atualizaGrid()
+        private void atualizaGrid(Boolean atuVinculoResponsavel)
         {
-            atualizaVinculadas();
-            atualizaResponsavel();
+            if (atuVinculoResponsavel) {
+                atualizaVinculadas();
+                atualizaResponsavel();
+            }
             grid.Rows.Clear();
 
             grid.ColumnCount = 4;
@@ -222,7 +226,7 @@ namespace MyReview.Visao
                     if (contTar.deletaTarefa(int.Parse(grid.CurrentRow.Cells[0].Value.ToString())))
                     {
                         MessageBox.Show("Exclusão realizada com sucesso!");
-                        atualizaGrid();
+                        atualizaGrid(true);
                     }
                 }
                 else
@@ -261,7 +265,7 @@ namespace MyReview.Visao
 
                 revisao.status = "F";
 
-                atualizaGrid();
+                atualizaGrid(true);
 
                 foreach (Tarefa t in lista)
                 {
@@ -296,7 +300,7 @@ namespace MyReview.Visao
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
             atualizaLista();
-            atualizaGrid();
+            atualizaGrid(true);
         }
 
         private void chkModelo_CheckedChanged(object sender, EventArgs e)
@@ -310,17 +314,93 @@ namespace MyReview.Visao
                 lblCampoRevisao.Text = "Descrição:";
             }
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             if (cmbModelos.Text != "" || cmbModelos.Text != null)
             {
+                txtPesquisa.Text = "";
 
+                atualizaLista();
+
+                List<int> clone = contTar.retornaClone(int.Parse(cmbModelos.SelectedValue.ToString()));
+
+                foreach (Tarefa tar in lista)
+                {
+                    for(int i = 0; i < clone.Count; i++)
+                    {
+                        if (tar.id == clone[i]) 
+                        {
+                            tar.idRevisao = revisao.id;
+                        }
+                    }
+                }
+                atualizaGrid(false);
             }
             else
             {
                 MessageBox.Show("Selecione um modelo para clonar.");
             }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkSia.Checked)
+            {
+                txtCodigoSia.Enabled = true;
+            }
+            else
+            {
+                txtCodigoSia.Enabled = false;
+            }
+        }
+
+        private void txtCodigoTarefa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        public void editar(int id)
+        {
+            editando = true;
+            revisao = contRev.pegaRevisaoId(id);
+
+            txtVersao.Text = revisao.versao;
+            txtDescricaoRevisao.Text = revisao.descricao;
+            chkModelo.Checked = revisao.modelo;
+
+            List<Tarefa> auxiliar = contTar.selecionaTarefaIdRevisao(id);
+
+            atualizaLista();
+            listaAux.Clear();
+
+            foreach (Tarefa tar in auxiliar)
+            {
+                if (tar.sia)
+                {
+                    listaAux.Add(tar);
+                }
+                else
+                {
+                    foreach(Tarefa t in lista)
+                    {
+                        if(t.id == tar.id)
+                        {
+                            t.idRevisao = id;
+                        }
+                    }
+                }
+            }
+            lista.AddRange(listaAux);
+            listaAux.Clear();
+
+            atualizaGrid(false);
+         }
+
+        private void txtCodigoSia_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

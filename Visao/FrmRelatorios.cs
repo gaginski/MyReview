@@ -41,7 +41,7 @@ namespace MyReview.Visao
         {
             switch (e.KeyCode)
             {
-                case (Keys.A):
+                case (Keys.H):
                     if (txtInicial.Focused)
                     {
                         txtInicial.Text = DateTime.Now.ToString();

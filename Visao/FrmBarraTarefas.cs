@@ -75,9 +75,15 @@ namespace MyReview.Visao
 
         private void button5_Click(object sender, EventArgs e)
         {
-			FrmRelatorios rel = new FrmRelatorios();
-			rel.UsuarioLogado(usuarioLogado.id);
-			rel.ShowDialog();
+            FrmListagemCasoTeste lcs = new FrmListagemCasoTeste();
+            lcs.ShowDialog();
+        }
+
+        private void btnRelatorio_click(object sender, EventArgs e)
+        {
+            FrmRelatorios rel = new FrmRelatorios();
+            rel.UsuarioLogado(usuarioLogado.id);
+            rel.ShowDialog();
         }
     }
 }

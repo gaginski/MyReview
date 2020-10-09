@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace MyReview.Visao
 {
-    partial class FrmCriaRevisao
+    partial class FrmCadastroRevisao
     {
         /// <summary>
         /// Required designer variable.
@@ -33,19 +33,15 @@ namespace MyReview.Visao
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCriaRevisao));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroRevisao));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkModelo = new System.Windows.Forms.CheckBox();
             this.txtVersao = new System.Windows.Forms.MaskedTextBox();
             this.txtDescricaoRevisao = new System.Windows.Forms.RichTextBox();
             this.lblCampoRevisao = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.grid = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.responsavel = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Vincular = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.TarefaSia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chkSia = new System.Windows.Forms.CheckBox();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
             this.txtDescricaoTarefa = new System.Windows.Forms.RichTextBox();
@@ -54,6 +50,12 @@ namespace MyReview.Visao
             this.label3 = new System.Windows.Forms.Label();
             this.txtTituloTarefa = new System.Windows.Forms.TextBox();
             this.lblAtividade = new System.Windows.Forms.Label();
+            this.grid = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.responsavel = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Vincular = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.TarefaSia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -62,7 +64,6 @@ namespace MyReview.Visao
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnPesquisa = new System.Windows.Forms.Button();
-            this.chkModelo = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
@@ -93,6 +94,18 @@ namespace MyReview.Visao
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Revisão";
+            // 
+            // chkModelo
+            // 
+            this.chkModelo.AutoSize = true;
+            this.chkModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkModelo.Location = new System.Drawing.Point(186, 26);
+            this.chkModelo.Name = "chkModelo";
+            this.chkModelo.Size = new System.Drawing.Size(127, 20);
+            this.chkModelo.TabIndex = 5;
+            this.chkModelo.Text = "Revisão Modelo";
+            this.chkModelo.UseVisualStyleBackColor = true;
+            this.chkModelo.CheckedChanged += new System.EventHandler(this.chkModelo_CheckedChanged);
             // 
             // txtVersao
             // 
@@ -125,6 +138,7 @@ namespace MyReview.Visao
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chkSia);
             this.groupBox2.Controls.Add(this.btnExcluir);
             this.groupBox2.Controls.Add(this.btnIncluir);
             this.groupBox2.Controls.Add(this.txtDescricaoTarefa);
@@ -140,6 +154,90 @@ namespace MyReview.Visao
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tarefas";
+            // 
+            // chkSia
+            // 
+            this.chkSia.AutoSize = true;
+            this.chkSia.Location = new System.Drawing.Point(380, 34);
+            this.chkSia.Name = "chkSia";
+            this.chkSia.Size = new System.Drawing.Size(47, 20);
+            this.chkSia.TabIndex = 8;
+            this.chkSia.Text = "Sia";
+            this.chkSia.UseVisualStyleBackColor = true;
+            this.chkSia.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(263, 165);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(79, 23);
+            this.btnExcluir.TabIndex = 7;
+            this.btnExcluir.Text = "&Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // btnIncluir
+            // 
+            this.btnIncluir.Location = new System.Drawing.Point(349, 165);
+            this.btnIncluir.Name = "btnIncluir";
+            this.btnIncluir.Size = new System.Drawing.Size(79, 23);
+            this.btnIncluir.TabIndex = 6;
+            this.btnIncluir.Text = "&Incluir";
+            this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtDescricaoTarefa
+            // 
+            this.txtDescricaoTarefa.Location = new System.Drawing.Point(10, 76);
+            this.txtDescricaoTarefa.MaxLength = 500;
+            this.txtDescricaoTarefa.Name = "txtDescricaoTarefa";
+            this.txtDescricaoTarefa.Size = new System.Drawing.Size(417, 83);
+            this.txtDescricaoTarefa.TabIndex = 5;
+            this.txtDescricaoTarefa.Text = "";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 57);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(116, 16);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Descrição Tarefa:";
+            // 
+            // txtCodigoSia
+            // 
+            this.txtCodigoSia.Location = new System.Drawing.Point(294, 32);
+            this.txtCodigoSia.Name = "txtCodigoSia";
+            this.txtCodigoSia.Size = new System.Drawing.Size(80, 22);
+            this.txtCodigoSia.TabIndex = 4;
+            this.txtCodigoSia.TextChanged += new System.EventHandler(this.txtCodigoSia_TextChanged);
+            this.txtCodigoSia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoTarefa_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(291, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 16);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Cód. Tarefa:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // txtTituloTarefa
+            // 
+            this.txtTituloTarefa.Location = new System.Drawing.Point(10, 32);
+            this.txtTituloTarefa.Name = "txtTituloTarefa";
+            this.txtTituloTarefa.Size = new System.Drawing.Size(278, 22);
+            this.txtTituloTarefa.TabIndex = 1;
+            // 
+            // lblAtividade
+            // 
+            this.lblAtividade.AutoSize = true;
+            this.lblAtividade.Location = new System.Drawing.Point(6, 16);
+            this.lblAtividade.Name = "lblAtividade";
+            this.lblAtividade.Size = new System.Drawing.Size(44, 16);
+            this.lblAtividade.TabIndex = 0;
+            this.lblAtividade.Text = "Título:";
             // 
             // grid
             // 
@@ -186,77 +284,6 @@ namespace MyReview.Visao
             this.TarefaSia.Name = "TarefaSia";
             this.TarefaSia.ReadOnly = true;
             this.TarefaSia.Width = 80;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Location = new System.Drawing.Point(263, 165);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(79, 23);
-            this.btnExcluir.TabIndex = 7;
-            this.btnExcluir.Text = "&Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // btnIncluir
-            // 
-            this.btnIncluir.Location = new System.Drawing.Point(349, 165);
-            this.btnIncluir.Name = "btnIncluir";
-            this.btnIncluir.Size = new System.Drawing.Size(79, 23);
-            this.btnIncluir.TabIndex = 6;
-            this.btnIncluir.Text = "&Incluir";
-            this.btnIncluir.UseVisualStyleBackColor = true;
-            this.btnIncluir.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txtDescricaoTarefa
-            // 
-            this.txtDescricaoTarefa.Location = new System.Drawing.Point(10, 76);
-            this.txtDescricaoTarefa.MaxLength = 500;
-            this.txtDescricaoTarefa.Name = "txtDescricaoTarefa";
-            this.txtDescricaoTarefa.Size = new System.Drawing.Size(417, 83);
-            this.txtDescricaoTarefa.TabIndex = 5;
-            this.txtDescricaoTarefa.Text = "";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 57);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 16);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Descrição Tarefa:";
-            // 
-            // txtCodigoSia
-            // 
-            this.txtCodigoSia.Location = new System.Drawing.Point(347, 32);
-            this.txtCodigoSia.Name = "txtCodigoSia";
-            this.txtCodigoSia.Size = new System.Drawing.Size(80, 22);
-            this.txtCodigoSia.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(346, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 16);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Cód. Tarefa:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // txtTituloTarefa
-            // 
-            this.txtTituloTarefa.Location = new System.Drawing.Point(10, 32);
-            this.txtTituloTarefa.Name = "txtTituloTarefa";
-            this.txtTituloTarefa.Size = new System.Drawing.Size(332, 22);
-            this.txtTituloTarefa.TabIndex = 1;
-            // 
-            // lblAtividade
-            // 
-            this.lblAtividade.AutoSize = true;
-            this.lblAtividade.Location = new System.Drawing.Point(6, 16);
-            this.lblAtividade.Name = "lblAtividade";
-            this.lblAtividade.Size = new System.Drawing.Size(44, 16);
-            this.lblAtividade.TabIndex = 0;
-            this.lblAtividade.Text = "Título:";
             // 
             // btnSalvar
             // 
@@ -320,9 +347,10 @@ namespace MyReview.Visao
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 346);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(19, 341);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 13);
+            this.label6.Size = new System.Drawing.Size(138, 16);
             this.label6.TabIndex = 13;
             this.label6.Text = "Pesquisa (Descrição)";
             // 
@@ -336,19 +364,7 @@ namespace MyReview.Visao
             this.btnPesquisa.UseVisualStyleBackColor = true;
             this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
             // 
-            // chkModelo
-            // 
-            this.chkModelo.AutoSize = true;
-            this.chkModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkModelo.Location = new System.Drawing.Point(186, 26);
-            this.chkModelo.Name = "chkModelo";
-            this.chkModelo.Size = new System.Drawing.Size(127, 20);
-            this.chkModelo.TabIndex = 5;
-            this.chkModelo.Text = "Revisão Modelo";
-            this.chkModelo.UseVisualStyleBackColor = true;
-            this.chkModelo.CheckedChanged += new System.EventHandler(this.chkModelo_CheckedChanged);
-            // 
-            // FrmCriaRevisao
+            // FrmCadastroRevisao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -365,7 +381,7 @@ namespace MyReview.Visao
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmCriaRevisao";
+            this.Name = "FrmCadastroRevisao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyReview - Cadastro de Revisões";
             this.Load += new System.EventHandler(this.FrmCriaRevisao_Load);
@@ -410,5 +426,6 @@ namespace MyReview.Visao
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnPesquisa;
         private System.Windows.Forms.CheckBox chkModelo;
+        private System.Windows.Forms.CheckBox chkSia;
     }
 }

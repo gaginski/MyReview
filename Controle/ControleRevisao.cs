@@ -145,6 +145,37 @@ namespace MyReview.Controle
 
             return lista;
         }
+        public Revisao pegaRevisaoId(int id)
+        {
+            Revisao rev = new Revisao();
+
+            try
+            {
+                con.Open();
+                cmd.Connection = con;
+
+                cmd.CommandText = "SELECT rev_versao, rev_descricao, rev_status, rev_modelo FROM revisao  WHERE rev_id = @id;";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                read = cmd.ExecuteReader();
+                read.Read();
+
+                rev.id = id;
+                rev.versao = read.GetString(0);
+                rev.descricao = read.GetString(1);
+                rev.status = read.GetString(2);
+                rev.modelo = read.GetBoolean(3);
+
+                read.Close();
+                con.Close();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Erro ao realizar seleção da revisão!\nMensagem de erro:"+error.Message);
+            }
+
+            return rev;
+        }
 
     }
 }

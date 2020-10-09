@@ -79,6 +79,18 @@
     <Compile Include="Modelo\Tarefa.cs" />
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Modelo\Config.cs" />
+    <Compile Include="Visao\FrmListagemCasoTeste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\FrmListagemCasoTeste.Designer.cs">
+      <DependentUpon>FrmListagemCasoTeste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\FrmCadatroTarefas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\FrmCadatroTarefas.Designer.cs">
+      <DependentUpon>FrmCadatroTarefas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Visao\FrmConfiguracao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,8 +159,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Visao\FrmCadatroTarefas.resx">
+      <DependentUpon>FrmCadatroTarefas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Visao\FrmConfiguracao.resx">
       <DependentUpon>FrmConfiguracao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visao\FrmListagemCasoTeste.resx">
+      <DependentUpon>FrmListagemCasoTeste.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Visao\FrmRelatorios.resx">
       <DependentUpon>FrmRelatorios.cs</DependentUpon>

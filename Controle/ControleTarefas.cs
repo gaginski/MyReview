@@ -110,7 +110,7 @@ namespace MyReview.Controle
 
                 cmd.Connection = con;
                 String comando = "Select tar_id, tar_titulo, tar_codigoSia, tar_sia, tar_descricao from tarefa where tar_sia = 0";
-                if(titulo != null)
+                if (titulo != null)
                 {
                     comando = comando + " AND tar_titulo like '%" + titulo + "%'";
                 }
@@ -181,7 +181,7 @@ namespace MyReview.Controle
                                                                     + " INNER JOIN revisao_tarefa ON rev_id = rta_revisao"
                                                                     + " INNER JOIN tarefa ON rta_tarefa = tar_id"
                                                                     + " LEFT JOIN usuario ON rta_responsavel = usu_id"
-                                                                    + " WHERE  rev_status <> 'A' AND";
+                                                                    + " WHERE  rev_status <> 'A' AND rev_modelo = 0 AND";
                 if (semVinculo)
                 {
                     comando = comando + " (rta_responsavel = @id OR rta_responsavel = 0)";
@@ -208,35 +208,7 @@ namespace MyReview.Controle
 
                 while (read.Read())
                 {
-                    Tarefa aux = new Tarefa();
-
-                    /*TAREFA*/
-                    aux.id = read.GetInt32(0);
-                    aux.titulo = read.GetString(1);
-                    aux.codigoSia = read.GetString(2);
-                    aux.sia = read.GetBoolean(3);
-                    aux.descricao = read.GetString(4);
-                    /*REVISAO*/
-                    aux.idRevisao = read.GetInt32(5);
-                    aux.revisao.id = read.GetInt32(5);
-                    aux.revisao.versao = read.GetString(6);
-                    aux.revisao.descricao = read.GetString(7);
-                    aux.revisao.status = read.GetString(8);
-                    /*USUARIO*/
-                    aux.reponsavel = read.GetInt32(9);
-                    if (read.GetInt32(9) != 0)
-                    {
-                        aux.usuario.id = read.GetInt32(9);
-                        aux.usuario.login = read.GetString(10);
-                        aux.usuario.tipo = read.GetInt32(11);
-                    }
-                    /*REVISAO_TAREFA*/
-                    aux.idVinculo = read.GetInt32(12);
-                    aux.status = read.GetString(13);
-                    aux.dataInicio = read.GetDateTime(14);
-                    aux.dataFim = read.GetDateTime(15);
-
-                    listaTarefa.Add(aux);
+                    listaTarefa.Add(povoaObjeto());
                 }
                 read.Close();
                 con.Close();
@@ -247,6 +219,38 @@ namespace MyReview.Controle
             }
 
             return listaTarefa;
+        }
+        private Tarefa povoaObjeto()
+        {
+            Tarefa aux = new Tarefa();
+
+            /*TAREFA*/
+            aux.id = read.GetInt32(0);
+            aux.titulo = read.GetString(1);
+            aux.codigoSia = read.GetString(2);
+            aux.sia = read.GetBoolean(3);
+            aux.descricao = read.GetString(4);
+            /*REVISAO*/
+            aux.idRevisao = read.GetInt32(5);
+            aux.revisao.id = read.GetInt32(5);
+            aux.revisao.versao = read.GetString(6);
+            aux.revisao.descricao = read.GetString(7);
+            aux.revisao.status = read.GetString(8);
+            /*USUARIO*/
+            aux.reponsavel = read.GetInt32(9);
+            if (read.GetInt32(9) != 0)
+            {
+                aux.usuario.id = read.GetInt32(9);
+                aux.usuario.login = read.GetString(10);
+                aux.usuario.tipo = read.GetInt32(11);
+            }
+            /*REVISAO_TAREFA*/
+            aux.idVinculo = read.GetInt32(12);
+            aux.status = read.GetString(13);
+            aux.dataInicio = read.GetDateTime(14);
+            aux.dataFim = read.GetDateTime(15);
+
+            return aux;
         }
         public Boolean verificaVinculoUsuario(int id, Usuario usu)
         {
@@ -370,56 +374,126 @@ namespace MyReview.Controle
         }
         public Tarefa selecionaTarefaRevaoId(int id)
         {
-            con.Open();
-            cmd.Connection = con;
-            cmd.Parameters.Clear();
-
-            cmd.CommandText = "SELECT /*tarefa*/ tar_id, tar_titulo, tar_codigoSia, tar_sia, tar_descricao,"
-                                                                + "/* revisao*/ rev_id, rev_versao, rev_descricao, rev_status,"
-                                                                + "/* usuario*/ rta_responsavel, usu_usuario, usu_tipo,"
-                                                                + "/* revisao_tarefa*/ rta_id, rta_status, rta_dataInicio, rta_dataFim"
-                                                                + " FROM revisao"
-                                                                + " INNER JOIN revisao_tarefa ON rev_id = rta_revisao"
-                                                                + " INNER JOIN tarefa ON rta_tarefa = tar_id"
-                                                                + " LEFT JOIN usuario ON rta_responsavel = usu_id"
-                                                                + " WHERE  rta_id = @id";
-            cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("@id", id.ToString());
-            read = cmd.ExecuteReader();
-            read.Read();
-
             Tarefa aux = new Tarefa();
-
-            /*TAREFA*/
-            aux.id = read.GetInt32(0);
-            aux.titulo = read.GetString(1);
-            aux.codigoSia = read.GetString(2);
-            aux.sia = read.GetBoolean(3);
-            aux.descricao = read.GetString(4);
-            /*REVISAO*/
-            aux.idRevisao = read.GetInt32(5);
-            aux.revisao.id = read.GetInt32(5);
-            aux.revisao.versao = read.GetString(6);
-            aux.revisao.descricao = read.GetString(7);
-            aux.revisao.status = read.GetString(8);
-            /*USUARIO*/
-            aux.reponsavel = read.GetInt32(9);
-            if (read.GetInt32(9) != 0)
+            try
             {
-                aux.usuario.id = read.GetInt32(9);
-                aux.usuario.login = read.GetString(10);
-                aux.usuario.tipo = read.GetInt32(11);
+                con.Open();
+                cmd.Connection = con;
+                cmd.Parameters.Clear();
+
+                cmd.CommandText = "SELECT /*tarefa*/ tar_id, tar_titulo, tar_codigoSia, tar_sia, tar_descricao,"
+                                                                    + "/* revisao*/ rev_id, rev_versao, rev_descricao, rev_status,"
+                                                                    + "/* usuario*/ rta_responsavel, usu_usuario, usu_tipo,"
+                                                                    + "/* revisao_tarefa*/ rta_id, rta_status, rta_dataInicio, rta_dataFim"
+                                                                    + " FROM revisao"
+                                                                    + " INNER JOIN revisao_tarefa ON rev_id = rta_revisao"
+                                                                    + " INNER JOIN tarefa ON rta_tarefa = tar_id"
+                                                                    + " LEFT JOIN usuario ON rta_responsavel = usu_id"
+                                                                    + " WHERE  rta_id = @id AND rev_modelo = 0";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id.ToString());
+                read = cmd.ExecuteReader();
+                read.Read();
+                aux = povoaObjeto();
+
+                read.Close();
+                con.Close();
             }
-            /*REVISAO_TAREFA*/
-            aux.idVinculo = read.GetInt32(12);
-            aux.status = read.GetString(13);
-            aux.dataInicio = read.GetDateTime(14);
-            aux.dataFim = read.GetDateTime(15);
-
-            con.Close();
-            read.Close();
-
+            catch (Exception error)
+            {
+                MessageBox.Show("Erro ao selecionar tarefa pelo ID\nMensagem de erro:"+error.Message);
+            }
             return aux;
+        }
+        public List<int> retornaClone(int id)
+        {
+            List<int> clone = new List<int>();
+
+            try
+            {
+                con.Open();
+                cmd.Connection = con;
+                cmd.CommandText = "Select rta_tarefa from revisao_tarefa where rta_revisao = @revisao";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@revisao", id.ToString());
+
+                read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    int aux = read.GetInt32(0);
+                    clone.Add(aux);
+                }
+
+                con.Close();
+                read.Close();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Erro ao clonar revisão!\nMensagem de erro:" + error.Message + "Método: retornaClone() - Classe ControleTarefas");
+            }
+
+            return clone;
+        }
+        public void alteraTarefaId(Tarefa t)
+        {
+            try
+            {
+                con.Open();
+                cmd.Connection = con;
+
+                cmd.CommandText  = "UPDATE tarefa SET tar_descricao = @descricao, tar_titulo = @titulo where tar_id = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", t.id);
+                cmd.Parameters.AddWithValue("@descricao", t.descricao);
+                cmd.Parameters.AddWithValue("@titulo", t.titulo);
+
+                cmd.ExecuteNonQuery();
+
+                con.Close();
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show("Erro ao alterar tarefa\nMensagem de erro:"+error.Message);
+            }
+        }
+        public List<Tarefa> selecionaTarefaIdRevisao(int id)
+        {
+            List<Tarefa> listaT = new List<Tarefa>();
+            Tarefa aux = new Tarefa();
+            try
+            {
+                con.Open();
+                cmd.Connection = con;
+                cmd.Parameters.Clear();
+
+                cmd.CommandText = "SELECT /*tarefa*/ tar_id, tar_titulo, tar_codigoSia, tar_sia, tar_descricao,"
+                                                                    + "/* revisao*/ rev_id, rev_versao, rev_descricao, rev_status,"
+                                                                    + "/* usuario*/ rta_responsavel, usu_usuario, usu_tipo,"
+                                                                    + "/* revisao_tarefa*/ rta_id, rta_status, rta_dataInicio, rta_dataFim"
+                                                                    + " FROM revisao"
+                                                                    + " INNER JOIN revisao_tarefa ON rev_id = rta_revisao"
+                                                                    + " INNER JOIN tarefa ON rta_tarefa = tar_id"
+                                                                    + " LEFT JOIN usuario ON rta_responsavel = usu_id"
+                                                                    + " WHERE  rev_id = @id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id.ToString());
+                read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    aux = povoaObjeto();
+                    listaT.Add(aux);
+                }
+                
+                read.Close();
+                con.Close();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Erro ao selecionar tarefa pelo ID\nMensagem de erro:" + error.Message);
+            }
+            return listaT;
         }
     }
 }
