@@ -58,12 +58,14 @@ namespace MyReview.Visao
         public void passaTarefa(int id, int idUsu)
         {
             tarefa = contTar.selecionaTarefaRevaoId(id);
-            usuarioLogado.id = idUsu;
+            ControleUsuario contUsu = new ControleUsuario();
+            usuarioLogado = contUsu.pegaUsuario(idUsu);
         }
 
         private void frmExibicaoTarefa_close(object sender, FormClosedEventArgs e)
         {
             FrmMinhasTarefas fmt = new FrmMinhasTarefas();
+            fmt.UsuarioLogado(usuarioLogado.id);
             fmt.Show();
             fmt.UsuarioLogado(usuarioLogado.id);
         }
@@ -82,72 +84,69 @@ namespace MyReview.Visao
                     atualizaInformacao();
                 }
                 else
-                {
                     MessageBox.Show("Só é possível iniciar tarefas com o status pendente!");
-                }
             }
             else
-            {
                 MessageBox.Show("Tarefa vinculada a outro usuário!");
-            }
-        }
 
-        private void btnSalvarDocumentacao_Click(object sender, EventArgs e)
+    }
+
+    private void btnSalvarDocumentacao_Click(object sender, EventArgs e)
+    {
+        if (txtStatusTarefa.Text == "Iniciada")
         {
-            if (txtStatusTarefa.Text == "Iniciada")
+            if (txtDocumentacao.Text != "")
             {
-                if (txtDocumentacao.Text != "")
-                {
-                    doc.tarefa = tarefa;
-                    doc.usuario = usuarioLogado;
-                    doc.documentacao = txtDocumentacao.Text;
-                    doc.tarefasCriadas = txtTarefasCriadas.Text;
+                doc.tarefa = tarefa;
+                doc.usuario = usuarioLogado;
+                doc.documentacao = txtDocumentacao.Text;
+                doc.tarefasCriadas = txtTarefasCriadas.Text;
 
-                    if (contDoc.SalvaDocumentacao(doc))
-                    {
-                        MessageBox.Show("Documentação salva com sucesso!");
-                        txtDocumentacao.Text = "";
-                        txtTarefasCriadas.Text = "";
-                    }
-                }
-                else
+                if (contDoc.SalvaDocumentacao(doc))
                 {
-                    MessageBox.Show("Deve ser informado o texto de documentação!");
+                    MessageBox.Show("Documentação salva com sucesso!");
+                    txtDocumentacao.Text = "";
+                    txtTarefasCriadas.Text = "";
                 }
             }
             else
             {
-                MessageBox.Show("Só é possivel documentar em tarefas iniciadas!");
+                MessageBox.Show("Deve ser informado o texto de documentação!");
             }
         }
-
-        private void btnFinalizar_Click(object sender, EventArgs e)
+        else
         {
-            if (txtStatusTarefa.Text == "Iniciada")
-            {
-                if (contDoc.verificaExisteDocumentacao(int.Parse(txtCodigo.Text)))
-                {
-                    tarefa.dataFim = DateTime.Now;
-                    tarefa.usuario = usuarioLogado;
-                    tarefa.status = "C";
-                    contTar.AlteraStatusTarefa(tarefa);
-                    atualizaInformacao();
-                }
-                else
-                    MessageBox.Show("Não é possivel fechar uma tarefa sem documentação!");
-            }
-            else
-            {
-                MessageBox.Show("Só é possivel encerrar tarefas com status 'iniciada'!");
-            }
-        }
-
-        private void frmExibicaoTarefa(object sender, KeyEventArgs e)
-        {
-             if(e.KeyValue.Equals(27))
-            {
-                this.Close();
-            }
+            MessageBox.Show("Só é possivel documentar em tarefas iniciadas!");
         }
     }
+
+    private void btnFinalizar_Click(object sender, EventArgs e)
+    {
+        if (txtStatusTarefa.Text == "Iniciada")
+        {
+            if (contDoc.verificaExisteDocumentacao(int.Parse(txtCodigo.Text)))
+            {
+                tarefa.dataFim = DateTime.Now;
+                tarefa.usuario = usuarioLogado;
+                tarefa.status = "C";
+                contTar.AlteraStatusTarefa(tarefa);
+                atualizaInformacao();
+            }
+            else
+                MessageBox.Show("Não é possivel fechar uma tarefa sem documentação!");
+        }
+        else
+        {
+            MessageBox.Show("Só é possivel encerrar tarefas com status 'iniciada'!");
+        }
+    }
+
+    private void frmExibicaoTarefa(object sender, KeyEventArgs e)
+    {
+        if (e.KeyValue.Equals(27))
+        {
+            this.Close();
+        }
+    }
+}
 }
