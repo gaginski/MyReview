@@ -60,7 +60,7 @@
             // txtInicial
             // 
             this.txtInicial.Location = new System.Drawing.Point(25, 52);
-            this.txtInicial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtInicial.Margin = new System.Windows.Forms.Padding(4);
             this.txtInicial.Mask = "00/00/0000 90:00";
             this.txtInicial.Name = "txtInicial";
             this.txtInicial.Size = new System.Drawing.Size(131, 22);
@@ -70,7 +70,7 @@
             // txtFinal
             // 
             this.txtFinal.Location = new System.Drawing.Point(165, 52);
-            this.txtFinal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFinal.Margin = new System.Windows.Forms.Padding(4);
             this.txtFinal.Mask = "00/00/0000 90:00";
             this.txtFinal.Name = "txtFinal";
             this.txtFinal.Size = new System.Drawing.Size(131, 22);
@@ -79,8 +79,12 @@
             // 
             // txtRelatorio
             // 
+            this.txtRelatorio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRelatorio.Location = new System.Drawing.Point(24, 86);
-            this.txtRelatorio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRelatorio.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRelatorio.MinimumSize = new System.Drawing.Size(411, 243);
             this.txtRelatorio.Name = "txtRelatorio";
             this.txtRelatorio.Size = new System.Drawing.Size(411, 243);
             this.txtRelatorio.TabIndex = 6;
@@ -88,8 +92,9 @@
             // 
             // btnGerar
             // 
+            this.btnGerar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGerar.Location = new System.Drawing.Point(305, 52);
-            this.btnGerar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGerar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGerar.Name = "btnGerar";
             this.btnGerar.Size = new System.Drawing.Size(131, 27);
             this.btnGerar.TabIndex = 7;
@@ -111,7 +116,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmRelatorios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyReview - Gerar Relatório";

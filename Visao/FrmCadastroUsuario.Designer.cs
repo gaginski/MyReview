@@ -51,7 +51,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(25, 42);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.MaxLength = 15;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(156, 22);
@@ -60,7 +60,7 @@
             // txtSenha
             // 
             this.txtSenha.Location = new System.Drawing.Point(206, 42);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha.MaxLength = 20;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
@@ -81,7 +81,7 @@
             // 
             this.chkAdm.AutoSize = true;
             this.chkAdm.Location = new System.Drawing.Point(25, 74);
-            this.chkAdm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkAdm.Margin = new System.Windows.Forms.Padding(4);
             this.chkAdm.Name = "chkAdm";
             this.chkAdm.Size = new System.Drawing.Size(110, 20);
             this.chkAdm.TabIndex = 4;
@@ -91,7 +91,7 @@
             // btnSalvar
             // 
             this.btnSalvar.Location = new System.Drawing.Point(240, 89);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(105, 30);
             this.btnSalvar.TabIndex = 5;
@@ -105,7 +105,7 @@
             this.chkAtivo.Checked = true;
             this.chkAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkAtivo.Location = new System.Drawing.Point(25, 95);
-            this.chkAtivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkAtivo.Margin = new System.Windows.Forms.Padding(4);
             this.chkAtivo.Name = "chkAtivo";
             this.chkAtivo.Size = new System.Drawing.Size(57, 20);
             this.chkAtivo.TabIndex = 6;
@@ -126,7 +126,10 @@
             this.Controls.Add(this.lblUsuario);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(386, 178);
+            this.MinimumSize = new System.Drawing.Size(386, 178);
             this.Name = "FrmCadastroUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyReview - Cadatro de Usuários";

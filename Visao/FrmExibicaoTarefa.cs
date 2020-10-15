@@ -64,8 +64,8 @@ namespace MyReview.Visao
         private void frmExibicaoTarefa_close(object sender, FormClosedEventArgs e)
         {
             FrmMinhasTarefas fmt = new FrmMinhasTarefas();
-            fmt.UsuarioLogado(usuarioLogado.id);
             fmt.Show();
+            fmt.UsuarioLogado(usuarioLogado.id);
         }
 
         private void btnInciar_Click(object sender, EventArgs e)
@@ -139,6 +139,14 @@ namespace MyReview.Visao
             else
             {
                 MessageBox.Show("Só é possivel encerrar tarefas com status 'iniciada'!");
+            }
+        }
+
+        private void frmExibicaoTarefa(object sender, KeyEventArgs e)
+        {
+             if(e.KeyValue.Equals(27))
+            {
+                this.Close();
             }
         }
     }

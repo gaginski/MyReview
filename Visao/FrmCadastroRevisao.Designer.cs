@@ -82,6 +82,8 @@ namespace MyReview.Visao
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.chkModelo);
             this.groupBox1.Controls.Add(this.txtVersao);
             this.groupBox1.Controls.Add(this.txtDescricaoRevisao);
@@ -118,6 +120,9 @@ namespace MyReview.Visao
             // 
             // txtDescricaoRevisao
             // 
+            this.txtDescricaoRevisao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDescricaoRevisao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescricaoRevisao.Location = new System.Drawing.Point(10, 68);
             this.txtDescricaoRevisao.MaxLength = 500;
@@ -138,6 +143,8 @@ namespace MyReview.Visao
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.chkSia);
             this.groupBox2.Controls.Add(this.btnExcluir);
             this.groupBox2.Controls.Add(this.btnIncluir);
@@ -157,6 +164,7 @@ namespace MyReview.Visao
             // 
             // chkSia
             // 
+            this.chkSia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkSia.AutoSize = true;
             this.chkSia.Location = new System.Drawing.Point(380, 34);
             this.chkSia.Name = "chkSia";
@@ -168,6 +176,7 @@ namespace MyReview.Visao
             // 
             // btnExcluir
             // 
+            this.btnExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExcluir.Location = new System.Drawing.Point(263, 165);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(79, 23);
@@ -178,6 +187,7 @@ namespace MyReview.Visao
             // 
             // btnIncluir
             // 
+            this.btnIncluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIncluir.Location = new System.Drawing.Point(349, 165);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(79, 23);
@@ -188,6 +198,8 @@ namespace MyReview.Visao
             // 
             // txtDescricaoTarefa
             // 
+            this.txtDescricaoTarefa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDescricaoTarefa.Location = new System.Drawing.Point(10, 76);
             this.txtDescricaoTarefa.MaxLength = 500;
             this.txtDescricaoTarefa.Name = "txtDescricaoTarefa";
@@ -206,6 +218,7 @@ namespace MyReview.Visao
             // 
             // txtCodigoSia
             // 
+            this.txtCodigoSia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCodigoSia.Location = new System.Drawing.Point(294, 32);
             this.txtCodigoSia.Name = "txtCodigoSia";
             this.txtCodigoSia.Size = new System.Drawing.Size(80, 22);
@@ -215,6 +228,7 @@ namespace MyReview.Visao
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(291, 13);
             this.label3.Name = "label3";
@@ -225,6 +239,8 @@ namespace MyReview.Visao
             // 
             // txtTituloTarefa
             // 
+            this.txtTituloTarefa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTituloTarefa.Location = new System.Drawing.Point(10, 32);
             this.txtTituloTarefa.Name = "txtTituloTarefa";
             this.txtTituloTarefa.Size = new System.Drawing.Size(278, 22);
@@ -241,6 +257,9 @@ namespace MyReview.Visao
             // 
             // grid
             // 
+            this.grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -287,6 +306,7 @@ namespace MyReview.Visao
             // 
             // btnSalvar
             // 
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.Location = new System.Drawing.Point(361, 586);
             this.btnSalvar.Name = "btnSalvar";
@@ -298,6 +318,7 @@ namespace MyReview.Visao
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Location = new System.Drawing.Point(276, 586);
             this.btnCancelar.Name = "btnCancelar";
@@ -308,9 +329,11 @@ namespace MyReview.Visao
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(19, 578);
+            this.label5.MaximumSize = new System.Drawing.Size(111, 16);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 16);
             this.label5.TabIndex = 9;
@@ -318,6 +341,8 @@ namespace MyReview.Visao
             // 
             // cmbModelos
             // 
+            this.cmbModelos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbModelos.FormattingEnabled = true;
             this.cmbModelos.Location = new System.Drawing.Point(21, 597);
             this.cmbModelos.Name = "cmbModelos";
@@ -326,6 +351,7 @@ namespace MyReview.Visao
             // 
             // button3
             // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(174, 586);
             this.button3.Name = "button3";
@@ -337,6 +363,8 @@ namespace MyReview.Visao
             // 
             // txtPesquisa
             // 
+            this.txtPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPesquisa.Location = new System.Drawing.Point(21, 362);
             this.txtPesquisa.Name = "txtPesquisa";
@@ -356,6 +384,7 @@ namespace MyReview.Visao
             // 
             // btnPesquisa
             // 
+            this.btnPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPesquisa.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisa.Image")));
             this.btnPesquisa.Location = new System.Drawing.Point(407, 359);
             this.btnPesquisa.Name = "btnPesquisa";
@@ -381,6 +410,7 @@ namespace MyReview.Visao
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(473, 673);
             this.Name = "FrmCadastroRevisao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyReview - Cadastro de Revisões";

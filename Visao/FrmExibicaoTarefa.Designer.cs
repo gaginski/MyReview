@@ -66,6 +66,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.txtDescricaoTarefa);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.btnFinalizar);
@@ -84,9 +86,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(724, 242);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
@@ -95,8 +97,11 @@
             // 
             // txtDescricaoTarefa
             // 
+            this.txtDescricaoTarefa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDescricaoTarefa.Location = new System.Drawing.Point(13, 87);
-            this.txtDescricaoTarefa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescricaoTarefa.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescricaoTarefa.Name = "txtDescricaoTarefa";
             this.txtDescricaoTarefa.Size = new System.Drawing.Size(693, 101);
             this.txtDescricaoTarefa.TabIndex = 8;
@@ -114,10 +119,11 @@
             // 
             // btnFinalizar
             // 
+            this.btnFinalizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFinalizar.Image = ((System.Drawing.Image)(resources.GetObject("btnFinalizar.Image")));
             this.btnFinalizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFinalizar.Location = new System.Drawing.Point(543, 205);
-            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(85, 31);
             this.btnFinalizar.TabIndex = 4;
@@ -128,10 +134,11 @@
             // 
             // btnInciar
             // 
+            this.btnInciar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInciar.Image = ((System.Drawing.Image)(resources.GetObject("btnInciar.Image")));
             this.btnInciar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInciar.Location = new System.Drawing.Point(636, 205);
-            this.btnInciar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInciar.Margin = new System.Windows.Forms.Padding(4);
             this.btnInciar.Name = "btnInciar";
             this.btnInciar.Size = new System.Drawing.Size(70, 31);
             this.btnInciar.TabIndex = 2;
@@ -142,8 +149,9 @@
             // 
             // txtDataFim
             // 
+            this.txtDataFim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtDataFim.Location = new System.Drawing.Point(159, 211);
-            this.txtDataFim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDataFim.Margin = new System.Windows.Forms.Padding(4);
             this.txtDataFim.Mask = "00/00/0000 90:00";
             this.txtDataFim.Name = "txtDataFim";
             this.txtDataFim.Size = new System.Drawing.Size(137, 22);
@@ -152,6 +160,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(155, 192);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -162,8 +171,9 @@
             // 
             // txtDataInicio
             // 
+            this.txtDataInicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtDataInicio.Location = new System.Drawing.Point(11, 211);
-            this.txtDataInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDataInicio.Margin = new System.Windows.Forms.Padding(4);
             this.txtDataInicio.Mask = "00/00/0000 90:00";
             this.txtDataInicio.Name = "txtDataInicio";
             this.txtDataInicio.Size = new System.Drawing.Size(139, 22);
@@ -172,6 +182,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(7, 192);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -182,14 +193,16 @@
             // 
             // txtStatusTarefa
             // 
+            this.txtStatusTarefa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtStatusTarefa.Location = new System.Drawing.Point(306, 211);
-            this.txtStatusTarefa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtStatusTarefa.Margin = new System.Windows.Forms.Padding(4);
             this.txtStatusTarefa.Name = "txtStatusTarefa";
             this.txtStatusTarefa.Size = new System.Drawing.Size(107, 22);
             this.txtStatusTarefa.TabIndex = 7;
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(302, 192);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -200,8 +213,10 @@
             // 
             // txtTitulo
             // 
+            this.txtTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTitulo.Location = new System.Drawing.Point(205, 39);
-            this.txtTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(500, 22);
             this.txtTitulo.TabIndex = 5;
@@ -219,7 +234,7 @@
             // txtVersao
             // 
             this.txtVersao.Location = new System.Drawing.Point(97, 39);
-            this.txtVersao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtVersao.Margin = new System.Windows.Forms.Padding(4);
             this.txtVersao.Name = "txtVersao";
             this.txtVersao.Size = new System.Drawing.Size(95, 22);
             this.txtVersao.TabIndex = 3;
@@ -237,15 +252,16 @@
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(12, 39);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(72, 22);
             this.txtCodigo.TabIndex = 1;
             // 
             // btnSalvarDocumentacao
             // 
+            this.btnSalvarDocumentacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalvarDocumentacao.Location = new System.Drawing.Point(585, 456);
-            this.btnSalvarDocumentacao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalvarDocumentacao.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalvarDocumentacao.Name = "btnSalvarDocumentacao";
             this.btnSalvarDocumentacao.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnSalvarDocumentacao.Size = new System.Drawing.Size(155, 39);
@@ -256,6 +272,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(23, 261);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -266,9 +283,12 @@
             // 
             // txtDocumentacao
             // 
+            this.txtDocumentacao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDocumentacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDocumentacao.Location = new System.Drawing.Point(27, 280);
-            this.txtDocumentacao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDocumentacao.Margin = new System.Windows.Forms.Padding(4);
             this.txtDocumentacao.Name = "txtDocumentacao";
             this.txtDocumentacao.Size = new System.Drawing.Size(712, 90);
             this.txtDocumentacao.TabIndex = 5;
@@ -276,9 +296,11 @@
             // 
             // txtTarefasCriadas
             // 
+            this.txtTarefasCriadas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTarefasCriadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTarefasCriadas.Location = new System.Drawing.Point(27, 395);
-            this.txtTarefasCriadas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTarefasCriadas.Margin = new System.Windows.Forms.Padding(4);
             this.txtTarefasCriadas.Name = "txtTarefasCriadas";
             this.txtTarefasCriadas.Size = new System.Drawing.Size(712, 53);
             this.txtTarefasCriadas.TabIndex = 7;
@@ -286,6 +308,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(23, 375);
@@ -308,12 +331,15 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(773, 547);
             this.Name = "FrmExibicaoTarefa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyReview - Tarefa";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmExibicaoTarefa_close);
             this.Load += new System.EventHandler(this.FrmExibicaoTarefa_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmExibicaoTarefa);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

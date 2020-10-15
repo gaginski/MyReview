@@ -331,7 +331,7 @@ namespace MyReview.Controle
 
                 verificaStatusRevisao(tarefa);
 
-                MessageBox.Show("Tarefa " + tarefa.usuario.id + " alterada com sucesso!");
+                MessageBox.Show("Tarefa " + tarefa.idVinculo + " alterada com sucesso!");
             }
             catch (Exception error)
             {
