@@ -88,5 +88,13 @@ namespace MyReview.Visao
 
             atualizaGrid();
         }
+
+        private void keyPress(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+                if(txtPesquisa.Focused)
+                    atualizaGrid();
+
+        }
     }
 }

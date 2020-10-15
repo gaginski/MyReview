@@ -402,5 +402,20 @@ namespace MyReview.Visao
         {
 
         }
+
+        private void cadRevisaoKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                if (txtPesquisa.Focused)
+                {
+                    atualizaLista();
+                    atualizaGrid(true);
+                }
+        }
+
+        private void btnPesquisa_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }

@@ -392,6 +392,7 @@ namespace MyReview.Visao
             this.btnPesquisa.TabIndex = 14;
             this.btnPesquisa.UseVisualStyleBackColor = true;
             this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
+            this.btnPesquisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnPesquisa_KeyDown);
             // 
             // FrmCadastroRevisao
             // 
@@ -410,11 +411,13 @@ namespace MyReview.Visao
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(473, 673);
             this.Name = "FrmCadastroRevisao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyReview - Cadastro de Revisões";
             this.Load += new System.EventHandler(this.FrmCriaRevisao_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cadRevisaoKeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

@@ -126,11 +126,13 @@
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(673, 489);
             this.Name = "FrmListagemCasoTeste";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyReview - Casos de Teste";
             this.Load += new System.EventHandler(this.FrmListagemCasoTeste_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyPress);
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
