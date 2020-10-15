@@ -34,7 +34,7 @@ namespace MyReview.Visao
 
         private void button1_Click(object sender, EventArgs e)
         {
-            txtRelatorio.Text = contRel.geraRelatorio(usuarioLogado, Convert.ToDateTime(txtInicial.Text), Convert.ToDateTime(txtFinal.Text));
+            txtRelatorio.Text = contRel.geraRelatorio(usuarioLogado, Convert.ToDateTime(txtInicial.Text), Convert.ToDateTime(txtFinal.Text)).ToUpper();
         }
 
         private void keyDown(object sender, KeyEventArgs e)
