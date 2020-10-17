@@ -36,6 +36,8 @@
             this.chkAdm = new System.Windows.Forms.CheckBox();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.chkAtivo = new System.Windows.Forms.CheckBox();
+            this.txtConfirma = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblUsuario
@@ -80,7 +82,7 @@
             // chkAdm
             // 
             this.chkAdm.AutoSize = true;
-            this.chkAdm.Location = new System.Drawing.Point(25, 74);
+            this.chkAdm.Location = new System.Drawing.Point(25, 101);
             this.chkAdm.Margin = new System.Windows.Forms.Padding(4);
             this.chkAdm.Name = "chkAdm";
             this.chkAdm.Size = new System.Drawing.Size(110, 20);
@@ -90,7 +92,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(240, 89);
+            this.btnSalvar.Location = new System.Drawing.Point(240, 129);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(105, 30);
@@ -104,7 +106,7 @@
             this.chkAtivo.AutoSize = true;
             this.chkAtivo.Checked = true;
             this.chkAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkAtivo.Location = new System.Drawing.Point(25, 95);
+            this.chkAtivo.Location = new System.Drawing.Point(25, 129);
             this.chkAtivo.Margin = new System.Windows.Forms.Padding(4);
             this.chkAtivo.Name = "chkAtivo";
             this.chkAtivo.Size = new System.Drawing.Size(57, 20);
@@ -112,11 +114,33 @@
             this.chkAtivo.Text = "Ativo";
             this.chkAtivo.UseVisualStyleBackColor = true;
             // 
+            // txtConfirma
+            // 
+            this.txtConfirma.Location = new System.Drawing.Point(206, 93);
+            this.txtConfirma.Margin = new System.Windows.Forms.Padding(4);
+            this.txtConfirma.MaxLength = 20;
+            this.txtConfirma.Name = "txtConfirma";
+            this.txtConfirma.PasswordChar = '*';
+            this.txtConfirma.Size = new System.Drawing.Size(139, 22);
+            this.txtConfirma.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(203, 73);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 16);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Confirmação:";
+            // 
             // FrmCadastroUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(370, 139);
+            this.ClientSize = new System.Drawing.Size(370, 172);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtConfirma);
             this.Controls.Add(this.chkAtivo);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.chkAdm);
@@ -128,8 +152,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(386, 178);
-            this.MinimumSize = new System.Drawing.Size(386, 178);
             this.Name = "FrmCadastroUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyReview - Cadatro de Usuários";
@@ -148,5 +170,7 @@
         private System.Windows.Forms.CheckBox chkAdm;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.CheckBox chkAtivo;
+        private System.Windows.Forms.TextBox txtConfirma;
+        private System.Windows.Forms.Label label2;
     }
 }

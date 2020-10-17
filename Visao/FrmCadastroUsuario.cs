@@ -39,54 +39,56 @@ namespace MyReview.Visao
 
                 if (!existe)
                 {
-                    usu.login = txtUsuario.Text.ToUpper().Trim();
-                    usu.senha = txtSenha.Text;
-                    switch (chkAdm.Checked)
+                    if (txtConfirma.Text.Equals(txtSenha.Text))
                     {
-                        case (true):
-                            usu.tipo = 1;
-                            break;
-                        case (false):
-                            usu.tipo = 0;
-                            break;
-                    };
-
-                    switch (chkAtivo.Checked)
-                    {
-                        case (true):
-                            usu.status = "F";
-                            break;
-                        case (false):
-                            usu.status = "X";
-                            break;
-                    }
-
-                    if (edit)
-                    {
-                        if (contUsu.alteraUsuario(usu))
+                        usu.login = txtUsuario.Text.ToUpper().Trim();
+                        usu.senha = txtSenha.Text;
+                        switch (chkAdm.Checked)
                         {
-                            MessageBox.Show("Salvo com sucesso!");
-                            this.Close();
+                            case (true):
+                                usu.tipo = 1;
+                                break;
+                            case (false):
+                                usu.tipo = 0;
+                                break;
+                        };
+
+                        switch (chkAtivo.Checked)
+                        {
+                            case (true):
+                                usu.status = "F";
+                                break;
+                            case (false):
+                                usu.status = "X";
+                                break;
+                        }
+
+                        if (edit)
+                        {
+                            if (contUsu.alteraUsuario(usu))
+                            {
+                                MessageBox.Show("Salvo com sucesso!");
+                                this.Close();
+                            }
+                        }
+                        else
+                        {
+                            if (contUsu.gravaUsuario(usu))
+                            {
+                                MessageBox.Show("Salvo com sucesso!");
+                                this.Close();
+                            }
                         }
                     }
                     else
-                    {
-                        if (contUsu.gravaUsuario(usu))
-                        {
-                            MessageBox.Show("Salvo com sucesso!");
-                            this.Close();
-                        }
-                    }
+                        MessageBox.Show("Senha difere da confirmação!");
                 }
-                else
-                {
-                    MessageBox.Show("Nome de usuário já utilizado!");
-                }
+                    else
+                        MessageBox.Show("Nome de usuário já utilizado!");
             }
             else
-            {
                 MessageBox.Show("Informe Usuário e Senha!");
-            }
+
           }
         public void editando(int id)
         {
@@ -94,6 +96,7 @@ namespace MyReview.Visao
             edit = true;
 
             txtSenha.Text = usu.senha;
+            txtConfirma.Text = usu.senha;
             txtUsuario.Text = usu.login;
             
             if(usu.tipo == 1 || usu.tipo == 2)
