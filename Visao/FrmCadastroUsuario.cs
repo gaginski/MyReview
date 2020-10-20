@@ -25,9 +25,7 @@ namespace MyReview.Visao
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             Boolean existe = false;
-            List<Usuario> listaUsuario = new List<Usuario>();
-
-            listaUsuario = contUsu.selecionaUsuarios();
+            List<Usuario> listaUsuario = contUsu.selecionaUsuarios();
 
             if (!txtUsuario.Text.Equals("") && !txtSenha.Text.Equals(""))
             {

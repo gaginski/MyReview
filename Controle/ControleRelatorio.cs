@@ -57,20 +57,24 @@ namespace MyReview.Controle
                 }
                 cmd.Dispose();
                 read.Close();
-                int i = 0;
-                String comando = "Select tar_titulo from tarefa where tar_id in(";
-                foreach (String s in tarefas)
+                
+                if (tarefas.Count > 0)
                 {
-                    if (i != tarefas.Count && i != 0)
-                        comando = comando + ", ";
+                    int i = 0;
+                    String comando = "Select tar_titulo from tarefa where tar_id in(";
+                    foreach (String s in tarefas)
+                    {
+                        if (i != tarefas.Count && i != 0)
+                            comando = comando + ", ";
 
-                    comando = comando + " " + s;
-                     i++;
+                        comando = comando + " " + s;
+                        i++;
+                    }
+                    comando = comando + ") group by tar_titulo";
+
+                    cmd.CommandText = comando;
+                    read = cmd.ExecuteReader();
                 }
-                comando = comando + ") group by tar_titulo";
-
-                cmd.CommandText = comando;
-                read = cmd.ExecuteReader();
 
                 while (read.Read())
                 {
