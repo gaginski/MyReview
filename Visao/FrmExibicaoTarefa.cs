@@ -9,6 +9,7 @@ namespace MyReview.Visao
     {
         ControleTarefas contTar = new ControleTarefas();
         ControleDocumentacao contDoc = new ControleDocumentacao();
+        ControleConfig contConfig = new ControleConfig();
         Tarefa tarefa = new Tarefa();
         Usuario usuarioLogado = new Usuario();
         Documentacao doc = new Documentacao();
@@ -16,6 +17,10 @@ namespace MyReview.Visao
         public FrmExibicaoTarefa()
         {
             InitializeComponent();
+            contConfig.carregaConfig();
+
+            this.Width = contConfig.conf.frmExibicaoTarefa[0];
+            this.Height = contConfig.conf.frmExibicaoTarefa[1];
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -64,6 +69,13 @@ namespace MyReview.Visao
 
         private void frmExibicaoTarefa_close(object sender, FormClosedEventArgs e)
         {
+
+            contConfig.carregaConfig();
+
+            Config aux = contConfig.conf;
+            aux.frmExibicaoTarefa = new int[] { this.Width, this.Height };
+            contConfig.salvaConfig(aux);
+
             FrmMinhasTarefas fmt = new FrmMinhasTarefas();
             fmt.UsuarioLogado(usuarioLogado.id);
             fmt.Show();
@@ -148,5 +160,10 @@ namespace MyReview.Visao
             this.Close();
         }
     }
-}
+
+        private void AlteraTamanho(object sender, EventArgs e)
+        {
+            
+        }
+    }
 }

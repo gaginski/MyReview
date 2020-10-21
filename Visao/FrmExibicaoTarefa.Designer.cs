@@ -339,6 +339,7 @@
             this.Text = "MyReview - Tarefa";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmExibicaoTarefa_close);
             this.Load += new System.EventHandler(this.FrmExibicaoTarefa_Load);
+            this.SizeChanged += new System.EventHandler(this.AlteraTamanho);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmExibicaoTarefa);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

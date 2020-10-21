@@ -16,6 +16,7 @@ namespace MyReview.Visao
     {
         ControleTarefas contTar = new ControleTarefas();
         ControleRevisao contRev = new ControleRevisao();
+        ControleConfig contConfig = new ControleConfig();
 
         List<Tarefa> listaTar = new List<Tarefa>();
         Usuario usuarioLogado = new Usuario();
@@ -23,6 +24,10 @@ namespace MyReview.Visao
         public FrmMinhasTarefas()
         {
             InitializeComponent();
+
+            contConfig.carregaConfig();
+            this.Width = contConfig.conf.frmMinhasTarefas[0];
+            this.Height = contConfig.conf.frmMinhasTarefas[1];
         }
 
         private void FrmMinhasTarefas_Load(object sender, EventArgs e)
@@ -190,6 +195,15 @@ namespace MyReview.Visao
             else
                 MessageBox.Show("Selecione um registro!");
 
+        }
+
+        private void CloseForm(object sender, FormClosedEventArgs e)
+        {
+            contConfig.carregaConfig();
+
+            Config aux = contConfig.conf;
+            aux.frmMinhasTarefas = new int[] { this.Width, this.Height };
+            contConfig.salvaConfig(aux);
         }
     }
 }

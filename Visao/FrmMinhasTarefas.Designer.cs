@@ -137,6 +137,7 @@
             this.Name = "FrmMinhasTarefas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyReview - Minhas Tarefas";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CloseForm);
             this.Load += new System.EventHandler(this.FrmMinhasTarefas_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMinhasTarefas_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
