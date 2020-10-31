@@ -37,6 +37,14 @@ namespace MyReview.Controle
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
 
+                cmd.CommandText = "ALTER TABLE usuario ADD COLUMN IF NOT EXISTS usu_email VARCHAR(50) default '';";
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+
+                cmd.CommandText = "ALTER TABLE usuario ADD COLUMN IF NOT EXISTS usu_enviaEmail BOOLEAN default '0';";
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+
                 cmd.Parameters.Clear();
                 cmd.CommandText = ("Select count(*) from usuario where usu_tipo = 2 and usu_usuario = 'visual'");
                 cmd.ExecuteNonQuery();

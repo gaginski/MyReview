@@ -6,6 +6,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -37,7 +39,7 @@ namespace MyReview.Controle
         {
             Util ut = new Util();
 
-            lblVersao.Text = "1.1.1.0";
+            lblVersao.Text = "1.1.5.1";
 
             if (!ut.VerificaConexao())
             {

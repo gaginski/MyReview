@@ -39,44 +39,52 @@ namespace MyReview.Visao
                 {
                     if (txtConfirma.Text.Equals(txtSenha.Text))
                     {
-                        usu.login = txtUsuario.Text.ToUpper().Trim();
-                        usu.senha = txtSenha.Text;
-                        switch (chkAdm.Checked)
+                        if (!chkEnviaEmail.Checked || (chkEnviaEmail.Checked && txtEmail.Text != ""))
                         {
-                            case (true):
-                                usu.tipo = 1;
-                                break;
-                            case (false):
-                                usu.tipo = 0;
-                                break;
-                        };
+                            usu.login = txtUsuario.Text.ToUpper().Trim();
+                            usu.senha = txtSenha.Text;
+                            usu.enviaEmail = chkEnviaEmail.Checked;
+                            usu.email = txtEmail.Text;
 
-                        switch (chkAtivo.Checked)
-                        {
-                            case (true):
-                                usu.status = "F";
-                                break;
-                            case (false):
-                                usu.status = "X";
-                                break;
-                        }
-
-                        if (edit)
-                        {
-                            if (contUsu.alteraUsuario(usu))
+                            switch (chkAdm.Checked)
                             {
-                                MessageBox.Show("Salvo com sucesso!");
-                                this.Close();
+                                case (true):
+                                    usu.tipo = 1;
+                                    break;
+                                case (false):
+                                    usu.tipo = 0;
+                                    break;
+                            };
+
+                            switch (chkAtivo.Checked)
+                            {
+                                case (true):
+                                    usu.status = "F";
+                                    break;
+                                case (false):
+                                    usu.status = "X";
+                                    break;
+                            }
+
+                            if (edit)
+                            {
+                                if (contUsu.alteraUsuario(usu))
+                                {
+                                    MessageBox.Show("Salvo com sucesso!");
+                                    this.Close();
+                                }
+                            }
+                            else
+                            {
+                                if (contUsu.gravaUsuario(usu))
+                                {
+                                    MessageBox.Show("Salvo com sucesso!");
+                                    this.Close();
+                                }
                             }
                         }
                         else
-                        {
-                            if (contUsu.gravaUsuario(usu))
-                            {
-                                MessageBox.Show("Salvo com sucesso!");
-                                this.Close();
-                            }
-                        }
+                            MessageBox.Show("Informe o Email!");
                     }
                     else
                         MessageBox.Show("Senha difere da confirmação!");
@@ -96,6 +104,8 @@ namespace MyReview.Visao
             txtSenha.Text = usu.senha;
             txtConfirma.Text = usu.senha;
             txtUsuario.Text = usu.login;
+            txtEmail.Text = usu.email;
+            chkEnviaEmail.Checked = usu.enviaEmail; 
             
             if(usu.tipo == 1 || usu.tipo == 2)
             {

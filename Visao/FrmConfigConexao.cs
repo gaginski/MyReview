@@ -65,7 +65,8 @@ namespace MyReview
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Util ut = new Util();
+            Config conf = montaConfig();
+            Util ut = new Util(conf);
 
             if (!ut.VerificaConexao())
                 MessageBox.Show("Impossivel conectar!");

@@ -3,6 +3,8 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -176,6 +178,37 @@ namespace MyReview.Controle
 
             return rev;
         }
+        
+        public void enviaEmailFinalizacao(Revisao rev) // implementar de acordo com o necessário
+        {
+            try
+                {
+                    String arquivo = "ModeloEmail.txt";
+                    String mensagem = System.IO.File.ReadAllText(arquivo); ;
+                    // cria uma mensagem
+                    MailMessage mensagemEmail = new MailMessage("vitorgaginskisouza@gmail.com", "vitorgaginskisouza@gmail.com");
+
+                    mensagemEmail.IsBodyHtml = true;
+                    mensagemEmail.Body = mensagem;
+                    mensagemEmail.Subject = "teste assunto";
+
+
+
+
+                    SmtpClient client = new SmtpClient(/*"smtp.gmail.com", 587*/);
+                    client.Host = "smtp.gmail.com";
+                    client.EnableSsl = true;
+                    client.UseDefaultCredentials = false;
+                    client.Credentials = new NetworkCredential("vitorgaginskisouza@gmail.com", "S0uza@32531"); ;
+
+                    // envia a mensagem
+                    client.Send(mensagemEmail);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
 
     }
 }

@@ -21,7 +21,7 @@ namespace MyReview.Controle
         public Util(Config _config)
         {
             chave = "SemSalsichaEhRuim_ByMarcosPauloJesus";
-           cmd = new MySqlCommand();
+            cmd = new MySqlCommand();
             config = _config;
             atualizaStringConexao();
             cmd.Connection = con;
