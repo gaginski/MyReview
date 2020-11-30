@@ -146,7 +146,8 @@ namespace MyReview.Visao
             }
 
             /*Remove da lista principal os itens da lista auxiliar */
-            for(int cont = 0; cont < lista.Count; cont++) { 
+            for (int cont = 0; cont < lista.Count; cont++)
+            {
                 for (int i = 0; i < listaAux.Count; i++)
                 {
                     if (lista[cont].id == listaAux[i].id)
@@ -180,7 +181,8 @@ namespace MyReview.Visao
         }
         private void atualizaGrid(Boolean atuVinculoResponsavel)
         {
-            if (atuVinculoResponsavel) {
+            if (atuVinculoResponsavel)
+            {
                 atualizaVinculadas();
                 atualizaResponsavel();
             }
@@ -222,22 +224,16 @@ namespace MyReview.Visao
             if (grid.CurrentRow != null)
             {
                 if (grid.CurrentRow.Cells[0].Value != null)
-                {
                     if (contTar.deletaTarefa(int.Parse(grid.CurrentRow.Cells[0].Value.ToString())))
                     {
                         MessageBox.Show("Exclusão realizada com sucesso!");
                         atualizaGrid(true);
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Selecione um registro!");
-                }
+                    else
+                        MessageBox.Show("Selecione um registro!");
             }
             else
-            {
                 MessageBox.Show("Selecione um registro!");
-            }
         }
         private void atualizaResponsavel()
         {
@@ -287,16 +283,6 @@ namespace MyReview.Visao
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
             atualizaLista();
@@ -326,9 +312,9 @@ namespace MyReview.Visao
 
                 foreach (Tarefa tar in lista)
                 {
-                    for(int i = 0; i < clone.Count; i++)
+                    for (int i = 0; i < clone.Count; i++)
                     {
-                        if (tar.id == clone[i]) 
+                        if (tar.id == clone[i])
                         {
                             tar.idRevisao = revisao.id;
                         }
@@ -383,9 +369,9 @@ namespace MyReview.Visao
                 }
                 else
                 {
-                    foreach(Tarefa t in lista)
+                    foreach (Tarefa t in lista)
                     {
-                        if(t.id == tar.id)
+                        if (t.id == tar.id)
                         {
                             t.idRevisao = id;
                         }
@@ -396,13 +382,7 @@ namespace MyReview.Visao
             listaAux.Clear();
 
             atualizaGrid(false);
-         }
-
-        private void txtCodigoSia_TextChanged(object sender, EventArgs e)
-        {
-
         }
-
         private void cadRevisaoKeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -413,14 +393,9 @@ namespace MyReview.Visao
                 }
         }
 
-        private void btnPesquisa_KeyDown(object sender, KeyEventArgs e)
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

@@ -96,6 +96,7 @@ namespace MyReview.Visao
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Revisão";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // chkModelo
             // 
@@ -223,7 +224,6 @@ namespace MyReview.Visao
             this.txtCodigoSia.Name = "txtCodigoSia";
             this.txtCodigoSia.Size = new System.Drawing.Size(80, 22);
             this.txtCodigoSia.TabIndex = 4;
-            this.txtCodigoSia.TextChanged += new System.EventHandler(this.txtCodigoSia_TextChanged);
             this.txtCodigoSia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoTarefa_KeyPress);
             // 
             // label3
@@ -235,7 +235,6 @@ namespace MyReview.Visao
             this.label3.Size = new System.Drawing.Size(82, 16);
             this.label3.TabIndex = 3;
             this.label3.Text = "Cód. Tarefa:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtTituloTarefa
             // 
@@ -326,7 +325,6 @@ namespace MyReview.Visao
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // label5
             // 
@@ -371,7 +369,6 @@ namespace MyReview.Visao
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(385, 22);
             this.txtPesquisa.TabIndex = 12;
-            this.txtPesquisa.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label6
             // 
@@ -393,7 +390,6 @@ namespace MyReview.Visao
             this.btnPesquisa.TabIndex = 14;
             this.btnPesquisa.UseVisualStyleBackColor = true;
             this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
-            this.btnPesquisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnPesquisa_KeyDown);
             // 
             // FrmCadastroRevisao
             // 
