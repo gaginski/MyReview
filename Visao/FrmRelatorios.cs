@@ -40,7 +40,7 @@ namespace MyReview.Visao
 
         private void keyDown(object sender, KeyEventArgs e)
         {
-            switch (e.KeyCode)
+         /*   switch (e.KeyCode)
             {
                 case (Keys.H):
                     if (txtInicial.Focused)
@@ -52,13 +52,17 @@ namespace MyReview.Visao
                         txtFinal.Text = DateTime.Now.ToString();
                     }
                     break;
-            }
+            }*/
         }
         private void validaCampos()
         {
-            txtInicial.Text = (txtInicial.Text.Contains("  :  ") && !txtInicial.Text.Equals("  /  /       :  ")) ? txtInicial.Text.Replace("  :  ", "00:00") : txtInicial.Text; // tem algo errado, mas não sei o que
-            txtFinal.Text = (txtFinal.Text.Contains("  :  ") && !txtFinal.Text.Equals("  /  /       :  ")) ? txtFinal.Text.Replace("  :  ", "23:59") : txtFinal.Text; // || |||||||||||||||||||
+           // txtInicial.Text = (txtInicial.Text.Contains("  :  ") && !txtInicial.Text.Equals("  /  /       :  ")) ? txtInicial.Text.Replace("  :  ", "00:00") : txtInicial.Text; // tem algo errado, mas não sei o que
+           // txtFinal.Text = (txtFinal.Text.Contains("  :  ") && !txtFinal.Text.Equals("  /  /       :  ")) ? txtFinal.Text.Replace("  :  ", "23:59") : txtFinal.Text; // || |||||||||||||||||||
         }
 
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

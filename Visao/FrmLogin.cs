@@ -67,6 +67,10 @@ namespace MyReview.Controle
                     case (Keys.E):
                         btnEntra_Click(sender, e);
                         break;
+                    case (Keys.T):
+                        testes t = new testes();
+                        t.Show();
+                        break;
                 }
 
             }
