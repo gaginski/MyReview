@@ -17,21 +17,25 @@ namespace MyReview.Visao
         public FrmCadastroCasoTeste()
         {
             InitializeComponent();
+            gridPassos.Rows.Add(1, "");
         }
 
-        private void pnlCadatroCasosTeste_Paint(object sender, PaintEventArgs e)
+        private void FrmCadastroCasoTeste_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void keyDown(object sender, KeyEventArgs e)
         {
         }
 
-        private void panelControl1_Paint(object sender, PaintEventArgs e)
+        private void btnIncluiCaso_Click(object sender, EventArgs e)
         {
-            DataTable dtPassos = new DataTable();
-            dtPassos.Columns.Add("#");
-            dtPassos.Columns.Add("Passos");
+            
+        }
 
-            grid1.DataSource = dtPassos;
-
-            grid1.AddNewRecord();
-         }
+        private void btnNovoPasso_Click(object sender, EventArgs e)
+        {
+            gridPassos.Rows.Add(gridPassos.Rows.Count, "");
+        }
     }
 }

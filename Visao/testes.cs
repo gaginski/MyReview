@@ -16,12 +16,47 @@ namespace MyReview.Visao
         public testes()
         {
             InitializeComponent();
+            //panel1.Enabled = false;
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             FrmCadastroCasoTeste t = new FrmCadastroCasoTeste();
             t.Show();
+        }
+
+        private void testes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Equals("12062019"))
+            {
+                panel1.Enabled = true;
+            }
+        }
+
+        private void textSenhaTeste_keyDown(object sender, KeyEventArgs e)
+        {
+            if (textBox1.Text.Equals("12062019"))
+            {
+                panel1.Enabled = true;
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (textBox1.Text.Equals("12062019"))
+            {
+                panel1.Enabled = true;
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

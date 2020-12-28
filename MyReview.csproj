@@ -96,6 +96,9 @@
     <Compile Include="Controle\ControleAtualizacao.cs" />
     <Compile Include="Controle\Util.cs" />
     <Compile Include="Controle\ControleConfig.cs" />
+    <Compile Include="DataBase\Base.cs" />
+    <Compile Include="DataBase\IBase.cs" />
+    <Compile Include="DataBase\OpcoesBase.cs" />
     <Compile Include="Modelo\Documentacao.cs" />
     <Compile Include="Modelo\Revisao.cs" />
     <Compile Include="Modelo\Tarefa.cs" />

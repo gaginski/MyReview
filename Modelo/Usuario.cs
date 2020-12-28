@@ -31,5 +31,5 @@ namespace MyReview.Modelo
             this.tipo = _tipo;
             this.status = _status;
         }
-    }
+}
 }
