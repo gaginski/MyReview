@@ -2,12 +2,7 @@
 using MyReview.Modelo;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyReview.Visao
@@ -147,8 +142,7 @@ namespace MyReview.Visao
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-
-            return base.ProcessCmdKey(ref msg, keyData);
+                     return base.ProcessCmdKey(ref msg, keyData);
         }
 
         private void frmMinhasTarefas_KeyDown(object sender, KeyEventArgs e)

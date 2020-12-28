@@ -37,7 +37,7 @@ namespace MyReview.Controle
         {
             Util ut = new Util();
 
-            lblVersao.Text = "1.1.1.0";
+            lblVersao.Text = "1.1.5.0";
 
             if (!ut.VerificaConexao())
             {

@@ -36,6 +36,7 @@
             this.lblSenha = new System.Windows.Forms.Label();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.groupLogin = new System.Windows.Forms.GroupBox();
+            this.chkViewSenha = new System.Windows.Forms.CheckBox();
             this.btnConfig = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,7 +45,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblConexao = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.chkViewSenha = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupLogin.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -122,6 +122,18 @@
             this.groupLogin.TabIndex = 6;
             this.groupLogin.TabStop = false;
             this.groupLogin.Text = "Login";
+            // 
+            // chkViewSenha
+            // 
+            this.chkViewSenha.AutoSize = true;
+            this.chkViewSenha.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkViewSenha.Location = new System.Drawing.Point(157, 102);
+            this.chkViewSenha.Name = "chkViewSenha";
+            this.chkViewSenha.Size = new System.Drawing.Size(70, 17);
+            this.chkViewSenha.TabIndex = 6;
+            this.chkViewSenha.Text = "Visualizar";
+            this.chkViewSenha.UseVisualStyleBackColor = true;
+            this.chkViewSenha.CheckedChanged += new System.EventHandler(this.chkViewSenha_CheckedChanged);
             // 
             // btnConfig
             // 
@@ -203,23 +215,11 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Conexão:";
             // 
-            // chkViewSenha
-            // 
-            this.chkViewSenha.AutoSize = true;
-            this.chkViewSenha.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkViewSenha.Location = new System.Drawing.Point(157, 102);
-            this.chkViewSenha.Name = "chkViewSenha";
-            this.chkViewSenha.Size = new System.Drawing.Size(70, 17);
-            this.chkViewSenha.TabIndex = 6;
-            this.chkViewSenha.Text = "Visualizar";
-            this.chkViewSenha.UseVisualStyleBackColor = true;
-            this.chkViewSenha.CheckedChanged += new System.EventHandler(this.chkViewSenha_CheckedChanged);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(252, 388);
+            this.label4.Location = new System.Drawing.Point(281, 391);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(129, 13);
             this.label4.TabIndex = 13;

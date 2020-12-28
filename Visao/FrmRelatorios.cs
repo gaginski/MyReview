@@ -34,7 +34,8 @@ namespace MyReview.Visao
 
         private void button1_Click(object sender, EventArgs e)
         {
-            txtRelatorio.Text = contRel.geraRelatorio(usuarioLogado, Convert.ToDateTime(txtInicial.Text), Convert.ToDateTime(txtFinal.Text)).ToUpper();
+            //txtRelatorio.Text = contRel.geraRelatorio(usuarioLogado, Convert.ToDateTime(txtInicial.Text), Convert.ToDateTime(txtFinal.Text)).ToUpper();
+            validaCampos();
         }
 
         private void keyDown(object sender, KeyEventArgs e)
@@ -53,5 +54,11 @@ namespace MyReview.Visao
                     break;
             }
         }
+        private void validaCampos()
+        {
+            txtInicial.Text = (txtInicial.Text.Contains("  :  ") && !txtInicial.Text.Equals("  /  /       :  ")) ? txtInicial.Text.Replace("  :  ", "00:00") : txtInicial.Text; // tem algo errado, mas não sei o que
+            txtFinal.Text = (txtFinal.Text.Contains("  :  ") && !txtFinal.Text.Equals("  /  /       :  ")) ? txtFinal.Text.Replace("  :  ", "23:59") : txtFinal.Text; // || |||||||||||||||||||
+        }
+
     }
 }

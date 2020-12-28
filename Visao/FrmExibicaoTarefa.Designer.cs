@@ -51,6 +51,8 @@
             this.txtDocumentacao = new System.Windows.Forms.RichTextBox();
             this.txtTarefasCriadas = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtIncluirTf = new System.Windows.Forms.TextBox();
+            this.btnIncluir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +68,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.txtDescricaoTarefa);
             this.groupBox1.Controls.Add(this.label9);
@@ -260,7 +263,7 @@
             // btnSalvarDocumentacao
             // 
             this.btnSalvarDocumentacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalvarDocumentacao.Location = new System.Drawing.Point(585, 456);
+            this.btnSalvarDocumentacao.Location = new System.Drawing.Point(585, 491);
             this.btnSalvarDocumentacao.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalvarDocumentacao.Name = "btnSalvarDocumentacao";
             this.btnSalvarDocumentacao.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -274,7 +277,7 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 261);
+            this.label4.Location = new System.Drawing.Point(25, 261);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 16);
@@ -283,14 +286,13 @@
             // 
             // txtDocumentacao
             // 
-            this.txtDocumentacao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtDocumentacao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDocumentacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocumentacao.Location = new System.Drawing.Point(27, 280);
+            this.txtDocumentacao.Location = new System.Drawing.Point(26, 281);
             this.txtDocumentacao.Margin = new System.Windows.Forms.Padding(4);
             this.txtDocumentacao.Name = "txtDocumentacao";
-            this.txtDocumentacao.Size = new System.Drawing.Size(712, 90);
+            this.txtDocumentacao.Size = new System.Drawing.Size(712, 89);
             this.txtDocumentacao.TabIndex = 5;
             this.txtDocumentacao.Text = "";
             // 
@@ -298,8 +300,9 @@
             // 
             this.txtTarefasCriadas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTarefasCriadas.Enabled = false;
             this.txtTarefasCriadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTarefasCriadas.Location = new System.Drawing.Point(27, 395);
+            this.txtTarefasCriadas.Location = new System.Drawing.Point(27, 430);
             this.txtTarefasCriadas.Margin = new System.Windows.Forms.Padding(4);
             this.txtTarefasCriadas.Name = "txtTarefasCriadas";
             this.txtTarefasCriadas.Size = new System.Drawing.Size(712, 53);
@@ -311,18 +314,40 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 375);
+            this.label5.Location = new System.Drawing.Point(26, 391);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 16);
             this.label5.TabIndex = 6;
             this.label5.Text = "Tarefas criadas:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // txtIncluirTf
+            // 
+            this.txtIncluirTf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtIncluirTf.Location = new System.Drawing.Point(136, 389);
+            this.txtIncluirTf.Name = "txtIncluirTf";
+            this.txtIncluirTf.Size = new System.Drawing.Size(100, 22);
+            this.txtIncluirTf.TabIndex = 8;
+            // 
+            // btnIncluir
+            // 
+            this.btnIncluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnIncluir.Location = new System.Drawing.Point(242, 388);
+            this.btnIncluir.Name = "btnIncluir";
+            this.btnIncluir.Size = new System.Drawing.Size(75, 23);
+            this.btnIncluir.TabIndex = 9;
+            this.btnIncluir.Text = "Incluir";
+            this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
             // FrmExibicaoTarefa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(757, 508);
+            this.ClientSize = new System.Drawing.Size(757, 543);
+            this.Controls.Add(this.btnIncluir);
+            this.Controls.Add(this.txtIncluirTf);
             this.Controls.Add(this.txtTarefasCriadas);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtDocumentacao);
@@ -372,5 +397,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RichTextBox txtDescricaoTarefa;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtIncluirTf;
+        private System.Windows.Forms.Button btnIncluir;
     }
 }

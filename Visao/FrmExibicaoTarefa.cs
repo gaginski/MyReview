@@ -35,11 +35,9 @@ namespace MyReview.Visao
             txtTitulo.Text = tarefa.titulo;
             txtVersao.Text = tarefa.revisao.versao;
             txtDescricaoTarefa.Text = tarefa.descricao;
-
-            if (tarefa.dataInicio.ToString() != "31/12/1888 23:59:59")
-                txtDataInicio.Text = tarefa.dataInicio.ToString();
-            if (tarefa.dataFim.ToString() != "31/12/1888 23:59:59")
-                txtDataFim.Text = tarefa.dataFim.ToString();
+            
+            txtDataInicio.Text = tarefa.dataInicio.ToString() != "31/12/1888 23:59:59" ? tarefa.dataInicio.ToString() : "";
+            txtDataFim.Text = tarefa.dataFim.ToString() != "31/12/1888 23:59:59" ? tarefa.dataFim.ToString() : "";
 
             switch (tarefa.status)
             {
@@ -164,6 +162,17 @@ namespace MyReview.Visao
         private void AlteraTamanho(object sender, EventArgs e)
         {
             
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnIncluir_Click(object sender, EventArgs e)
+        {
+            txtTarefasCriadas.Text = (txtTarefasCriadas.Text.Equals("") ? txtIncluirTf.Text.Trim() : txtTarefasCriadas.Text + " - " + txtIncluirTf.Text.Trim());
+            txtIncluirTf.Text = "";
         }
     }
 }
