@@ -30,7 +30,9 @@ namespace MyReview.Visao
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.memoEdit3 = new DevExpress.XtraEditors.MemoEdit();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -46,6 +48,8 @@ namespace MyReview.Visao
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.btnIncluiCaso = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btnNovoPasso = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExclui = new DevExpress.XtraEditors.SimpleButton();
             this.gridPassos = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Passo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,12 +62,9 @@ namespace MyReview.Visao
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtTituloSuite = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.memoEdit3 = new DevExpress.XtraEditors.MemoEdit();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.btnExclui = new DevExpress.XtraEditors.SimpleButton();
-            this.btnNovoPasso = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memoEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlCadatroCasosTeste)).BeginInit();
@@ -80,7 +81,6 @@ namespace MyReview.Visao
             ((System.ComponentModel.ISupportInitialize)(this.txtCriador.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVersao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTituloSuite.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit3.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -104,6 +104,13 @@ namespace MyReview.Visao
             this.panelControl1.Size = new System.Drawing.Size(931, 714);
             this.panelControl1.TabIndex = 0;
             // 
+            // memoEdit3
+            // 
+            this.memoEdit3.Location = new System.Drawing.Point(5, 77);
+            this.memoEdit3.Name = "memoEdit3";
+            this.memoEdit3.Size = new System.Drawing.Size(920, 42);
+            this.memoEdit3.TabIndex = 22;
+            // 
             // dataGridView2
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
@@ -113,6 +120,16 @@ namespace MyReview.Visao
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(910, 201);
             this.dataGridView2.TabIndex = 13;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Location = new System.Drawing.Point(5, 55);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(50, 16);
+            this.labelControl9.TabIndex = 21;
+            this.labelControl9.Text = "Objetivo";
             // 
             // simpleButton1
             // 
@@ -278,6 +295,27 @@ namespace MyReview.Visao
             this.panelControl2.Size = new System.Drawing.Size(455, 326);
             this.panelControl2.TabIndex = 10;
             // 
+            // btnNovoPasso
+            // 
+            this.btnNovoPasso.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovoPasso.Appearance.Options.UseFont = true;
+            this.btnNovoPasso.Location = new System.Drawing.Point(422, 291);
+            this.btnNovoPasso.Name = "btnNovoPasso";
+            this.btnNovoPasso.Size = new System.Drawing.Size(30, 32);
+            this.btnNovoPasso.TabIndex = 22;
+            this.btnNovoPasso.Text = "+";
+            this.btnNovoPasso.Click += new System.EventHandler(this.btnNovoPasso_Click);
+            // 
+            // btnExclui
+            // 
+            this.btnExclui.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExclui.Appearance.Options.UseFont = true;
+            this.btnExclui.Location = new System.Drawing.Point(386, 291);
+            this.btnExclui.Name = "btnExclui";
+            this.btnExclui.Size = new System.Drawing.Size(30, 32);
+            this.btnExclui.TabIndex = 21;
+            this.btnExclui.Text = "x";
+            // 
             // gridPassos
             // 
             this.gridPassos.BackgroundColor = System.Drawing.Color.White;
@@ -399,44 +437,6 @@ namespace MyReview.Visao
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Título da Suíte de Testes";
             // 
-            // memoEdit3
-            // 
-            this.memoEdit3.Location = new System.Drawing.Point(5, 77);
-            this.memoEdit3.Name = "memoEdit3";
-            this.memoEdit3.Size = new System.Drawing.Size(920, 42);
-            this.memoEdit3.TabIndex = 22;
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(5, 55);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(50, 16);
-            this.labelControl9.TabIndex = 21;
-            this.labelControl9.Text = "Objetivo";
-            // 
-            // btnExclui
-            // 
-            this.btnExclui.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExclui.Appearance.Options.UseFont = true;
-            this.btnExclui.Location = new System.Drawing.Point(422, 291);
-            this.btnExclui.Name = "btnExclui";
-            this.btnExclui.Size = new System.Drawing.Size(30, 32);
-            this.btnExclui.TabIndex = 21;
-            this.btnExclui.Text = "x";
-            // 
-            // btnNovoPasso
-            // 
-            this.btnNovoPasso.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovoPasso.Appearance.Options.UseFont = true;
-            this.btnNovoPasso.Location = new System.Drawing.Point(386, 291);
-            this.btnNovoPasso.Name = "btnNovoPasso";
-            this.btnNovoPasso.Size = new System.Drawing.Size(30, 32);
-            this.btnNovoPasso.TabIndex = 22;
-            this.btnNovoPasso.Text = "+";
-            this.btnNovoPasso.Click += new System.EventHandler(this.btnNovoPasso_Click);
-            // 
             // FrmCadastroCasoTeste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -450,6 +450,7 @@ namespace MyReview.Visao
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memoEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlCadatroCasosTeste)).EndInit();
@@ -468,7 +469,6 @@ namespace MyReview.Visao
             ((System.ComponentModel.ISupportInitialize)(this.txtCriador.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVersao.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTituloSuite.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit3.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

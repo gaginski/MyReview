@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using MyReview.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,6 +57,17 @@ namespace MyReview.Visao
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void simpleButton2_Click_1(object sender, EventArgs e)
+        {
+            Usuario u = new Usuario();
+
+            u.usu_login = "vitor";
+            u.usu_senha = 123123;
+
+            u.Salvar();
 
         }
     }

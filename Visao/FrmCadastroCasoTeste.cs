@@ -35,7 +35,17 @@ namespace MyReview.Visao
 
         private void btnNovoPasso_Click(object sender, EventArgs e)
         {
-            gridPassos.Rows.Add(gridPassos.Rows.Count, "");
+            bool verificador = true;
+            for(int i = 0; i< gridPassos.Rows.Count; i++)
+            {
+                if(gridPassos.Rows[1].Cells[i].Value != null && verificador)
+                {
+                    MessageBox.Show("Informe a descrição do passo " + i+1);
+                    verificador = false;
+                }
+            }
+            if(verificador)
+                gridPassos.Rows.Add(gridPassos.Rows.Count, "");
         }
     }
 }

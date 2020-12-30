@@ -33,6 +33,7 @@ namespace MyReview.Visao
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,12 +68,22 @@ namespace MyReview.Visao
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.simpleButton2);
             this.panel1.Controls.Add(this.simpleButton1);
             this.panel1.Location = new System.Drawing.Point(4, 64);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(435, 192);
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Location = new System.Drawing.Point(11, 32);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(138, 23);
+            this.simpleButton2.TabIndex = 1;
+            this.simpleButton2.Text = "TesteBanco";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click_1);
             // 
             // testes
             // 
@@ -97,5 +108,6 @@ namespace MyReview.Visao
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }

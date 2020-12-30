@@ -13,6 +13,7 @@ namespace MyReview.Controle
     {
         public Config config;
         public String stringConexao;
+        public String stringConexaoSql;
         public MySqlConnection con { get; set; }
         public MySqlDataReader read { get; set; }
         public MySqlCommand cmd { get; set; }
@@ -41,6 +42,8 @@ namespace MyReview.Controle
         public void atualizaStringConexao()
         {
             this.stringConexao = "server=" + config.host + ";port=" + config.porta + ";User Id=" + config.usuario + ";database = " + config.banco + "; password=" + config.senha + ";";
+            //stringConexaoSql = "Server= "+ config.host + "; Database= " + config.banco + "; Uid= " + config.usuario + "; Pwd= " + config.senha + ";";
+            stringConexaoSql = "Server= DESKTOP-AVV1N1R; Database= myreview; Uid= sa; Pwd= root;";
             con = new MySqlConnection(stringConexao);
         }
         public Boolean VerificaConexao()

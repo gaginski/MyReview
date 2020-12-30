@@ -8,19 +8,22 @@ using System.Data.SqlClient;
 using System.Collections.Specialized;
 using System.Reflection;
 using MyReview.DataBase;
+using MyReview.Visao;
+using MyReview.Controle;
+using System.Windows.Forms;
 
 namespace Database
 {
     public class Base : IBase
     {
-        private string connectionString = ConfigurationManager.AppSettings["SqlConnection"];
-
-        public string Key => throw new NotImplementedException();
+        Util util = new Util();
+        
+       public string Key => throw new NotImplementedException();
 
         public virtual void Salvar()
         {
             using (SqlConnection connection = new SqlConnection(
-              connectionString))
+              util.stringConexaoSql))
             {
                 List<string> campos = new List<string>();
                 List<string> valores = new List<string>();
@@ -38,6 +41,7 @@ namespace Database
                 string queryString = "insert into " + this.GetType().Name + "s (" + string.Join(", ", campos.ToArray()) + ")values(" + string.Join(", ", valores.ToArray()) + ");";
                 SqlCommand command = new SqlCommand(queryString, connection);
                 command.Connection.Open();
+                MessageBox.Show(queryString);
                 command.ExecuteNonQuery();
             }
         }
@@ -46,7 +50,7 @@ namespace Database
         {
             var list = new List<IBase>();
             using (SqlConnection connection = new SqlConnection(
-               connectionString))
+               util.stringConexaoSql))
             {
                 string queryString = "select * from " + this.GetType().Name + "s";
                 SqlCommand command = new SqlCommand(queryString, connection);
@@ -67,7 +71,7 @@ namespace Database
         {
             var list = new List<IBase>();
             using (SqlConnection connection = new SqlConnection(
-               connectionString))
+               util.stringConexaoSql))
             {
                 List<string> where = new List<string>();
                 string chavePrimaria = string.Empty;

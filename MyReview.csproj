@@ -106,6 +106,7 @@
     <Compile Include="Modelo\Tarefa.cs" />
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Modelo\Config.cs" />
+    <Compile Include="Model\Usuario.cs" />
     <Compile Include="Visao\FrmCadastroCasoTeste.cs">
       <SubType>Form</SubType>
     </Compile>
