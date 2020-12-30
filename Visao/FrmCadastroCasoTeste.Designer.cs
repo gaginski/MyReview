@@ -188,6 +188,7 @@ namespace MyReview.Visao
             // 
             this.memoEdit2.Location = new System.Drawing.Point(5, 224);
             this.memoEdit2.Name = "memoEdit2";
+            this.memoEdit2.Properties.MaxLength = 1000;
             this.memoEdit2.Size = new System.Drawing.Size(449, 69);
             this.memoEdit2.TabIndex = 20;
             // 

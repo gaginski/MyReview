@@ -46,11 +46,13 @@ namespace MyReview.Visao
                 if(gridPassos.Rows[i].Cells[0].Value != null && gridPassos.Rows[i].Cells[1].Value != null)
                 {
                     Casos_Passo aux = new Casos_Passo();
+
                     aux.cps_indice = Int32.Parse(gridPassos.Rows[i].Cells[0].Value.ToString());
                     aux.cps_descricao = gridPassos.Rows[i].Cells[1].Value.ToString();
                     aux.cps_cts_id = 1; // ajustar
                     aux.cps_dataInclusao = DateTime.Parse(DateTime.Now.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
                     aux.cps_ultimaAlteracao = DateTime.Parse(DateTime.Now.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
+
                     listaPassos.Add(aux);
                 }
             }

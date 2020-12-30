@@ -62,7 +62,7 @@ namespace MyReview.Visao
 
         private void simpleButton2_Click_1(object sender, EventArgs e)
         {
-            Usuario u = new Usuario();
+            Suite u = new Suite();
 
             u.usu_login = "vitor";
             u.usu_senha = 123123;
