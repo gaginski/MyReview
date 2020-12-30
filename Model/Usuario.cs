@@ -11,7 +11,7 @@ namespace MyReview.Model
     class Usuario : Base
     {
         [OpcoesBase(UsarNoBanco = true, ChavePrimaria = true, UsarParaBuscar = true)]
-        public int? usu_id { get; set; }
+        public int usu_id { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]
         public string usu_login { get; set; }

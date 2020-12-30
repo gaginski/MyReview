@@ -11,14 +11,17 @@ using MyReview.DataBase;
 using MyReview.Visao;
 using MyReview.Controle;
 using System.Windows.Forms;
+using MyReview.Model;
 
 namespace Database
 {
     public class Base : IBase
     {
         Util util = new Util();
-        
-       public string Key => throw new NotImplementedException();
+
+        string IBase.Key => throw new NotImplementedException();
+
+        //public string Key => throw new NotImplementedException();
 
         public virtual void Salvar()
         {
@@ -28,10 +31,12 @@ namespace Database
                 List<string> campos = new List<string>();
                 List<string> valores = new List<string>();
 
-                foreach (PropertyInfo pi in this.GetType().GetProperties(BindingFlags.Public))
+                MessageBox.Show(this.GetType().GetProperties(BindingFlags.Public).Length.ToString());
+
+                foreach (PropertyInfo pi in this.GetType().GetProperties()) //GetProperties(/*BindingFlags.Public*/) não consegui fazer pegar apenas as publics
                 {
                     OpcoesBase pOpcoesBase = (OpcoesBase)pi.GetCustomAttribute(typeof(OpcoesBase));
-                    if (pOpcoesBase != null && pOpcoesBase.UsarNoBanco)
+                    if (pOpcoesBase != null && pOpcoesBase.UsarNoBanco && !pOpcoesBase.UsarParaBuscar)
                     {
                         campos.Add(pi.Name);
                         valores.Add("'" + pi.GetValue(this) + "'");
@@ -45,7 +50,7 @@ namespace Database
                 command.ExecuteNonQuery();
             }
         }
-
+       
         public virtual List<IBase> Todos()
         {
             var list = new List<IBase>();
@@ -81,17 +86,13 @@ namespace Database
                     if (pOpcoesBase != null)
                     {
                         if (pOpcoesBase.ChavePrimaria)
-                        {
                             chavePrimaria = pi.Name;
-                        }
 
                         if (pOpcoesBase.UsarNoBanco)
                         {
                             var valor = pi.GetValue(this);
                             if (valor != null)
-                            {
                                 where.Add(pi.Name + " = '" + valor + "'");
-                            }
                         }
                     }
                 }

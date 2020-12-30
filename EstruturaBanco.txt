@@ -1,0 +1,37 @@
+use[myreview]
+
+drop table Casos_Passos;
+drop table CasoTestes;
+
+
+create table Casos_Passos(
+	cps_id INT IDENTITY(1,1) PRIMARY KEY,
+	cps_indice INT NOT NULL,
+	cps_descricao VARCHAR(500) NOT NULL,
+	cps_cts_id INT NOT NULL,
+	cps_dataInclusao DATETIME DEFAULT CURRENT_TIMESTAMP,
+	cps_usu_inclusao INT,
+	cps_ultimaAlteracao DATETIME DEFAULT CURRENT_TIMESTAMP,
+	cps_usu_ultimaAlteracao INT,
+	cps_terminalUltimaAleracao VARCHAR(100)
+	constraint fk_Casos_Passos_CasoTestes foreign key (cps_cts_id) references CasoTestes (cts_id)
+	/* IMPLEMENTAR CHAVES SECUNDÁRIAS*/)
+
+	
+create table CasoTestes(
+	cts_id int IDENTITY(1,1) PRIMARY KEY,
+	cts_descricao varchar(200),
+	cts_indice INT NOT NULL,
+	cts_sts_id int not null,
+	cts_precondicoes varchar(500),
+	cts_prioridade int,
+	cts_tempoEstimado int,
+	cts_resultadoEsperado varchar(1000),
+	cts_dataInclusao DATETIME DEFAULT CURRENT_TIMESTAMP,
+	cts_usu_inclusao INT,
+	cts_ultimaAlteracao DATETIME DEFAULT CURRENT_TIMESTAMP,
+	cts_usu_ultimaAlteracao INT,
+	cts_terminalUltimaAleracao VARCHAR(100),
+	cts_Observacao varchar(1000)
+	/* IMPLEMENTAR CHAVES SECUNDÁRIAS*/)
+		

@@ -44,7 +44,7 @@ namespace MyReview.Visao
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
-            this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
+            this.txtPrecondicao = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.btnIncluiCaso = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -54,7 +54,7 @@ namespace MyReview.Visao
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Passo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtDescricaoCaso = new DevExpress.XtraEditors.TextEdit();
             this.lblCaso = new DevExpress.XtraEditors.LabelControl();
             this.txtCriador = new DevExpress.XtraEditors.TextEdit();
             this.lblCriador = new DevExpress.XtraEditors.LabelControl();
@@ -73,11 +73,11 @@ namespace MyReview.Visao
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecondicao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPassos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescricaoCaso.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCriador.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVersao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTituloSuite.Properties)).BeginInit();
@@ -173,11 +173,11 @@ namespace MyReview.Visao
             this.pnlCadatroCasosTeste.Controls.Add(this.labelControl6);
             this.pnlCadatroCasosTeste.Controls.Add(this.comboBoxEdit2);
             this.pnlCadatroCasosTeste.Controls.Add(this.separatorControl1);
-            this.pnlCadatroCasosTeste.Controls.Add(this.memoEdit1);
+            this.pnlCadatroCasosTeste.Controls.Add(this.txtPrecondicao);
             this.pnlCadatroCasosTeste.Controls.Add(this.labelControl5);
             this.pnlCadatroCasosTeste.Controls.Add(this.btnIncluiCaso);
             this.pnlCadatroCasosTeste.Controls.Add(this.panelControl2);
-            this.pnlCadatroCasosTeste.Controls.Add(this.textEdit1);
+            this.pnlCadatroCasosTeste.Controls.Add(this.txtDescricaoCaso);
             this.pnlCadatroCasosTeste.Controls.Add(this.lblCaso);
             this.pnlCadatroCasosTeste.Location = new System.Drawing.Point(8, 125);
             this.pnlCadatroCasosTeste.Name = "pnlCadatroCasosTeste";
@@ -214,6 +214,7 @@ namespace MyReview.Visao
             this.spinEdit1.Properties.Appearance.Options.UseFont = true;
             this.spinEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinEdit1.Properties.MaxLength = 2;
             this.spinEdit1.Size = new System.Drawing.Size(151, 22);
             this.spinEdit1.TabIndex = 18;
             // 
@@ -245,6 +246,7 @@ namespace MyReview.Visao
             this.comboBoxEdit2.Properties.Appearance.Options.UseFont = true;
             this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit2.Properties.MaxLength = 1;
             this.comboBoxEdit2.Size = new System.Drawing.Size(100, 22);
             this.comboBoxEdit2.TabIndex = 15;
             // 
@@ -255,12 +257,13 @@ namespace MyReview.Visao
             this.separatorControl1.Size = new System.Drawing.Size(449, 23);
             this.separatorControl1.TabIndex = 14;
             // 
-            // memoEdit1
+            // txtPrecondicao
             // 
-            this.memoEdit1.Location = new System.Drawing.Point(5, 77);
-            this.memoEdit1.Name = "memoEdit1";
-            this.memoEdit1.Size = new System.Drawing.Size(449, 69);
-            this.memoEdit1.TabIndex = 13;
+            this.txtPrecondicao.Location = new System.Drawing.Point(5, 77);
+            this.txtPrecondicao.Name = "txtPrecondicao";
+            this.txtPrecondicao.Properties.MaxLength = 500;
+            this.txtPrecondicao.Size = new System.Drawing.Size(449, 69);
+            this.txtPrecondicao.TabIndex = 13;
             // 
             // labelControl5
             // 
@@ -356,14 +359,15 @@ namespace MyReview.Visao
             this.labelControl4.TabIndex = 11;
             this.labelControl4.Text = "Passo a Passo";
             // 
-            // textEdit1
+            // txtDescricaoCaso
             // 
-            this.textEdit1.Location = new System.Drawing.Point(63, 8);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Size = new System.Drawing.Size(391, 22);
-            this.textEdit1.TabIndex = 9;
+            this.txtDescricaoCaso.Location = new System.Drawing.Point(63, 8);
+            this.txtDescricaoCaso.Name = "txtDescricaoCaso";
+            this.txtDescricaoCaso.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricaoCaso.Properties.Appearance.Options.UseFont = true;
+            this.txtDescricaoCaso.Properties.MaxLength = 200;
+            this.txtDescricaoCaso.Size = new System.Drawing.Size(391, 22);
+            this.txtDescricaoCaso.TabIndex = 9;
             // 
             // lblCaso
             // 
@@ -445,8 +449,6 @@ namespace MyReview.Visao
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmCadastroCasoTeste";
             this.Text = "FrmCadastroCasoTeste";
-            this.Load += new System.EventHandler(this.FrmCadastroCasoTeste_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDown);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -460,12 +462,12 @@ namespace MyReview.Visao
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecondicao.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPassos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescricaoCaso.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCriador.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVersao.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTituloSuite.Properties)).EndInit();
@@ -487,7 +489,7 @@ namespace MyReview.Visao
         private DevExpress.XtraEditors.TextEdit txtCriador;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtDescricaoCaso;
         private DevExpress.XtraEditors.LabelControl lblCaso;
         private DevExpress.XtraEditors.MemoEdit memoEdit2;
         private DevExpress.XtraEditors.LabelControl labelControl8;
@@ -496,7 +498,7 @@ namespace MyReview.Visao
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
         private DevExpress.XtraEditors.SeparatorControl separatorControl1;
-        private DevExpress.XtraEditors.MemoEdit memoEdit1;
+        private DevExpress.XtraEditors.MemoEdit txtPrecondicao;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.SimpleButton btnIncluiCaso;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;

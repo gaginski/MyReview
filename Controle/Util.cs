@@ -43,7 +43,7 @@ namespace MyReview.Controle
         {
             this.stringConexao = "server=" + config.host + ";port=" + config.porta + ";User Id=" + config.usuario + ";database = " + config.banco + "; password=" + config.senha + ";";
             //stringConexaoSql = "Server= "+ config.host + "; Database= " + config.banco + "; Uid= " + config.usuario + "; Pwd= " + config.senha + ";";
-            stringConexaoSql = "Server= DESKTOP-AVV1N1R; Database= myreview; Uid= sa; Pwd= root;";
+            stringConexaoSql = "Server= OMNISERVER\\SQL2014; Database= myreview; Uid= sa; Pwd= omni@50ftp4r;";
             con = new MySqlConnection(stringConexao);
         }
         public Boolean VerificaConexao()
