@@ -22,7 +22,7 @@ namespace MyReview.Visao
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            FrmCadastroCasoTeste t = new FrmCadastroCasoTeste();
+            FrmCadastroCasoTeste t = new FrmCadastroCasoTeste(false, 1);
             t.Show();
         }
 
@@ -62,13 +62,7 @@ namespace MyReview.Visao
 
         private void simpleButton2_Click_1(object sender, EventArgs e)
         {
-            Suite u = new Suite();
-
-            u.usu_login = "vitor";
-            u.usu_senha = 123123;
-
-            u.Salvar();
-
+           
         }
     }
 }

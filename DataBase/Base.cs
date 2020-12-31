@@ -21,8 +21,6 @@ namespace Database
 
         string IBase.Key => throw new NotImplementedException();
 
-        //public string Key => throw new NotImplementedException();
-
         public virtual void Salvar()
         {
             using (SqlConnection connection = new SqlConnection(
@@ -50,7 +48,7 @@ namespace Database
                 command.ExecuteNonQuery();
             }
         }
-       
+
         public virtual List<IBase> Todos()
         {
             var list = new List<IBase>();
@@ -83,50 +81,93 @@ namespace Database
                 foreach (PropertyInfo pi in this.GetType().GetProperties(BindingFlags.Public))
                 {
                     OpcoesBase pOpcoesBase = (OpcoesBase)pi.GetCustomAttribute(typeof(OpcoesBase));
-                    if (pOpcoesBase != null)
-                    {
+                    if (pOpcoesBase != null || pOpcoesBase.ChavePrimaria)
+                        {
                         if (pOpcoesBase.ChavePrimaria)
                             chavePrimaria = pi.Name;
 
-                        if (pOpcoesBase.UsarNoBanco)
-                        {
-                            var valor = pi.GetValue(this);
-                            if (valor != null)
-                                where.Add(pi.Name + " = '" + valor + "'");
-                        }
+                    if (pOpcoesBase.UsarNoBanco)
+                    {
+                        var valor = pi.GetValue(this);
+                        if (valor != null)
+                            where.Add(pi.Name + " = '" + valor + "'");
                     }
-                }
-
-                string queryString = "select * from " + this.GetType().Name + "s where " + chavePrimaria + " is not null";
-                if (where.Count > 0)
-                {
-                    queryString += " and " + string.Join(" and ", where.ToArray());
-                }
-
-                SqlCommand command = new SqlCommand(queryString, connection);
-                command.Connection.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    var obj = (IBase)Activator.CreateInstance(this.GetType());
-                    setProperty(ref obj, reader);
-                    list.Add(obj);
-                }
+               }
             }
+
+            string queryString = "select * from " + this.GetType().Name + "s";
+            if (where.Count > 0)
+            {
+                queryString += " where " + string.Join(" and ", where.ToArray());
+            }
+
+            SqlCommand command = new SqlCommand(queryString, connection);
+            command.Connection.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                var obj = (IBase)Activator.CreateInstance(this.GetType());
+                setProperty(ref obj, reader);
+                list.Add(obj);
+            }
+        }
             return list;
         }
 
-        private void setProperty(ref IBase obj, SqlDataReader reader)
+    public virtual string max(String campo)
+    {
+        String _return = null;
+        using (SqlConnection connection = new SqlConnection(util.stringConexaoSql))
         {
-            foreach (PropertyInfo pi in obj.GetType().GetProperties(BindingFlags.Public))
+            List<string> where = new List<string>();
+            string chavePrimaria = string.Empty;
+            foreach (PropertyInfo pi in this.GetType().GetProperties(BindingFlags.Public))
             {
                 OpcoesBase pOpcoesBase = (OpcoesBase)pi.GetCustomAttribute(typeof(OpcoesBase));
-                if (pOpcoesBase != null && pOpcoesBase.UsarNoBanco)
+                if (pOpcoesBase != null)
                 {
-                    pi.SetValue(obj, reader[pi.Name].ToString());
+                    if (pOpcoesBase.ChavePrimaria)
+                        chavePrimaria = pi.Name;
+
+                    if (pOpcoesBase.UsarNoBanco)
+                    {
+                        var valor = pi.GetValue(this);
+                        if (valor != null)
+                            where.Add(pi.Name + " = '" + valor + "'");
+                    }
                 }
+            }
+
+            string queryString = "select ISNULL(max(" + campo + ") , 0) from " + this.GetType().Name + "s where " + campo + " is not null";
+            if (where.Count > 0)
+            {
+                queryString += " and " + string.Join(" and ", where.ToArray());
+            }
+
+            SqlCommand command = new SqlCommand(queryString, connection);
+            command.Connection.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            if (reader.Read() && reader.GetValue(0) != null)
+                _return = reader.GetInt32(0).ToString();
+
+        }
+        return _return != null ? _return : "0";
+    }
+
+    private void setProperty(ref IBase obj, SqlDataReader reader)
+    {
+        foreach (PropertyInfo pi in obj.GetType().GetProperties(BindingFlags.Public))
+        {
+            OpcoesBase pOpcoesBase = (OpcoesBase)pi.GetCustomAttribute(typeof(OpcoesBase));
+            if (pOpcoesBase != null && pOpcoesBase.UsarNoBanco)
+            {
+                pi.SetValue(obj, reader[pi.Name].ToString());
             }
         }
     }
+
+}
 }

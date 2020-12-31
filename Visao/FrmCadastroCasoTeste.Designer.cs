@@ -30,6 +30,8 @@ namespace MyReview.Visao
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.txtId = new DevExpress.XtraEditors.TextEdit();
             this.memoEdit3 = new DevExpress.XtraEditors.MemoEdit();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
@@ -37,12 +39,12 @@ namespace MyReview.Visao
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.pnlCadatroCasosTeste = new DevExpress.XtraEditors.PanelControl();
-            this.memoEdit2 = new DevExpress.XtraEditors.MemoEdit();
+            this.txtResultado = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
+            this.sedTempoEstimado = new DevExpress.XtraEditors.SpinEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cmbPrioridade = new DevExpress.XtraEditors.ComboBoxEdit();
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             this.txtPrecondicao = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -64,14 +66,15 @@ namespace MyReview.Visao
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlCadatroCasosTeste)).BeginInit();
             this.pnlCadatroCasosTeste.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtResultado.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sedTempoEstimado.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbPrioridade.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecondicao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -86,6 +89,8 @@ namespace MyReview.Visao
             // panelControl1
             // 
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl1.Controls.Add(this.labelControl10);
+            this.panelControl1.Controls.Add(this.txtId);
             this.panelControl1.Controls.Add(this.memoEdit3);
             this.panelControl1.Controls.Add(this.dataGridView2);
             this.panelControl1.Controls.Add(this.labelControl9);
@@ -103,6 +108,25 @@ namespace MyReview.Visao
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(931, 714);
             this.panelControl1.TabIndex = 0;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Location = new System.Drawing.Point(5, 5);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(11, 16);
+            this.labelControl10.TabIndex = 24;
+            this.labelControl10.Text = "Id";
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(5, 27);
+            this.txtId.Name = "txtId";
+            this.txtId.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Properties.Appearance.Options.UseFont = true;
+            this.txtId.Size = new System.Drawing.Size(35, 22);
+            this.txtId.TabIndex = 23;
             // 
             // memoEdit3
             // 
@@ -145,7 +169,7 @@ namespace MyReview.Visao
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(711, 3);
+            this.labelControl3.Location = new System.Drawing.Point(713, 5);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(43, 16);
             this.labelControl3.TabIndex = 8;
@@ -166,12 +190,12 @@ namespace MyReview.Visao
             // 
             this.pnlCadatroCasosTeste.Appearance.Options.UseTextOptions = true;
             this.pnlCadatroCasosTeste.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.pnlCadatroCasosTeste.Controls.Add(this.memoEdit2);
+            this.pnlCadatroCasosTeste.Controls.Add(this.txtResultado);
             this.pnlCadatroCasosTeste.Controls.Add(this.labelControl8);
-            this.pnlCadatroCasosTeste.Controls.Add(this.spinEdit1);
+            this.pnlCadatroCasosTeste.Controls.Add(this.sedTempoEstimado);
             this.pnlCadatroCasosTeste.Controls.Add(this.labelControl7);
             this.pnlCadatroCasosTeste.Controls.Add(this.labelControl6);
-            this.pnlCadatroCasosTeste.Controls.Add(this.comboBoxEdit2);
+            this.pnlCadatroCasosTeste.Controls.Add(this.cmbPrioridade);
             this.pnlCadatroCasosTeste.Controls.Add(this.separatorControl1);
             this.pnlCadatroCasosTeste.Controls.Add(this.txtPrecondicao);
             this.pnlCadatroCasosTeste.Controls.Add(this.labelControl5);
@@ -184,13 +208,13 @@ namespace MyReview.Visao
             this.pnlCadatroCasosTeste.Size = new System.Drawing.Size(920, 341);
             this.pnlCadatroCasosTeste.TabIndex = 6;
             // 
-            // memoEdit2
+            // txtResultado
             // 
-            this.memoEdit2.Location = new System.Drawing.Point(5, 224);
-            this.memoEdit2.Name = "memoEdit2";
-            this.memoEdit2.Properties.MaxLength = 1000;
-            this.memoEdit2.Size = new System.Drawing.Size(449, 69);
-            this.memoEdit2.TabIndex = 20;
+            this.txtResultado.Location = new System.Drawing.Point(5, 224);
+            this.txtResultado.Name = "txtResultado";
+            this.txtResultado.Properties.MaxLength = 1000;
+            this.txtResultado.Size = new System.Drawing.Size(449, 69);
+            this.txtResultado.TabIndex = 20;
             // 
             // labelControl8
             // 
@@ -202,22 +226,22 @@ namespace MyReview.Visao
             this.labelControl8.TabIndex = 19;
             this.labelControl8.Text = "Resultado Esperado";
             // 
-            // spinEdit1
+            // sedTempoEstimado
             // 
-            this.spinEdit1.EditValue = new decimal(new int[] {
+            this.sedTempoEstimado.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.spinEdit1.Location = new System.Drawing.Point(112, 174);
-            this.spinEdit1.Name = "spinEdit1";
-            this.spinEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.spinEdit1.Properties.Appearance.Options.UseFont = true;
-            this.spinEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.sedTempoEstimado.Location = new System.Drawing.Point(112, 174);
+            this.sedTempoEstimado.Name = "sedTempoEstimado";
+            this.sedTempoEstimado.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sedTempoEstimado.Properties.Appearance.Options.UseFont = true;
+            this.sedTempoEstimado.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEdit1.Properties.MaxLength = 2;
-            this.spinEdit1.Size = new System.Drawing.Size(151, 22);
-            this.spinEdit1.TabIndex = 18;
+            this.sedTempoEstimado.Properties.MaxLength = 2;
+            this.sedTempoEstimado.Size = new System.Drawing.Size(151, 22);
+            this.sedTempoEstimado.TabIndex = 18;
             // 
             // labelControl7
             // 
@@ -239,17 +263,17 @@ namespace MyReview.Visao
             this.labelControl6.TabIndex = 16;
             this.labelControl6.Text = "Prioridade";
             // 
-            // comboBoxEdit2
+            // cmbPrioridade
             // 
-            this.comboBoxEdit2.Location = new System.Drawing.Point(5, 174);
-            this.comboBoxEdit2.Name = "comboBoxEdit2";
-            this.comboBoxEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxEdit2.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cmbPrioridade.Location = new System.Drawing.Point(5, 174);
+            this.cmbPrioridade.Name = "cmbPrioridade";
+            this.cmbPrioridade.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPrioridade.Properties.Appearance.Options.UseFont = true;
+            this.cmbPrioridade.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit2.Properties.MaxLength = 1;
-            this.comboBoxEdit2.Size = new System.Drawing.Size(100, 22);
-            this.comboBoxEdit2.TabIndex = 15;
+            this.cmbPrioridade.Properties.MaxLength = 1;
+            this.cmbPrioridade.Size = new System.Drawing.Size(100, 22);
+            this.cmbPrioridade.TabIndex = 15;
             // 
             // separatorControl1
             // 
@@ -393,7 +417,7 @@ namespace MyReview.Visao
             // 
             this.lblCriador.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCriador.Appearance.Options.UseFont = true;
-            this.lblCriador.Location = new System.Drawing.Point(570, 3);
+            this.lblCriador.Location = new System.Drawing.Point(572, 5);
             this.lblCriador.Name = "lblCriador";
             this.lblCriador.Size = new System.Drawing.Size(44, 16);
             this.lblCriador.TabIndex = 4;
@@ -417,7 +441,7 @@ namespace MyReview.Visao
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(464, 3);
+            this.labelControl2.Location = new System.Drawing.Point(466, 5);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(44, 16);
             this.labelControl2.TabIndex = 2;
@@ -425,18 +449,18 @@ namespace MyReview.Visao
             // 
             // txtTituloSuite
             // 
-            this.txtTituloSuite.Location = new System.Drawing.Point(5, 27);
+            this.txtTituloSuite.Location = new System.Drawing.Point(46, 27);
             this.txtTituloSuite.Name = "txtTituloSuite";
             this.txtTituloSuite.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTituloSuite.Properties.Appearance.Options.UseFont = true;
-            this.txtTituloSuite.Size = new System.Drawing.Size(455, 22);
+            this.txtTituloSuite.Size = new System.Drawing.Size(414, 22);
             this.txtTituloSuite.TabIndex = 1;
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(3, 3);
+            this.labelControl1.Location = new System.Drawing.Point(46, 5);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(149, 16);
             this.labelControl1.TabIndex = 0;
@@ -453,15 +477,16 @@ namespace MyReview.Visao
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlCadatroCasosTeste)).EndInit();
             this.pnlCadatroCasosTeste.ResumeLayout(false);
             this.pnlCadatroCasosTeste.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtResultado.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sedTempoEstimado.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbPrioridade.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecondicao.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -492,12 +517,12 @@ namespace MyReview.Visao
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit txtDescricaoCaso;
         private DevExpress.XtraEditors.LabelControl lblCaso;
-        private DevExpress.XtraEditors.MemoEdit memoEdit2;
+        private DevExpress.XtraEditors.MemoEdit txtResultado;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.SpinEdit spinEdit1;
+        private DevExpress.XtraEditors.SpinEdit sedTempoEstimado;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
+        private DevExpress.XtraEditors.ComboBoxEdit cmbPrioridade;
         private DevExpress.XtraEditors.SeparatorControl separatorControl1;
         private DevExpress.XtraEditors.MemoEdit txtPrecondicao;
         private DevExpress.XtraEditors.LabelControl labelControl5;
@@ -511,5 +536,7 @@ namespace MyReview.Visao
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.SimpleButton btnNovoPasso;
         private DevExpress.XtraEditors.SimpleButton btnExclui;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.TextEdit txtId;
     }
 }

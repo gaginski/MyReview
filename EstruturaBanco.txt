@@ -2,6 +2,7 @@ use[myreview]
 
 drop table Casos_Passos;
 drop table CasoTestes;
+drop table SuiteTestes;
 
 
 create table Casos_Passos(
@@ -32,6 +33,19 @@ create table CasoTestes(
 	cts_ultimaAlteracao DATETIME DEFAULT CURRENT_TIMESTAMP,
 	cts_usu_ultimaAlteracao INT,
 	cts_terminalUltimaAleracao VARCHAR(100),
-	cts_Observacao varchar(1000)
+	cts_Observacao varchar(1000),
+	constraint fk_Casos_Passos_SuiteTestes foreign key (cts_sts_id) references SuiteTestes (sts_id)
 	/* IMPLEMENTAR CHAVES SECUNDÁRIAS*/)
-		
+
+create table SuiteTestes(
+	sts_id int IDENTITY(1,1) PRIMARY KEY,
+	sts_descricao varchar(200),
+	sts_status char,
+	sts_versao varchar(15),
+	sts_usu_autor int,
+	sts_prj_id int,
+	sts_objetivo varchar(500),
+	sts_dataCadastro DateTime DEFAULT CURRENT_TIMESTAMP,
+	sts_ultimaAlteracao DateTime DEFAULT CURRENT_TIMESTAMP)
+
+	insert into Casos_Passos (cps_indice, cps_descricao, cps_cts_id, cps_dataInclusao, cps_usu_inclusao, cps_ultimaAlteracao, cps_usu_ultimaAlteracao, cps_terminalUltimaAleracao)values('1', '', '1', '2020-12-30 21:58:32', '0', '2020-12-30 21:58:32', '0', '')

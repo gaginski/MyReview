@@ -108,12 +108,24 @@
     <Compile Include="Modelo\Config.cs" />
     <Compile Include="Model\Casos_Passo.cs" />
     <Compile Include="Model\CasoTeste.cs" />
-    <Compile Include="Model\Usuario.cs" />
+    <Compile Include="Model\SuiteTeste.cs" />
     <Compile Include="Visao\FrmCadastroCasoTeste.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Visao\FrmCadastroCasoTeste.Designer.cs">
       <DependentUpon>FrmCadastroCasoTeste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\FrmCadastroUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\FrmCadastroUsuarios.Designer.cs">
+      <DependentUpon>FrmCadastroUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\FrmCadUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\FrmCadUsuario.Designer.cs">
+      <DependentUpon>FrmCadUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Visao\FrmListagemCasoTeste.cs">
       <SubType>Form</SubType>
@@ -169,12 +181,6 @@
     <Compile Include="Visao\FrmListagemUsuarios.Designer.cs">
       <DependentUpon>FrmListagemUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Visao\FrmCadastroUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Visao\FrmCadastroUsuario.Designer.cs">
-      <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Visao\FrmBarraTarefas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     <EmbeddedResource Include="Visao\FrmCadatroTarefas.resx">
       <DependentUpon>FrmCadatroTarefas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Visao\FrmCadUsuario.resx">
+      <DependentUpon>FrmCadUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Visao\FrmConfiguracao.resx">
       <DependentUpon>FrmConfiguracao.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,9 +240,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Visao\FrmListagemUsuarios.resx">
       <DependentUpon>FrmListagemUsuarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Visao\FrmCadastroUsuario.resx">
-      <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Visao\FrmBarraTarefas.resx">
       <DependentUpon>FrmBarraTarefas.cs</DependentUpon>
