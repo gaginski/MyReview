@@ -2,6 +2,7 @@ use[myreview]
 
 drop table Casos_Passos;
 drop table CasoTestes;
+drop table SuiteTestes;
 
 
 create table Casos_Passos(
@@ -32,6 +33,53 @@ create table CasoTestes(
 	cts_ultimaAlteracao DATETIME DEFAULT CURRENT_TIMESTAMP,
 	cts_usu_ultimaAlteracao INT,
 	cts_terminalUltimaAleracao VARCHAR(100),
-	cts_Observacao varchar(1000)
+	cts_Observacao varchar(1000),
+	constraint fk_Casos_Passos_SuiteTestes foreign key (cts_sts_id) references SuiteTestes (sts_id)
 	/* IMPLEMENTAR CHAVES SECUNDÁRIAS*/)
-		
+
+create table SuiteTestes(
+	sts_id int IDENTITY(1,1) PRIMARY KEY,
+	sts_descricao varchar(200),
+	sts_status char,
+	sts_versao varchar(15),
+	sts_usu_autor int,
+	sts_prj_id int,
+	sts_objetivo varchar(500),
+	sts_dataCadastro DateTime DEFAULT CURRENT_TIMESTAMP,
+	sts_ultimaAlteracao DateTime DEFAULT CURRENT_TIMESTAMP)
+
+	insert into Casos_Passos (cps_indice, cps_descricao, cps_cts_id, cps_dataInclusao, cps_usu_inclusao, cps_ultimaAlteracao, cps_usu_ultimaAlteracao, cps_terminalUltimaAleracao)values('1', '', '1', '2020-12-30 21:58:32', '0', '2020-12-30 21:58:32', '0', '')
+
+				 				 use [myreview]
+				 drop TABLE USUARIOS;
+				 CREATE TABLE USUARIOS(
+				 USU_ID INT IDENTITY(1,1) PRIMARY KEY,
+				 USU_NOME VARCHAR(100),
+				 USU_LOGIN VARCHAR(100),
+				 USU_SENHA VARCHAR (100),
+				 USU_ATIVO BIT DEFAULT 0,
+				 USU_ENVIAEMAIL BIT DEFAULT 0,
+				 USU_EMAIL VARCHAR(150),
+				 CTAdicionar BIT DEFAULT 0,
+                 CTAutoriaPropria BIT DEFAULT 0,
+                 CTEditar BIT DEFAULT 0,
+                 CTListar BIT DEFAULT 0,
+                 CTRemover BIT DEFAULT 0,
+                 ExCTAbrir BIT DEFAULT 0,
+                 ExCTIniFim BIT DEFAULT 0,
+                 ExCTListar BIT DEFAULT 0,
+                 ExCTOutrosUsu BIT DEFAULT 0,
+                 OutrasConfig BIT DEFAULT 0,
+                 RevAdicionar BIT DEFAULT 0,
+                 RevEditar BIT DEFAULT 0,
+                 RevListar BIT DEFAULT 0,
+                 RevRemover BIT DEFAULT 0,
+                 UsuAdicionar BIT DEFAULT 0,
+                 UsuEditar BIT DEFAULT 0,
+                 UsuListar BIT DEFAULT 0,
+                 UsuPermissoes BIT DEFAULT 0,
+                 UsuRemover BIT DEFAULT 0,
+				 USU_DATACAD DATETIME DEFAULT CURRENT_TIMESTAMP,
+				 USU_USUARIO_CAD INT,
+				 USU_DATAALTERACAO DATETIME DEFAULT CURRENT_TIMESTAMP,
+				 USU_TERMINAL_ALTERACAO VARCHAR(200))

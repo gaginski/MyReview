@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using MyReview.Model;
+using MyReview.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,12 +18,11 @@ namespace MyReview.Visao
         public testes()
         {
             InitializeComponent();
-            //panel1.Enabled = false;
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            FrmCadastroCasoTeste t = new FrmCadastroCasoTeste();
+            FrmCadastroCasoTeste t = new FrmCadastroCasoTeste(false, 1);
             t.Show();
         }
 
@@ -62,13 +62,30 @@ namespace MyReview.Visao
 
         private void simpleButton2_Click_1(object sender, EventArgs e)
         {
-            Suite u = new Suite();
+			FrmCadUsuario usuCad = new FrmCadUsuario(false, 0, 0);
+               usuCad.Show();
 
-            u.usu_login = "vitor";
-            u.usu_senha = 123123;
 
-            u.Salvar();
+		}
 
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            FrmCadUsuario usuCad = new FrmCadUsuario(true, 2, 2);
+               usuCad.Show();
+
+        }
+
+        private void btnAlerta_Click(object sender, EventArgs e)
+        {
+            FrmAlerta alerta = new FrmAlerta("Menssagem de Alerta Teste!");
+            alerta.Show();
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            FrmListaUsuarios lu = new FrmListaUsuarios(2);
+            lu.Show();
         }
     }
 }

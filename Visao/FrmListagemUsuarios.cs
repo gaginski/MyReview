@@ -64,7 +64,7 @@ namespace MyReview.Visao
             if (gridUsuarios.CurrentRow.Cells[0].Value != null)
             {
                 FrmCadastroUsuarios cad = new FrmCadastroUsuarios();
-                cad.editando(int.Parse(gridUsuarios.CurrentRow.Cells[0].Value.ToString()));
+              //  cad.editando(int.Parse(gridUsuarios.CurrentRow.Cells[0].Value.ToString()));
                 cad.ShowDialog();
                 gridUsuarios.Rows.Clear();
                 carregaGrid();
@@ -77,7 +77,7 @@ namespace MyReview.Visao
         }
         private void carregaGrid()
         {
-            ControleUsuario contu = new ControleUsuario();
+           ControleUsuario contu = new ControleUsuario();
             var listaUsuario = contu.selecionaUsuarios();
 
             gridUsuarios.Rows.Clear();

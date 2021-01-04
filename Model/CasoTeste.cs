@@ -17,7 +17,7 @@ namespace MyReview.Model
         public int cts_indice { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]
-        public int cts_sts_id { get; set; }
+        public int? cts_sts_id { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]
         public string cts_precondicoes { get; set; }
