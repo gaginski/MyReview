@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace MyReview.Visao
 {
-    public partial class FrmListagemUsuarios : Form
+    public partial class FrmListagemUsuarios_Antigo : Form
     {
         ControleUsuario contUsu = new ControleUsuario();
 
 
-        public FrmListagemUsuarios()
+        public FrmListagemUsuarios_Antigo()
         {
             InitializeComponent();
         }
@@ -38,7 +38,7 @@ namespace MyReview.Visao
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmCadastroUsuarios cad = new FrmCadastroUsuarios();
+            FrmCadastroUsuarios_Antigo cad = new FrmCadastroUsuarios_Antigo();
             cad.ShowDialog();
             carregaGrid();
         }
@@ -63,7 +63,7 @@ namespace MyReview.Visao
         {
             if (gridUsuarios.CurrentRow.Cells[0].Value != null)
             {
-                FrmCadastroUsuarios cad = new FrmCadastroUsuarios();
+                FrmCadastroUsuarios_Antigo cad = new FrmCadastroUsuarios_Antigo();
               //  cad.editando(int.Parse(gridUsuarios.CurrentRow.Cells[0].Value.ToString()));
                 cad.ShowDialog();
                 gridUsuarios.Rows.Clear();

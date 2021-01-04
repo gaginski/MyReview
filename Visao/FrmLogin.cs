@@ -116,7 +116,7 @@ namespace MyReview.Controle
             }
             if (valido)
             {
-                FrmBarraTarefas f = new FrmBarraTarefas();
+                FrmBarraTarefas f = new FrmBarraTarefas(1);
                 f.UsuarioLogado(usuLogin.id);
                 f.Show();
                 this.Visible = false;

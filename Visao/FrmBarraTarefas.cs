@@ -1,5 +1,6 @@
 ﻿using MyReview.Controle;
-using MyReview.Modelo;
+using MyReview.Model;
+using MyReview.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,34 +16,35 @@ namespace MyReview.Visao
 
     public partial class FrmBarraTarefas : Form
     {
+
         Usuario usuarioLogado = new Usuario();
 
         public void UsuarioLogado(int idUsuario)
         {
-            ControleUsuario contUsu = new ControleUsuario();
+            /*ControleUsuario contUsu = new ControleUsuario();
             usuarioLogado = contUsu.pegaUsuario(idUsuario);
-            lblUsuarioLogado.Text = usuarioLogado.login.ToUpper();
+            lblUsuarioLogado.Text = usuarioLogado.login.ToUpper();*/
         }
-        public FrmBarraTarefas()
+        public FrmBarraTarefas(int idUsuario)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Top = 0;//(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height) - 580;
+            this.Top = 0;
             this.Left = (System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width) - 139;
 
-        }
+            usuarioLogado.usu_id = idUsuario;
+            List<Usuario> list = usuarioLogado.Busca();
 
-        private void FrmBarraTarefas_Load(object sender, EventArgs e)
-        {
+            usuarioLogado = list[0];
+            validaPermicao();
 
         }
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
-            FrmListagemUsuarios C = new FrmListagemUsuarios();
-            C.ShowDialog();
+            new FrmListaUsuarios(usuarioLogado.usu_id).ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -51,15 +53,10 @@ namespace MyReview.Visao
             r.ShowDialog();
         }
 
-        private void lblUsuarioLogado_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             FrmMinhasTarefas mf = new FrmMinhasTarefas();
-            mf.UsuarioLogado(usuarioLogado.id);
+            mf.UsuarioLogado(usuarioLogado.usu_id);
             mf.ShowDialog();
         }
 
@@ -68,10 +65,6 @@ namespace MyReview.Visao
             Application.Exit();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -82,8 +75,17 @@ namespace MyReview.Visao
         private void btnRelatorio_click(object sender, EventArgs e)
         {
             FrmRelatorios rel = new FrmRelatorios();
-            rel.UsuarioLogado(usuarioLogado.id);
+            rel.UsuarioLogado((int)usuarioLogado.usu_id);
             rel.ShowDialog();
         }
-    }
+
+        private void validaPermicao()
+        {
+            btnUsuario.Enabled = usuarioLogado.UsuListar;
+            btnRevisao.Enabled = usuarioLogado.RevListar;
+            btnCasoTeste.Enabled = usuarioLogado.CTListar;
+            btnMinhasTarefas.Enabled = usuarioLogado.ExCTListar;
+            btnConfig.Enabled = usuarioLogado.OutrasConfig;
+        }
+        }
 }

@@ -188,7 +188,7 @@
         n5mOXJNWWmmllVZaaaWVVlopqSlT/g9AZF3/qI68FQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnRevisao.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAYAAAA4TnrqAAAABGdBTUEAALGPC/xhBQAABclJREFUeF7t
         m2tMW2UYx/miiX7QDyZ+2IVzKZmDcyiXMsdFlGziLhQo0HIbIspgyIQNdLqxzYFzDNAxZGyGJYrGBVmc
@@ -218,7 +218,7 @@
         ZK5XuVdZG9AH+pmvCxeJRSoqKioqKioqKioqKio1hYT8B99xXck7US2yAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnMinhasTarefas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEEAAABBCAYAAACO98lFAAAABGdBTUEAALGPC/xhBQAAAqVJREFUeF7t
         m01rE1EYhbP0Z/gTunItQqCpIrhxV8mmWjDaCtZ8gU6atIoTm4JNo2nTJlUrlS7E74Au6tKiIBTcuVVB
@@ -261,7 +261,7 @@
         lA61AedW+nRVxoM6Q/oD2/PVKr2YK3KNQhAEQRAEQRAEQf7npKX9BThc+nsUOenCAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCasoTeste.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAYAAAA4TnrqAAAABGdBTUEAALGPC/xhBQAACRRJREFUeF7t
         mXtwVPUVxyl/1NqZ1tryRx2cjqXhEWIekPCI5bHW1IIOCqVSoFggQIBQKKkOdERpRt6kghoBNUCE8Fzy
@@ -305,7 +305,7 @@
         0IfpHlmSt5Pw9TODUE/a+ihlukoiiSSSSCKJJJJIIt2afv3+D8VbHXg7s7MxAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnConfig.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAYAAAA4TnrqAAAABGdBTUEAALGPC/xhBQAAEcJJREFUeF7t
         nGlsHMl1gHeNHHacA4ntIPGFxAkSBLB/OPaP+IcTOAEC50cCO0iQBYwcho84Gwu7XInUTd0SReo+KJIS

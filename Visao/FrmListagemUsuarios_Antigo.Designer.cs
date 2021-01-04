@@ -1,6 +1,6 @@
 ﻿namespace MyReview.Visao
 {
-    partial class FrmListagemUsuarios
+    partial class FrmListagemUsuarios_Antigo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListagemUsuarios));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListagemUsuarios_Antigo));
             this.gridUsuarios = new System.Windows.Forms.DataGridView();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();

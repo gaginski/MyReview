@@ -61,10 +61,10 @@ namespace MyReview.Visao
             cmbStatus.SelectedIndex = 1;
             chkSemVinculo.Checked = true;
         }
-        public void UsuarioLogado(int idUsuario)
+        public void UsuarioLogado(int? idUsuario)
         {
             ControleUsuario contUsu = new ControleUsuario();
-            usuarioLogado = contUsu.pegaUsuario(idUsuario);
+            usuarioLogado = contUsu.pegaUsuario((int)idUsuario);
             atualizaGrid();
         }
 

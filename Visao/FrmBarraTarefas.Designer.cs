@@ -30,19 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBarraTarefas));
             this.btnUsuario = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRevisao = new System.Windows.Forms.Button();
+            this.btnMinhasTarefas = new System.Windows.Forms.Button();
             this.btnRelatorio = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnCasoTeste = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblUsuarioLogado = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnConfig = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnUsuario
             // 
+            this.btnUsuario.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuario.Image")));
             this.btnUsuario.Location = new System.Drawing.Point(12, 12);
             this.btnUsuario.Name = "btnUsuario";
@@ -50,35 +51,38 @@
             this.btnUsuario.TabIndex = 0;
             this.btnUsuario.Text = "Usuários";
             this.btnUsuario.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnUsuario.UseVisualStyleBackColor = true;
+            this.btnUsuario.UseVisualStyleBackColor = false;
             this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
             // 
-            // button1
+            // btnRevisao
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(12, 108);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 90);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Revisões";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnRevisao.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRevisao.Image = ((System.Drawing.Image)(resources.GetObject("btnRevisao.Image")));
+            this.btnRevisao.Location = new System.Drawing.Point(12, 108);
+            this.btnRevisao.Name = "btnRevisao";
+            this.btnRevisao.Size = new System.Drawing.Size(96, 90);
+            this.btnRevisao.TabIndex = 1;
+            this.btnRevisao.Text = "Revisões";
+            this.btnRevisao.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRevisao.UseVisualStyleBackColor = false;
+            this.btnRevisao.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnMinhasTarefas
             // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(12, 204);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 90);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Minhas Tarefas";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnMinhasTarefas.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnMinhasTarefas.Image = ((System.Drawing.Image)(resources.GetObject("btnMinhasTarefas.Image")));
+            this.btnMinhasTarefas.Location = new System.Drawing.Point(12, 204);
+            this.btnMinhasTarefas.Name = "btnMinhasTarefas";
+            this.btnMinhasTarefas.Size = new System.Drawing.Size(96, 90);
+            this.btnMinhasTarefas.TabIndex = 2;
+            this.btnMinhasTarefas.Text = "Minhas Tarefas";
+            this.btnMinhasTarefas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMinhasTarefas.UseVisualStyleBackColor = false;
+            this.btnMinhasTarefas.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnRelatorio
             // 
+            this.btnRelatorio.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnRelatorio.Image = ((System.Drawing.Image)(resources.GetObject("btnRelatorio.Image")));
             this.btnRelatorio.Location = new System.Drawing.Point(12, 300);
             this.btnRelatorio.Name = "btnRelatorio";
@@ -86,26 +90,28 @@
             this.btnRelatorio.TabIndex = 3;
             this.btnRelatorio.Text = "Relatórios";
             this.btnRelatorio.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRelatorio.UseVisualStyleBackColor = true;
+            this.btnRelatorio.UseVisualStyleBackColor = false;
             this.btnRelatorio.Click += new System.EventHandler(this.btnRelatorio_click);
             // 
-            // button5
+            // btnCasoTeste
             // 
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(12, 396);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(96, 90);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Casos de Teste";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnCasoTeste.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCasoTeste.Image = ((System.Drawing.Image)(resources.GetObject("btnCasoTeste.Image")));
+            this.btnCasoTeste.Location = new System.Drawing.Point(12, 396);
+            this.btnCasoTeste.Name = "btnCasoTeste";
+            this.btnCasoTeste.Size = new System.Drawing.Size(96, 90);
+            this.btnCasoTeste.TabIndex = 5;
+            this.btnCasoTeste.Text = "Casos de Teste";
+            this.btnCasoTeste.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCasoTeste.UseVisualStyleBackColor = false;
+            this.btnCasoTeste.Click += new System.EventHandler(this.button5_Click);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblUsuarioLogado);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(1, 592);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(120, 39);
@@ -119,7 +125,6 @@
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Usuário:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblUsuarioLogado
             // 
@@ -129,30 +134,31 @@
             this.lblUsuarioLogado.Size = new System.Drawing.Size(39, 13);
             this.lblUsuarioLogado.TabIndex = 1;
             this.lblUsuarioLogado.Text = "logado";
-            this.lblUsuarioLogado.Click += new System.EventHandler(this.lblUsuarioLogado_Click);
             // 
-            // button4
+            // btnConfig
             // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(12, 492);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(96, 90);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Configurações";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnConfig.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnConfig.Image = ((System.Drawing.Image)(resources.GetObject("btnConfig.Image")));
+            this.btnConfig.Location = new System.Drawing.Point(12, 492);
+            this.btnConfig.Name = "btnConfig";
+            this.btnConfig.Size = new System.Drawing.Size(96, 90);
+            this.btnConfig.TabIndex = 7;
+            this.btnConfig.Text = "Configurações";
+            this.btnConfig.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnConfig.UseVisualStyleBackColor = false;
             // 
             // FrmBarraTarefas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(120, 631);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnConfig);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnCasoTeste);
             this.Controls.Add(this.btnRelatorio);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnMinhasTarefas);
+            this.Controls.Add(this.btnRevisao);
             this.Controls.Add(this.btnUsuario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -162,7 +168,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "MyReview";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmBarraTarefas_Close);
-            this.Load += new System.EventHandler(this.FrmBarraTarefas_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -172,13 +177,13 @@
         #endregion
 
         private System.Windows.Forms.Button btnUsuario;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRevisao;
+        private System.Windows.Forms.Button btnMinhasTarefas;
         private System.Windows.Forms.Button btnRelatorio;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnCasoTeste;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblUsuarioLogado;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnConfig;
     }
 }

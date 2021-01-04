@@ -19,7 +19,7 @@ namespace MyReview.View
     {
         Usuario logado = new Usuario();
 
-        public FrmListaUsuarios(int usuarioLogado)
+        public FrmListaUsuarios(int? usuarioLogado)
         {
             InitializeComponent();
             logado.usu_id = usuarioLogado;
@@ -109,12 +109,14 @@ namespace MyReview.View
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             new FrmCadUsuario(false, logado.usu_id, 0).ShowDialog();
+            carregaGrid();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (validaSelecao())
                 new FrmCadUsuario(true, logado.usu_id, Int32.Parse(dtgListaUsuarios.CurrentRow.Cells[0].Value.ToString())).ShowDialog();
+            carregaGrid();
         }
         private bool validaSelecao()
         {

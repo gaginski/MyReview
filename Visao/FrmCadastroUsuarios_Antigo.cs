@@ -11,9 +11,9 @@ using DevExpress.XtraEditors;
 
 namespace MyReview.Visao
 {
-    public partial class FrmCadastroUsuarios : DevExpress.XtraEditors.XtraForm
+    public partial class FrmCadastroUsuarios_Antigo : DevExpress.XtraEditors.XtraForm
     {
-        public FrmCadastroUsuarios()
+        public FrmCadastroUsuarios_Antigo()
         {
             InitializeComponent();
         }

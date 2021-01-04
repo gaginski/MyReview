@@ -144,17 +144,23 @@
     <Compile Include="View\FrmCadastroCasoTeste.Designer.cs">
       <DependentUpon>FrmCadastroCasoTeste.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmExibicaoCasoTeste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmExibicaoCasoTeste.Designer.cs">
+      <DependentUpon>FrmExibicaoCasoTeste.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmListaUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\FrmListaUsuarios.Designer.cs">
       <DependentUpon>FrmListaUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Visao\FrmCadastroUsuarios.cs">
+    <Compile Include="Visao\FrmCadastroUsuarios_Antigo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Visao\FrmCadastroUsuarios.Designer.cs">
-      <DependentUpon>FrmCadastroUsuarios.cs</DependentUpon>
+    <Compile Include="Visao\FrmCadastroUsuarios_Antigo.Designer.cs">
+      <DependentUpon>FrmCadastroUsuarios_Antigo.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmCadUsuario.cs">
       <SubType>Form</SubType>
@@ -210,11 +216,11 @@
     <Compile Include="Visao\FrmCadastroRevisao.Designer.cs">
       <DependentUpon>FrmCadastroRevisao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Visao\FrmListagemUsuarios.cs">
+    <Compile Include="Visao\FrmListagemUsuarios_Antigo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Visao\FrmListagemUsuarios.Designer.cs">
-      <DependentUpon>FrmListagemUsuarios.cs</DependentUpon>
+    <Compile Include="Visao\FrmListagemUsuarios_Antigo.Designer.cs">
+      <DependentUpon>FrmListagemUsuarios_Antigo.cs</DependentUpon>
     </Compile>
     <Compile Include="Visao\FrmBarraTarefas.cs">
       <SubType>Form</SubType>
@@ -249,6 +255,9 @@
     <EmbeddedResource Include="View\FrmCadastroCasoTeste.resx">
       <DependentUpon>FrmCadastroCasoTeste.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmExibicaoCasoTeste.resx">
+      <DependentUpon>FrmExibicaoCasoTeste.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmListaUsuarios.resx">
       <DependentUpon>FrmListaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -279,8 +288,8 @@
     <EmbeddedResource Include="Visao\FrmListagemRevisao.resx">
       <DependentUpon>FrmListagemRevisao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Visao\FrmListagemUsuarios.resx">
-      <DependentUpon>FrmListagemUsuarios.cs</DependentUpon>
+    <EmbeddedResource Include="Visao\FrmListagemUsuarios_Antigo.resx">
+      <DependentUpon>FrmListagemUsuarios_Antigo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Visao\FrmBarraTarefas.resx">
       <DependentUpon>FrmBarraTarefas.cs</DependentUpon>

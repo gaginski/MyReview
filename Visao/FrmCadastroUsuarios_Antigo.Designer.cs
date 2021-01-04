@@ -1,6 +1,6 @@
 ﻿namespace MyReview.Visao
 {
-    partial class FrmCadastroUsuarios
+    partial class FrmCadastroUsuarios_Antigo
     {
         /// <summary>
         /// Required designer variable.

@@ -56,7 +56,7 @@ namespace MyReview.Visao
                 novoUsuario.ExCTIniFim = chkExCTIniFim.Checked;
                 novoUsuario.ExCTListar = chkExCTListar.Checked;
                 novoUsuario.ExCTOutrosUsu = chkExCTOutrosUsu.Checked;
-                novoUsuario.ExCTOutrosUsu = chkOutrasConfig.Checked;
+                novoUsuario.OutrasConfig = chkOutrasConfig.Checked;
                 novoUsuario.RevAdicionar = chkRevAdicionar.Checked;
                 novoUsuario.RevEditar = chkRevEditar.Checked;
                 novoUsuario.RevListar = chkRevListar.Checked;
@@ -75,7 +75,7 @@ namespace MyReview.Visao
                 novoUsuario.usu_dataAlteracao = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                 usu_logado.usu_terminal_alteracao = Environment.MachineName.ToString();
  
-                if (editando ? novoUsuario.Salvar() : novoUsuario.Salvar())
+                if (editando ? novoUsuario.update() : novoUsuario.Salvar())
                 {
                     FrmAlerta alerta = new FrmAlerta("Salvo com sucesso!");
                     alerta.ShowDialog();
@@ -189,7 +189,6 @@ namespace MyReview.Visao
 
             usu_editando = aux[0];
 
-
             txtNome.Text = usu_editando.usu_nome;
             txtSenha.Text = usu_editando.usu_senha;
             txtConfirmaSenha.Text = usu_editando.usu_senha;
@@ -206,7 +205,7 @@ namespace MyReview.Visao
             chkExCTIniFim.Checked = usu_editando.ExCTIniFim;
             chkExCTListar.Checked = usu_editando.ExCTListar;
             chkExCTOutrosUsu.Checked = usu_editando.ExCTOutrosUsu;
-            chkOutrasConfig.Checked = usu_editando.ExCTOutrosUsu;
+            chkOutrasConfig.Checked = usu_editando.OutrasConfig;
             chkRevAdicionar.Checked = usu_editando.RevAdicionar;
             chkRevEditar.Checked = usu_editando.RevEditar;
             chkRevListar.Checked = usu_editando.RevListar;
