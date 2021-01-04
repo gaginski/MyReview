@@ -19,6 +19,7 @@ namespace MyReview.Visao
         Usuario novoUsuario = new Usuario();
         private bool editando = false;
 
+
         public FrmCadUsuario(bool editando, int? Id_usuLogado, int usu_editar)
         {
             InitializeComponent();
@@ -65,6 +66,7 @@ namespace MyReview.Visao
                 novoUsuario.UsuListar = chkUsuListar.Checked;
                 novoUsuario.UsuPermissoes = chkUsuPermissoes.Checked;
                 novoUsuario.UsuRemover = chkUsuRemover.Checked;
+
                 if (!editando)
                 {
                     novoUsuario.usu_dataCad = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -72,7 +74,8 @@ namespace MyReview.Visao
                 }
                 novoUsuario.usu_dataAlteracao = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                 usu_logado.usu_terminal_alteracao = Environment.MachineName.ToString();
-                if (editando ? novoUsuario.update() : novoUsuario.Salvar())
+ 
+                if (editando ? novoUsuario.Salvar() : novoUsuario.Salvar())
                 {
                     FrmAlerta alerta = new FrmAlerta("Salvo com sucesso!");
                     alerta.ShowDialog();
@@ -111,8 +114,9 @@ namespace MyReview.Visao
             }
 
             Usuario aux = new Usuario();
+
             if (aux.selectGenerico("count(usu_login)", "usu_login = '"+ txtLogin.Text+"'") != "0" && !editando)
-            {
+			{
                 _return = false;
                 FrmAlerta alerta = new FrmAlerta("Atenção! Já existe um usuário cadastrado com esse login!");
                 alerta.ShowDialog();
@@ -184,6 +188,7 @@ namespace MyReview.Visao
             List<Usuario> aux = usu_editando.Busca();
 
             usu_editando = aux[0];
+
 
             txtNome.Text = usu_editando.usu_nome;
             txtSenha.Text = usu_editando.usu_senha;

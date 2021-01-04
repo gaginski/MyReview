@@ -61,6 +61,7 @@ namespace Database
                     string queryString = "insert into " + this.GetType().Name + "s (" + string.Join(", ", campos.ToArray()) + ")values(" + string.Join(", ", valores.ToArray()) + ");";
                     SqlCommand command = new SqlCommand(queryString, connection);
                     command.Connection.Open();
+
                     command.ExecuteNonQuery();
 
                     confirmacao = true;
@@ -213,6 +214,7 @@ namespace Database
                 }
             }
         }
+
         public virtual bool update()
         {
             bool confirmacao = false;
@@ -258,5 +260,6 @@ namespace Database
             }
             return confirmacao;
         }
+
     }
 }

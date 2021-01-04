@@ -75,7 +75,7 @@ namespace MyReview.Visao
                usuCad.Show();
 
         }
-
+           
         private void btnAlerta_Click(object sender, EventArgs e)
         {
             FrmAlerta alerta = new FrmAlerta("Menssagem de Alerta Teste!");
@@ -84,6 +84,7 @@ namespace MyReview.Visao
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
+
             FrmListaUsuarios lu = new FrmListaUsuarios(2);
             lu.Show();
         }
