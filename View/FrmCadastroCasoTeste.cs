@@ -18,7 +18,7 @@ namespace MyReview.Visao
     public partial class FrmCadastroCasoTeste : DevExpress.XtraEditors.XtraForm
     {
         private bool editando;
-        private Usuario usuarioLogado;
+        private Modelo.Usuario usuarioLogado;
         private SuiteTeste suite;
 
 
@@ -35,7 +35,7 @@ namespace MyReview.Visao
             if (editando)
                 carregaEditando(); 
             else 
-                carregaNovaSuite();
+                carregaNovaSuite(); // fazer isso na inclusão do caso de teste 
         }
         private void carregaEditando()
         {
@@ -90,6 +90,7 @@ namespace MyReview.Visao
 
         private void btnIncluiCaso_Click(object sender, EventArgs e)
         {
+            // fazer verificar se a suite está salva, caso não esteja, salvar
             #region inclusaoNovo
             CasoTeste casoAux = new CasoTeste();
             

@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using MyReview.Model;
+using MyReview.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,6 +64,25 @@ namespace MyReview.Visao
         private void simpleButton2_Click_1(object sender, EventArgs e)
         {
            
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            FrmCadUsuario usuCad = new FrmCadUsuario(false, 0, 0);
+               usuCad.Show();
+
+        }
+
+        private void btnAlerta_Click(object sender, EventArgs e)
+        {
+            FrmAlerta alerta = new FrmAlerta("Menssagem de Alerta Teste!");
+            alerta.Show();
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            FrmListaUsuarios lu = new FrmListaUsuarios(7);
+            lu.Show();
         }
     }
 }

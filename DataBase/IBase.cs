@@ -8,8 +8,8 @@ namespace MyReview.DataBase
 {
     public interface IBase
     {
-        string Key { get;  }
-        void Salvar();
+        int Key { get;  }
+        bool Salvar();
         List<IBase> Todos();
         List<IBase> Busca();
     }
