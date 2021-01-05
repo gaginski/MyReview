@@ -4,19 +4,20 @@ drop table Casos_Passos;
 drop table CasoTestes;
 drop table SuiteTestes;
 
-
 create table Casos_Passos(
-	cps_id INT IDENTITY(1,1) PRIMARY KEY,
 	cps_indice INT NOT NULL,
-	cps_descricao VARCHAR(500) NOT NULL,
 	cps_cts_id INT NOT NULL,
+	cps_descricao VARCHAR(500) NOT NULL,
 	cps_dataInclusao DATETIME DEFAULT CURRENT_TIMESTAMP,
 	cps_usu_inclusao INT,
 	cps_ultimaAlteracao DATETIME DEFAULT CURRENT_TIMESTAMP,
 	cps_usu_ultimaAlteracao INT,
 	cps_terminalUltimaAleracao VARCHAR(100)
-	constraint fk_Casos_Passos_CasoTestes foreign key (cps_cts_id) references CasoTestes (cts_id)
-	/* IMPLEMENTAR CHAVES SECUNDÁRIAS*/)
+	constraint fk_Casos_Passos_CasoTestes foreign key (cps_cts_id) references CasoTestes (cts_id),
+	PRIMARY KEY (cps_indice, cps_cts_id)
+ 	);
+
+
 
 	
 create table CasoTestes(

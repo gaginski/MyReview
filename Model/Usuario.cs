@@ -10,7 +10,7 @@ namespace MyReview.Model
 {
     class Usuario : Base
     {
-        [OpcoesBase(UsarNoBanco = true, ChavePrimaria = true, UsarParaBuscar = true)]
+        [OpcoesBase(UsarNoBanco = true, ChavePrimaria = true, UsarParaBuscar = true, AutoIncremento = true)]
         public int? usu_id { get; set; }
 
         [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = false)]

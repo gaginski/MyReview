@@ -49,13 +49,12 @@
             // 
             // lblMensagem
             // 
-            this.lblMensagem.AutoSize = true;
             this.lblMensagem.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensagem.Location = new System.Drawing.Point(156, 9);
-            this.lblMensagem.MaximumSize = new System.Drawing.Size(350, 0);
-            this.lblMensagem.MinimumSize = new System.Drawing.Size(350, 0);
+            this.lblMensagem.MaximumSize = new System.Drawing.Size(350, 95);
+            this.lblMensagem.MinimumSize = new System.Drawing.Size(350, 95);
             this.lblMensagem.Name = "lblMensagem";
-            this.lblMensagem.Size = new System.Drawing.Size(350, 69);
+            this.lblMensagem.Size = new System.Drawing.Size(350, 95);
             this.lblMensagem.TabIndex = 1;
             this.lblMensagem.Text = "Aqui vai o texto passado por parâmetro! Aqui vai o texto passado por parâmetro! A" +
     "qui vai o texto passado por parâmetro!";
@@ -81,6 +80,8 @@
             this.Controls.Add(this.lblMensagem);
             this.Controls.Add(this.label1);
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("FrmAlerta.IconOptions.Image")));
+            this.MaximumSize = new System.Drawing.Size(542, 176);
+            this.MinimumSize = new System.Drawing.Size(542, 176);
             this.Name = "FrmAlerta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Atenção!";

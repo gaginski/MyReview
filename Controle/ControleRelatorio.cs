@@ -14,7 +14,6 @@ namespace MyReview.Controle
         Util ut = new Util();
         MySqlConnection con;
         MySqlCommand cmd;
-        // TESTE COMENTÁRIO
         MySqlDataReader read;
 
         public ControleRelatorio()

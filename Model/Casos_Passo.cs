@@ -10,16 +10,13 @@ namespace MyReview.Model
 {
     class Casos_Passo : Base
     {
-        [OpcoesBase(UsarNoBanco= true, ChavePrimaria = true, UsarParaBuscar =true)]
-        public int? cps_id { get; set; }
-
-        [OpcoesBase(UsarNoBanco = true)]
+        [OpcoesBase(UsarNoBanco = true, ChavePrimaria =true,UsarParaBuscar =true)]
         public int cps_indice { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]
         public String cps_descricao { get; set; }
 
-        [OpcoesBase(UsarNoBanco = true)]
+        [OpcoesBase(UsarNoBanco = true, ChavePrimaria = true, UsarParaBuscar = true)]
         public int cps_cts_id { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]

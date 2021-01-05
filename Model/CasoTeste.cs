@@ -10,13 +10,13 @@ namespace MyReview.Model
 {
     class CasoTeste : Base
     {
-        [OpcoesBase(UsarNoBanco = true, ChavePrimaria = true, UsarParaBuscar = true)]
+        [OpcoesBase(UsarNoBanco = true, ChavePrimaria = true, UsarParaBuscar = true, AutoIncremento = true)]
         public int cts_id { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]
         public int cts_indice { get; set; }
 
-        [OpcoesBase(UsarNoBanco = true)]
+        [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = true)]
         public int? cts_sts_id { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]

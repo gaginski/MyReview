@@ -10,7 +10,7 @@ namespace MyReview.Model
 {
     class SuiteTeste : Base
     {
-        [OpcoesBase(UsarNoBanco = true, ChavePrimaria = true, UsarParaBuscar = true)]
+        [OpcoesBase(UsarNoBanco = true, ChavePrimaria = true, UsarParaBuscar = true, AutoIncremento = true)]
         public int? sts_id { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]
@@ -20,7 +20,7 @@ namespace MyReview.Model
         public string sts_versao { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]
-        public int sts_usu_autor { get; set; }
+        public int? sts_usu_autor { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]
         public int sts_prj_id { get; set; }

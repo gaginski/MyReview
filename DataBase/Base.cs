@@ -51,7 +51,7 @@ namespace Database
                     foreach (PropertyInfo pi in this.GetType().GetProperties()) //GetProperties(/*BindingFlags.Public*/) não consegui fazer pegar apenas as publics
                     {
                         OpcoesBase pOpcoesBase = (OpcoesBase)pi.GetCustomAttribute(typeof(OpcoesBase));
-                        if (pOpcoesBase != null && pOpcoesBase.UsarNoBanco && !pOpcoesBase.UsarParaBuscar)
+                        if (pOpcoesBase != null && pOpcoesBase.UsarNoBanco && !pOpcoesBase.AutoIncremento)
                         {
                             campos.Add(pi.Name);
                             valores.Add("'" + pi.GetValue(this) + "'");
@@ -116,7 +116,7 @@ namespace Database
                         if (pOpcoesBase.UsarNoBanco && pOpcoesBase.UsarParaBuscar)
                         {
                             var valor = pi.GetValue(this);
-                            if (valor != null)
+                            if (valor != null && valor != "0")
                                 where.Add(pi.Name + " = '" + valor + "'");
                         }
                     }
@@ -157,10 +157,10 @@ namespace Database
                         if (pOpcoesBase.ChavePrimaria)
                             chavePrimaria = pi.Name;
 
-                        if (pOpcoesBase.UsarNoBanco)
+                        if (pOpcoesBase.UsarNoBanco && pOpcoesBase.UsarParaBuscar )
                         {
                             var valor = pi.GetValue(this);
-                            if (valor != null)
+                            if (valor != null && !pOpcoesBase.ChavePrimaria)
                                 where.Add(pi.Name + " = '" + valor + "'");
                         }
                     }

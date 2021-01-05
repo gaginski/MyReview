@@ -33,10 +33,11 @@ namespace MyReview.Visao
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlerta = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +72,7 @@ namespace MyReview.Visao
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.simpleButton5);
             this.panel1.Controls.Add(this.simpleButton4);
             this.panel1.Controls.Add(this.btnAlerta);
             this.panel1.Controls.Add(this.simpleButton3);
@@ -81,6 +83,15 @@ namespace MyReview.Visao
             this.panel1.Size = new System.Drawing.Size(435, 192);
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Location = new System.Drawing.Point(11, 61);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(138, 23);
+            this.simpleButton4.TabIndex = 4;
+            this.simpleButton4.Text = "FrmListaUsuario";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // btnAlerta
             // 
@@ -109,14 +120,14 @@ namespace MyReview.Visao
             this.simpleButton2.Text = "TesteBanco";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click_1);
             // 
-            // simpleButton4
+            // simpleButton5
             // 
-            this.simpleButton4.Location = new System.Drawing.Point(11, 61);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(138, 23);
-            this.simpleButton4.TabIndex = 4;
-            this.simpleButton4.Text = "FrmListaUsuario";
-            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
+            this.simpleButton5.Location = new System.Drawing.Point(155, 61);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(138, 23);
+            this.simpleButton5.TabIndex = 5;
+            this.simpleButton5.Text = "FrmListaUsuario";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // testes
             // 
@@ -145,5 +156,6 @@ namespace MyReview.Visao
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton btnAlerta;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton simpleButton5;
     }
 }

@@ -88,5 +88,10 @@ namespace MyReview.Visao
             FrmListaUsuarios lu = new FrmListaUsuarios(2);
             lu.Show();
         }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            new FrmExibicaoCasoTeste().ShowDialog();
+        }
     }
 }
