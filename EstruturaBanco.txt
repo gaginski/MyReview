@@ -84,3 +84,7 @@ create table SuiteTestes(
 				 USU_USUARIO_CAD INT,
 				 USU_DATAALTERACAO DATETIME DEFAULT CURRENT_TIMESTAMP,
 				 USU_TERMINAL_ALTERACAO VARCHAR(200))
+
+CREATE TABLE projetos(
+pjt_id int IDENTITY(1,1) primary key,
+pjt_nome varchar(150))
