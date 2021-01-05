@@ -146,6 +146,7 @@
             this.btnConfig.Text = "Configurações";
             this.btnConfig.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnConfig.UseVisualStyleBackColor = false;
+            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
             // 
             // FrmBarraTarefas
             // 

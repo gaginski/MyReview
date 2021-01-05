@@ -129,6 +129,7 @@
     <Compile Include="Modelo\Config.cs" />
     <Compile Include="Model\Casos_Passo.cs" />
     <Compile Include="Model\CasoTeste.cs" />
+    <Compile Include="Model\Projeto.cs" />
     <Compile Include="Model\SuiteTeste.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Model\SuiteTeste.cs" />
@@ -143,6 +144,12 @@
     </Compile>
     <Compile Include="View\FrmCadastroCasoTeste.Designer.cs">
       <DependentUpon>FrmCadastroCasoTeste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmConfiguracao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmConfiguracao.Designer.cs">
+      <DependentUpon>FrmConfiguracao.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmExibicaoCasoTeste.cs">
       <SubType>Form</SubType>
@@ -179,12 +186,6 @@
     </Compile>
     <Compile Include="Visao\FrmCadatroTarefas.Designer.cs">
       <DependentUpon>FrmCadatroTarefas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Visao\FrmConfiguracao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Visao\FrmConfiguracao.Designer.cs">
-      <DependentUpon>FrmConfiguracao.cs</DependentUpon>
     </Compile>
     <Compile Include="Visao\FrmRelatorios.cs">
       <SubType>Form</SubType>
@@ -255,6 +256,9 @@
     <EmbeddedResource Include="View\FrmCadastroCasoTeste.resx">
       <DependentUpon>FrmCadastroCasoTeste.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmConfiguracao.resx">
+      <DependentUpon>FrmConfiguracao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmExibicaoCasoTeste.resx">
       <DependentUpon>FrmExibicaoCasoTeste.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,9 +270,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmCadUsuario.resx">
       <DependentUpon>FrmCadUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Visao\FrmConfiguracao.resx">
-      <DependentUpon>FrmConfiguracao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Visao\FrmListagemCasoTeste.resx">
       <DependentUpon>FrmListagemCasoTeste.cs</DependentUpon>

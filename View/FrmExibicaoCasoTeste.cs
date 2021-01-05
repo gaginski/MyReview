@@ -16,6 +16,14 @@ namespace MyReview.View
         public FrmExibicaoCasoTeste()
         {
             InitializeComponent();
+            progressBarControl1.PerformStep();
+            progressBarControl2.PerformStep();
+            progressBarControl2.PerformStep();
+        }
+
+        private void progressBarControl2_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

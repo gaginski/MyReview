@@ -117,29 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAFql0jNip9VOYqfVTmKn1U5ip9VOYqfVTmKn1U5ip9VOYqfVTmKn1U5ip9VOWqXSMwAA
-        AAAAAAAAAAAAAAAAAABuuOnmdsL1/3bC9f92wvX/dsL1/3bC9f92wvX/dsL1/3bC9f92wvX/dsL1/264
-        6eUAAAAAAAAAAAAAAAAAAAAAb7jq6pfR9//J5/v/yef7/8nn+//J5/v/yef7/8nn+//J5/v/yef7/5fR
-        9/9vuOrqAAAAAAAAAAAAAAAAAAAAAG+46uqt2vn/////////////////////////////////////////
-        //+t2vn/b7jq6gAAAAAAAAAAAAAAAAAAAABvuOrqrdr5////////////////////////////////////
-        ////////rdr5/2+46uoAAAAAAAAAAAAAAAAAAAAAb7jq6q3a+f/k5Pj/rKzx/+Tk+P//////////////
-        /////////////63a+f9vuOrqAAAAAAAAAAAAAAAAAAAAAG+46uqt2vn/29v1/5qa7//V1fP/2dn0/9nZ
-        9P/Z2fT/2dn0//j4/f+t2vn/b7jq6gAAAAAAAAAAAAAAAAAAAABvuOrqrdr5////////////////////
-        ////////////////////////rdr5/2+46uoAAAAAAAAAAAAAAAAAAAAAb7jq6q3a+f/39fP/6OPd//f1
-        8////////////////////////////63a+f9vuOrqAAAAAAAAAAAAAAAAAAAAAG+46uqt2vn/6ubi/+Ha
-        zv/m4d3/6+jk/+vo5P/r6OT/6+jk//v6+v+t2vn/b7jq6gAAAAAAAAAAAAAAAAAAAABvuOrqrdr5////
-        ////////////////////////////////////////rdr5/2+46uoAAAAAAAAAAAAAAAAAAAAAb7jq6q3a
-        +f///////////////////////////////////////////63a+f9vuOrqAAAAAAAAAAAAAAAAAAAAAG+4
-        6uqt2vn///////r5+P/p5OD/6eTg/+nk4P/p5OD/+vn4//////+t2vn/b7jq6gAAAAAAAAAAAAAAAAAA
-        AABvuOrql9H3/8nn+/+fl4//j3lm/5J/bv2Sf279j3lm/5+Xj//J5/v/l9H3/2+46uoAAAAAAAAAAAAA
-        AAAAAAAAbrjp5nbC9f92wvX/ioiD/495Zv+MeWh2jXhneY95Zv+KiIP/dsL1/3bC9f9uuOnlAAAAAAAA
-        AAAAAAAAAAAAAFql0jNip9VOYqfVTnOVq2p7jZRukHlmh5B5Zod5i5Juc5WramKn1U5ip9VOWqXSMwAA
-        AAAAAAAAwAMAAMADAADAAwAAwAMAAMADAADAAwAAwAMAAMADAADAAwAAwAMAAMADAADAAwAAwAMAAMAD
-        AADAAwAAwAMAAA==
-</value>
-  </data>
 </root>

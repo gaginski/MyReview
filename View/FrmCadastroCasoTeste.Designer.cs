@@ -30,6 +30,7 @@ namespace MyReview.Visao
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.cmbProjeto = new System.Windows.Forms.ComboBox();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.txtId = new DevExpress.XtraEditors.TextEdit();
             this.txtObjetivo = new DevExpress.XtraEditors.MemoEdit();
@@ -67,7 +68,6 @@ namespace MyReview.Visao
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtTituloSuite = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.cmbProjeto = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
@@ -110,6 +110,15 @@ namespace MyReview.Visao
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(931, 714);
             this.panelControl1.TabIndex = 0;
+            // 
+            // cmbProjeto
+            // 
+            this.cmbProjeto.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProjeto.FormattingEnabled = true;
+            this.cmbProjeto.Location = new System.Drawing.Point(713, 27);
+            this.cmbProjeto.Name = "cmbProjeto";
+            this.cmbProjeto.Size = new System.Drawing.Size(212, 24);
+            this.cmbProjeto.TabIndex = 22;
             // 
             // labelControl10
             // 
@@ -390,6 +399,7 @@ namespace MyReview.Visao
             this.gridPassos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.gridPassos.Size = new System.Drawing.Size(447, 261);
             this.gridPassos.TabIndex = 12;
+            this.gridPassos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPassos_CellContentClick);
             // 
             // Id
             // 
@@ -495,15 +505,6 @@ namespace MyReview.Visao
             this.labelControl1.Size = new System.Drawing.Size(149, 16);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Título da Suíte de Testes";
-            // 
-            // cmbProjeto
-            // 
-            this.cmbProjeto.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbProjeto.FormattingEnabled = true;
-            this.cmbProjeto.Location = new System.Drawing.Point(713, 27);
-            this.cmbProjeto.Name = "cmbProjeto";
-            this.cmbProjeto.Size = new System.Drawing.Size(212, 24);
-            this.cmbProjeto.TabIndex = 22;
             // 
             // FrmCadastroCasoTeste
             // 

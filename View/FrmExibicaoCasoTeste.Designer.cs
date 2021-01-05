@@ -31,6 +31,7 @@ namespace MyReview.View
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmExibicaoCasoTeste));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.progressBarControl2 = new DevExpress.XtraEditors.ProgressBarControl();
             this.lblObjetivo = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblDataCriacao = new System.Windows.Forms.Label();
@@ -43,6 +44,7 @@ namespace MyReview.View
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.progressBarControl1 = new DevExpress.XtraEditors.ProgressBarControl();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -64,16 +66,14 @@ namespace MyReview.View
             this.lblCasoId = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label22 = new System.Windows.Forms.Label();
-            this.progressBarControl1 = new DevExpress.XtraEditors.ProgressBarControl();
-            this.progressBarControl2 = new DevExpress.XtraEditors.ProgressBarControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -94,6 +94,14 @@ namespace MyReview.View
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1047, 231);
             this.panel1.TabIndex = 0;
+            // 
+            // progressBarControl2
+            // 
+            this.progressBarControl2.Location = new System.Drawing.Point(-1, 210);
+            this.progressBarControl2.Name = "progressBarControl2";
+            this.progressBarControl2.Size = new System.Drawing.Size(1048, 18);
+            this.progressBarControl2.TabIndex = 23;
+            this.progressBarControl2.EditValueChanged += new System.EventHandler(this.progressBarControl2_EditValueChanged);
             // 
             // lblObjetivo
             // 
@@ -233,6 +241,13 @@ namespace MyReview.View
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1047, 341);
             this.panelControl1.TabIndex = 1;
+            // 
+            // progressBarControl1
+            // 
+            this.progressBarControl1.Location = new System.Drawing.Point(474, 243);
+            this.progressBarControl1.Name = "progressBarControl1";
+            this.progressBarControl1.Size = new System.Drawing.Size(560, 10);
+            this.progressBarControl1.TabIndex = 22;
             // 
             // label21
             // 
@@ -445,20 +460,6 @@ namespace MyReview.View
             this.label22.Text = "Casos de Teste";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // progressBarControl1
-            // 
-            this.progressBarControl1.Location = new System.Drawing.Point(474, 243);
-            this.progressBarControl1.Name = "progressBarControl1";
-            this.progressBarControl1.Size = new System.Drawing.Size(560, 10);
-            this.progressBarControl1.TabIndex = 22;
-            // 
-            // progressBarControl2
-            // 
-            this.progressBarControl2.Location = new System.Drawing.Point(-1, 210);
-            this.progressBarControl2.Name = "progressBarControl2";
-            this.progressBarControl2.Size = new System.Drawing.Size(1048, 18);
-            this.progressBarControl2.TabIndex = 23;
-            // 
             // simpleButton2
             // 
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -481,20 +482,22 @@ namespace MyReview.View
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.panel1);
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("FrmExibicaoCasoTeste.IconOptions.Image")));
-            this.MinimumSize = new System.Drawing.Size(2, 726);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1073, 880);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1073, 880);
             this.Name = "FrmExibicaoCasoTeste";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Casos de Teste";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl2.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

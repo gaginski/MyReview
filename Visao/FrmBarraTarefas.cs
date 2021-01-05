@@ -87,5 +87,10 @@ namespace MyReview.Visao
             btnMinhasTarefas.Enabled = usuarioLogado.ExCTListar;
             btnConfig.Enabled = usuarioLogado.OutrasConfig;
         }
+
+        private void btnConfig_Click(object sender, EventArgs e)
+        {
+            new FrmConfiguracao().ShowDialog();
         }
+    }
 }

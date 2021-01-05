@@ -35,6 +35,8 @@ namespace MyReview.Visao
                 carregaEditando();
 
             carregaCombos();
+
+
         }
         private void carregaEditando()
         {
@@ -67,8 +69,10 @@ namespace MyReview.Visao
             }
             if (verificador)
                 gridPassos.Rows.Add(gridPassos.Rows.Count, "");
+
+            MessageBox.Show(gridPassos.Rows.Count.ToString());
         }
-        
+
         private void carregaCombos()
         {
             DataTable prioridades = new DataTable();
@@ -103,32 +107,42 @@ namespace MyReview.Visao
         }
         private void btnIncluiCaso_Click(object sender, EventArgs e)
         {
-            if (suite.sts_id == null)
-                carregaNovaSuite();
+            if (validaCamposCT())
+            {
+                bool valida = true;
+                if (suite.sts_id == null)
+                    carregaNovaSuite();
 
-            #region inclusaoNovo
-            CasoTeste casoAux = new CasoTeste();
+                #region inclusaoNovo
+                CasoTeste casoAux = new CasoTeste();
 
-            casoAux.cts_sts_id = suite.sts_id;
-            casoAux.cts_indice = (Int32.Parse(casoAux.max("cts_indice")) == 0) ? Int32.Parse(casoAux.max("cts_indice")) : Int32.Parse(casoAux.max("cts_indice")) + 1;
-            casoAux.cts_dataInclusao = DateTime.Parse(DateTime.Now.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-            casoAux.cts_precondicoes = txtPrecondicao.Text;
-            casoAux.cts_prioridade = Int32.Parse(cmbPrioridade.SelectedValue.ToString());
-            casoAux.cts_resultadoEsperado = txtResultado.Text;
-            casoAux.cts_tempoEstimado = Int32.Parse(sedTempoEstimado.Text);
-            casoAux.cts_ultimaAlteracao = DateTime.Parse(DateTime.Now.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-            casoAux.cts_terminalUltimaAleracao = Environment.MachineName;
+                casoAux.cts_sts_id = suite.sts_id;
+                casoAux.cts_indice = (Int32.Parse(casoAux.max("cts_indice")) == 0) ? Int32.Parse(casoAux.max("cts_indice")) : Int32.Parse(casoAux.max("cts_indice")) + 1;
+                casoAux.cts_dataInclusao = DateTime.Parse(DateTime.Now.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
+                casoAux.cts_precondicoes = txtPrecondicao.Text;
+                casoAux.cts_prioridade = Int32.Parse(cmbPrioridade.SelectedValue.ToString());
+                casoAux.cts_resultadoEsperado = txtResultado.Text;
+                casoAux.cts_tempoEstimado = Int32.Parse(sedTempoEstimado.Text);
+                casoAux.cts_ultimaAlteracao = DateTime.Parse(DateTime.Now.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
+                casoAux.cts_terminalUltimaAleracao = Environment.MachineName;
 
-            casoAux.Salvar();
-            casoAux.cts_id = Int32.Parse(casoAux.max("cts_id"));
+                if (valida)
+                    valida = casoAux.Salvar();
 
-            List<Casos_Passo> listaPassos = montaListaPassos(casoAux.cts_id);
+                casoAux.cts_id = Int32.Parse(casoAux.max("cts_id"));
 
-            foreach (Casos_Passo cp in listaPassos)
-                cp.Salvar();
+                List<Casos_Passo> listaPassos = montaListaPassos(casoAux.cts_id);
 
+                foreach (Casos_Passo cp in listaPassos)
+                    if (valida)
+                        cp.Salvar();
+
+                if (valida)
+                    new FrmAlerta("Salvo com Sucesso!");
+            }
             #endregion
         }
+
         private List<Casos_Passo> montaListaPassos(int idCasoTeste)
         {
             List<Casos_Passo> listaPassos = new List<Casos_Passo>();
@@ -149,8 +163,40 @@ namespace MyReview.Visao
                     listaPassos.Add(aux);
                 }
             }
-
             return listaPassos;
+        }
+        private bool validaCamposCT()
+        {
+            List<String> campos = new List<string>();
+            bool valida = false;
+
+            if (txtDescricaoCaso.Text == "")
+                campos.Add("Descrição do caso de teste");
+            if (txtPrecondicao.Text == "")
+                campos.Add("Pré-condições");
+            if (txtResultado.Text == "")
+                campos.Add("Resultado Esperado");
+            if (sedTempoEstimado.Text == "" || sedTempoEstimado.Text == "0")
+                campos.Add("Tempo estimado");
+
+            if (campos.Count > 0)
+            {
+                valida = false;
+                new FrmAlerta("Atenção! Alguns campos obrigatórios não foram preenchidos: " + string.Join(", ", campos.ToArray()) + ".");
+            }
+
+            if (gridPassos.Rows.Count == 2 && gridPassos.Rows[0].Cells[1].Value == "" && valida)
+            {
+                valida = false;
+                new FrmAlerta("Atenção! Um caso de teste precisa ter ao menos um passo!");
+            }
+
+            return valida;
+        }
+
+        private void gridPassos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
