@@ -88,28 +88,30 @@ namespace MyReview.Visao
             cmbPrioridade.DataSource = prioridades;
             cmbPrioridade.DisplayMember = "Descricao";
             cmbPrioridade.ValueMember = "valor";
-            cmbPrioridade.SelectedIndex = 1;
+            cmbPrioridade.SelectedIndex = 0;
 
+            List<Projeto> listaProjeto = new Projeto().Todos();
             DataTable projeto = new DataTable();
 
             projeto.Columns.Add("Projeto");
-            projeto.Columns.Add("valor");
+            projeto.Columns.Add("id");
 
-            projeto.Rows.Add("Baixa", "1");
-            projeto.Rows.Add("Normal", "2");
-            projeto.Rows.Add("Alta", "3");
-            projeto.Rows.Add("Urgente", "4");
+            foreach (Projeto p in listaProjeto)
+                projeto.Rows.Add(p.pjt_nome, p.pjt_id);
 
-            cmbProjeto.DataSource = prioridades;
+            cmbProjeto.DataSource = projeto;
             cmbProjeto.DisplayMember = "Projeto";
-            cmbProjeto.ValueMember = "valor";
-            cmbProjeto.SelectedIndex = 1;
+            cmbProjeto.ValueMember = "id";
+
+            if (listaProjeto.Count > 0)
+                cmbProjeto.SelectedIndex = 0;
         }
         private void btnIncluiCaso_Click(object sender, EventArgs e)
         {
             if (validaCamposCT())
             {
                 bool valida = true;
+
                 if (suite.sts_id == null)
                     carregaNovaSuite();
 
@@ -124,6 +126,7 @@ namespace MyReview.Visao
                 casoAux.cts_resultadoEsperado = txtResultado.Text;
                 casoAux.cts_tempoEstimado = Int32.Parse(sedTempoEstimado.Text);
                 casoAux.cts_ultimaAlteracao = DateTime.Parse(DateTime.Now.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
+                casoAux.cts_Observacao = txtObs.Text;
                 casoAux.cts_terminalUltimaAleracao = Environment.MachineName;
 
                 if (valida)
@@ -138,7 +141,17 @@ namespace MyReview.Visao
                         cp.Salvar();
 
                 if (valida)
+                {
+                    gridPassos.Rows.Clear();
+                    txtDescricaoCaso.Text = "";
+                    txtPrecondicao.Text = "";
+                    txtResultado.Text = "";
+                    txtObs.Text = "";
+                    sedTempoEstimado.Text = "0";
+                    cmbPrioridade.SelectedIndex = 0;
                     new FrmAlerta("Salvo com Sucesso!");
+                }
+                    
             }
             #endregion
         }
