@@ -34,7 +34,7 @@ namespace MyReview.Visao
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.txtId = new DevExpress.XtraEditors.TextEdit();
             this.txtObjetivo = new DevExpress.XtraEditors.MemoEdit();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.gridCasosTeste = new System.Windows.Forms.DataGridView();
             this.idCasoTeste = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prioridade = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +43,8 @@ namespace MyReview.Visao
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.pnlCadatroCasosTeste = new DevExpress.XtraEditors.PanelControl();
+            this.txtObs = new DevExpress.XtraEditors.MemoEdit();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.cmbPrioridade = new System.Windows.Forms.ComboBox();
             this.txtResultado = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -68,15 +70,14 @@ namespace MyReview.Visao
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtTituloSuite = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtObs = new DevExpress.XtraEditors.MemoEdit();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtObjetivo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCasosTeste)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlCadatroCasosTeste)).BeginInit();
             this.pnlCadatroCasosTeste.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtObs.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtResultado.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sedTempoEstimado.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
@@ -88,7 +89,6 @@ namespace MyReview.Visao
             ((System.ComponentModel.ISupportInitialize)(this.txtCriador.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVersao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTituloSuite.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtObs.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -98,7 +98,7 @@ namespace MyReview.Visao
             this.panelControl1.Controls.Add(this.labelControl10);
             this.panelControl1.Controls.Add(this.txtId);
             this.panelControl1.Controls.Add(this.txtObjetivo);
-            this.panelControl1.Controls.Add(this.dataGridView2);
+            this.panelControl1.Controls.Add(this.gridCasosTeste);
             this.panelControl1.Controls.Add(this.labelControl9);
             this.panelControl1.Controls.Add(this.simpleButton1);
             this.panelControl1.Controls.Add(this.labelControl3);
@@ -150,24 +150,24 @@ namespace MyReview.Visao
             this.txtObjetivo.Size = new System.Drawing.Size(920, 42);
             this.txtObjetivo.TabIndex = 22;
             // 
-            // dataGridView2
+            // gridCasosTeste
             // 
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gridCasosTeste.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridCasosTeste.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.gridCasosTeste.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridCasosTeste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridCasosTeste.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCasoTeste,
             this.Descricao,
             this.Prioridade,
             this.Tempo});
-            this.dataGridView2.GridColor = System.Drawing.Color.White;
-            this.dataGridView2.Location = new System.Drawing.Point(11, 472);
-            this.dataGridView2.MultiSelect = false;
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridView2.Size = new System.Drawing.Size(910, 201);
-            this.dataGridView2.TabIndex = 13;
+            this.gridCasosTeste.GridColor = System.Drawing.Color.White;
+            this.gridCasosTeste.Location = new System.Drawing.Point(11, 472);
+            this.gridCasosTeste.MultiSelect = false;
+            this.gridCasosTeste.Name = "gridCasosTeste";
+            this.gridCasosTeste.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.gridCasosTeste.Size = new System.Drawing.Size(910, 201);
+            this.gridCasosTeste.TabIndex = 13;
             // 
             // idCasoTeste
             // 
@@ -256,6 +256,24 @@ namespace MyReview.Visao
             this.pnlCadatroCasosTeste.Name = "pnlCadatroCasosTeste";
             this.pnlCadatroCasosTeste.Size = new System.Drawing.Size(920, 341);
             this.pnlCadatroCasosTeste.TabIndex = 6;
+            // 
+            // txtObs
+            // 
+            this.txtObs.Location = new System.Drawing.Point(5, 271);
+            this.txtObs.Name = "txtObs";
+            this.txtObs.Properties.MaxLength = 1000;
+            this.txtObs.Size = new System.Drawing.Size(449, 53);
+            this.txtObs.TabIndex = 23;
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Location = new System.Drawing.Point(5, 249);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(75, 16);
+            this.labelControl11.TabIndex = 22;
+            this.labelControl11.Text = "Observação";
             // 
             // cmbPrioridade
             // 
@@ -404,7 +422,6 @@ namespace MyReview.Visao
             this.gridPassos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.gridPassos.Size = new System.Drawing.Size(447, 202);
             this.gridPassos.TabIndex = 12;
-            this.gridPassos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPassos_CellContentClick);
             // 
             // Id
             // 
@@ -511,24 +528,6 @@ namespace MyReview.Visao
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Título da Suíte de Testes";
             // 
-            // txtObs
-            // 
-            this.txtObs.Location = new System.Drawing.Point(5, 271);
-            this.txtObs.Name = "txtObs";
-            this.txtObs.Properties.MaxLength = 1000;
-            this.txtObs.Size = new System.Drawing.Size(449, 53);
-            this.txtObs.TabIndex = 23;
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(5, 249);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(75, 16);
-            this.labelControl11.TabIndex = 22;
-            this.labelControl11.Text = "Observação";
-            // 
             // FrmCadastroCasoTeste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -545,10 +544,11 @@ namespace MyReview.Visao
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtObjetivo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCasosTeste)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlCadatroCasosTeste)).EndInit();
             this.pnlCadatroCasosTeste.ResumeLayout(false);
             this.pnlCadatroCasosTeste.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtObs.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtResultado.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sedTempoEstimado.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
@@ -561,7 +561,6 @@ namespace MyReview.Visao
             ((System.ComponentModel.ISupportInitialize)(this.txtCriador.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVersao.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTituloSuite.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtObs.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -592,7 +591,7 @@ namespace MyReview.Visao
         private DevExpress.XtraEditors.SimpleButton btnIncluiCaso;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.DataGridView gridPassos;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView gridCasosTeste;
         private DevExpress.XtraEditors.MemoEdit txtObjetivo;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.SimpleButton btnNovoPasso;

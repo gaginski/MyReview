@@ -151,7 +151,8 @@ namespace MyReview.Visao
                     cmbPrioridade.SelectedIndex = 0;
                     new FrmAlerta("Salvo com Sucesso!");
                 }
-                    
+
+                atualizaGridCasos();                    
             }
             #endregion
         }
@@ -207,9 +208,31 @@ namespace MyReview.Visao
             return valida;
         }
 
-        private void gridPassos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void atualizaGridCasos()
         {
+            CasoTeste aux = new CasoTeste();
+            aux.cts_sts_id = suite.sts_id;
 
+            List<CasoTeste> listaCasos = aux.Busca();
+            List<Usuario> listaUsuarios = new Usuario().Todos();
+
+            gridCasosTeste.Rows.Clear();
+
+            gridCasosTeste.ColumnCount = 6;
+            gridCasosTeste.Columns[0].Name = "ID";
+            gridCasosTeste.Columns[1].Name = "Descrição";
+            gridCasosTeste.Columns[2].Name = "Prioridade";
+            gridCasosTeste.Columns[3].Name = "Tempo Estimado";
+            gridCasosTeste.Columns[4].Name = "Resulatado";
+
+            gridCasosTeste.Columns[0].Width = 30;
+
+             foreach (CasoTeste c in listaCasos)
+            {
+              
+                    String[] auxiliar = { c.cts_indice, c.};
+                    dtgListaUsuarios.Rows.Add(auxiliar);
+            }
         }
     }
 }

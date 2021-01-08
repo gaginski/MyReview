@@ -48,5 +48,26 @@ namespace MyReview.Model
 
         [OpcoesBase(UsarNoBanco = true)]
         public string cts_Observacao { get; set; }
+
+        public new List<CasoTeste> Todos()
+        {
+            var casoteste = new List<CasoTeste>();
+            foreach (var ibase in base.Todos())
+            {
+                casoteste.Add((CasoTeste)ibase);
+            }
+
+            return casoteste;
+        }
+        public new List<CasoTeste> Busca()
+        {
+            var casoteste = new List<CasoTeste>();
+            foreach (var ibase in base.Todos())
+            {
+                casoteste.Add((CasoTeste)ibase);
+            }
+
+            return casoteste;
+        }
     }
 }
