@@ -19,7 +19,7 @@ namespace Database
     {
         Util util = new Util();
 
-        [OpcoesBase(UsarNoBanco =false)]
+        [OpcoesBase(UsarNoBanco = false)]
         public int Key
         {
             get
@@ -54,7 +54,10 @@ namespace Database
                         if (pOpcoesBase != null && pOpcoesBase.UsarNoBanco && !pOpcoesBase.AutoIncremento)
                         {
                             campos.Add(pi.Name);
-                            valores.Add("'" + pi.GetValue(this) + "'");
+                            if (!pOpcoesBase.Criptografado)
+                                valores.Add("'" + pi.GetValue(this) + "'");
+                            else
+                                valores.Add("'"+util.criptografa(pi.GetValue(this).ToString(), pOpcoesBase.chaveCripto) + "'");
                         }
                     }
 
@@ -116,7 +119,7 @@ namespace Database
                         if (pOpcoesBase.UsarNoBanco && pOpcoesBase.UsarParaBuscar)
                         {
                             var valor = pi.GetValue(this);
-                            if (valor != null && valor != "0")
+                            if (valor != null)
                                 where.Add(pi.Name + " = '" + valor + "'");
                         }
                     }
@@ -148,25 +151,19 @@ namespace Database
             using (SqlConnection connection = new SqlConnection(util.stringConexaoSql))
             {
                 List<string> where = new List<string>();
-                string chavePrimaria = string.Empty;
                 foreach (PropertyInfo pi in this.GetType().GetProperties())
                 {
                     OpcoesBase pOpcoesBase = (OpcoesBase)pi.GetCustomAttribute(typeof(OpcoesBase));
                     if (pOpcoesBase != null)
-                    {
-                        if (pOpcoesBase.ChavePrimaria)
-                            chavePrimaria = pi.Name;
-
-                        if (pOpcoesBase.UsarNoBanco && pOpcoesBase.UsarParaBuscar )
+                        if (pOpcoesBase.UsarNoBanco && pOpcoesBase.UsarParaBuscar)
                         {
                             var valor = pi.GetValue(this);
                             if (valor != null && !pOpcoesBase.ChavePrimaria)
                                 where.Add(pi.Name + " = '" + valor + "'");
                         }
-                    }
                 }
 
-                string queryString = "select isnull(max("+campo+"),0) from " + this.GetType().Name + "s where " + campo + " is not null";
+                string queryString = "select isnull(max(" + campo + "),0) from " + this.GetType().Name + "s where " + campo + " is not null";
                 if (where.Count > 0)
                 {
                     queryString += " and " + string.Join(" and ", where.ToArray());
@@ -188,7 +185,7 @@ namespace Database
             String _return = null;
             using (SqlConnection connection = new SqlConnection(util.stringConexaoSql))
             {
-               
+
                 string queryString = "select " + campo + " from " + this.GetType().Name + "s where " + where;
 
                 SqlCommand command = new SqlCommand(queryString, connection);
@@ -205,12 +202,16 @@ namespace Database
 
         private void setProperty(ref IBase obj, SqlDataReader reader)
         {
+            Util u = new Util();
             foreach (PropertyInfo pi in obj.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
             {
                 OpcoesBase pOpcoesBase = (OpcoesBase)pi.GetCustomAttribute(typeof(OpcoesBase));
-                if (pOpcoesBase != null && pOpcoesBase.UsarNoBanco)
+                if (pOpcoesBase != null && pOpcoesBase.UsarNoBanco && reader[pi.Name].ToString() != null)
                 {
-                    pi.SetValue(obj, reader[pi.Name]);
+                    if (!pOpcoesBase.Criptografado)
+                        pi.SetValue(obj, reader[pi.Name]);
+                    else
+                        pi.SetValue(obj, u.descriptografa(reader[pi.Name].ToString(), pOpcoesBase.chaveCripto));
                 }
             }
         }
@@ -226,11 +227,16 @@ namespace Database
                     List<string> campos = new List<string>();
                     List<string> where = new List<string>();
 
-                    foreach (PropertyInfo pi in this.GetType().GetProperties()) 
+                    foreach (PropertyInfo pi in this.GetType().GetProperties())
                     {
                         OpcoesBase pOpcoesBase = (OpcoesBase)pi.GetCustomAttribute(typeof(OpcoesBase));
                         if (pOpcoesBase != null && pOpcoesBase.UsarNoBanco && !pOpcoesBase.UsarParaBuscar)
-                            campos.Add(pi.Name+ " = '" + pi.GetValue(this) + "'");
+                        {
+                            if (!pOpcoesBase.Criptografado)
+                                campos.Add(pi.Name + " = '" + pi.GetValue(this) + "'");
+                            else
+                                campos.Add(pi.Name + " = '" + util.criptografa(pi.GetValue(this).ToString(), pOpcoesBase.chaveCripto) + "'");
+                        }
 
                         if (pOpcoesBase.UsarNoBanco && pOpcoesBase.UsarParaBuscar)
                         {
@@ -240,7 +246,7 @@ namespace Database
                         }
                     }
 
-                    string queryString = "update " + this.GetType().Name + "s set " + string.Join(", ", campos.ToArray()) ;
+                    string queryString = "update " + this.GetType().Name + "s set " + string.Join(", ", campos.ToArray());
                     if (where.Count > 0)
                     {
                         queryString += " where " + string.Join(" and ", where.ToArray());

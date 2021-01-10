@@ -11,10 +11,13 @@ namespace MyReview.Model
     class CasoTeste : Base
     {
         [OpcoesBase(UsarNoBanco = true, ChavePrimaria = true, UsarParaBuscar = true, AutoIncremento = true)]
-        public int cts_id { get; set; }
+        public int? cts_id { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]
         public int cts_indice { get; set; }
+
+        [OpcoesBase(UsarNoBanco = true)]
+        public string cts_descricao { get; set; }
 
         [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = true)]
         public int? cts_sts_id { get; set; }
@@ -32,13 +35,13 @@ namespace MyReview.Model
         public string cts_resultadoEsperado { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]
-        public String cts_dataInclusao { get; set; }
+        public DateTime cts_dataInclusao { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]
         public int cts_usu_inclusao { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]
-        public String cts_ultimaAlteracao { get; set; }
+        public DateTime cts_ultimaAlteracao { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]
         public int cts_usu_ultimaAlteracao { get; set; }
@@ -62,7 +65,7 @@ namespace MyReview.Model
         public new List<CasoTeste> Busca()
         {
             var casoteste = new List<CasoTeste>();
-            foreach (var ibase in base.Todos())
+            foreach (var ibase in base.Busca())
             {
                 casoteste.Add((CasoTeste)ibase);
             }

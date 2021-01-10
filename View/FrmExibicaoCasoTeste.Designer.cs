@@ -475,7 +475,7 @@ namespace MyReview.View
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1071, 848);
+            this.ClientSize = new System.Drawing.Size(1071, 756);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.dataGridView2);
@@ -485,7 +485,7 @@ namespace MyReview.View
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1073, 880);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1073, 880);
+            this.MinimumSize = new System.Drawing.Size(1073, 726);
             this.Name = "FrmExibicaoCasoTeste";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Casos de Teste";

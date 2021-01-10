@@ -121,7 +121,7 @@ namespace MyReview.Visao
             this.cmbProjeto.Location = new System.Drawing.Point(713, 25);
             this.cmbProjeto.Name = "cmbProjeto";
             this.cmbProjeto.Size = new System.Drawing.Size(212, 24);
-            this.cmbProjeto.TabIndex = 22;
+            this.cmbProjeto.TabIndex = 3;
             // 
             // labelControl10
             // 
@@ -148,7 +148,7 @@ namespace MyReview.Visao
             this.txtObjetivo.Location = new System.Drawing.Point(5, 77);
             this.txtObjetivo.Name = "txtObjetivo";
             this.txtObjetivo.Size = new System.Drawing.Size(920, 42);
-            this.txtObjetivo.TabIndex = 22;
+            this.txtObjetivo.TabIndex = 4;
             // 
             // gridCasosTeste
             // 
@@ -263,7 +263,7 @@ namespace MyReview.Visao
             this.txtObs.Name = "txtObs";
             this.txtObs.Properties.MaxLength = 1000;
             this.txtObs.Size = new System.Drawing.Size(449, 53);
-            this.txtObs.TabIndex = 23;
+            this.txtObs.TabIndex = 4;
             // 
             // labelControl11
             // 
@@ -282,7 +282,7 @@ namespace MyReview.Visao
             this.cmbPrioridade.Location = new System.Drawing.Point(460, 300);
             this.cmbPrioridade.Name = "cmbPrioridade";
             this.cmbPrioridade.Size = new System.Drawing.Size(121, 24);
-            this.cmbPrioridade.TabIndex = 21;
+            this.cmbPrioridade.TabIndex = 6;
             // 
             // txtResultado
             // 
@@ -290,7 +290,7 @@ namespace MyReview.Visao
             this.txtResultado.Name = "txtResultado";
             this.txtResultado.Properties.MaxLength = 1000;
             this.txtResultado.Size = new System.Drawing.Size(449, 69);
-            this.txtResultado.TabIndex = 20;
+            this.txtResultado.TabIndex = 3;
             // 
             // labelControl8
             // 
@@ -317,7 +317,7 @@ namespace MyReview.Visao
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.sedTempoEstimado.Properties.MaxLength = 2;
             this.sedTempoEstimado.Size = new System.Drawing.Size(151, 22);
-            this.sedTempoEstimado.TabIndex = 18;
+            this.sedTempoEstimado.TabIndex = 7;
             // 
             // labelControl7
             // 
@@ -352,7 +352,7 @@ namespace MyReview.Visao
             this.txtPrecondicao.Name = "txtPrecondicao";
             this.txtPrecondicao.Properties.MaxLength = 500;
             this.txtPrecondicao.Size = new System.Drawing.Size(449, 69);
-            this.txtPrecondicao.TabIndex = 13;
+            this.txtPrecondicao.TabIndex = 2;
             // 
             // labelControl5
             // 
@@ -371,13 +371,13 @@ namespace MyReview.Visao
             this.btnIncluiCaso.Location = new System.Drawing.Point(771, 292);
             this.btnIncluiCaso.Name = "btnIncluiCaso";
             this.btnIncluiCaso.Size = new System.Drawing.Size(141, 32);
-            this.btnIncluiCaso.TabIndex = 11;
+            this.btnIncluiCaso.TabIndex = 8;
             this.btnIncluiCaso.Text = "Salvar Caso de Testes";
             this.btnIncluiCaso.Click += new System.EventHandler(this.btnIncluiCaso_Click);
             // 
             // panelControl2
             // 
-            this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.panelControl2.Controls.Add(this.btnNovoPasso);
             this.panelControl2.Controls.Add(this.btnExclui);
             this.panelControl2.Controls.Add(this.gridPassos);
@@ -421,7 +421,7 @@ namespace MyReview.Visao
             this.gridPassos.Name = "gridPassos";
             this.gridPassos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.gridPassos.Size = new System.Drawing.Size(447, 202);
-            this.gridPassos.TabIndex = 12;
+            this.gridPassos.TabIndex = 5;
             // 
             // Id
             // 
@@ -440,7 +440,7 @@ namespace MyReview.Visao
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(5, 6);
+            this.labelControl4.Location = new System.Drawing.Point(3, 6);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(92, 16);
             this.labelControl4.TabIndex = 11;
@@ -454,7 +454,7 @@ namespace MyReview.Visao
             this.txtDescricaoCaso.Properties.Appearance.Options.UseFont = true;
             this.txtDescricaoCaso.Properties.MaxLength = 200;
             this.txtDescricaoCaso.Size = new System.Drawing.Size(391, 22);
-            this.txtDescricaoCaso.TabIndex = 9;
+            this.txtDescricaoCaso.TabIndex = 1;
             // 
             // lblCaso
             // 
@@ -468,6 +468,7 @@ namespace MyReview.Visao
             // 
             // txtCriador
             // 
+            this.txtCriador.Enabled = false;
             this.txtCriador.Location = new System.Drawing.Point(572, 27);
             this.txtCriador.Name = "txtCriador";
             this.txtCriador.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -497,7 +498,7 @@ namespace MyReview.Visao
             this.txtVersao.Properties.MaskSettings.Set("mask", "#.##.##.####");
             this.txtVersao.Properties.UseMaskAsDisplayFormat = true;
             this.txtVersao.Size = new System.Drawing.Size(100, 22);
-            this.txtVersao.TabIndex = 3;
+            this.txtVersao.TabIndex = 2;
             // 
             // labelControl2
             // 

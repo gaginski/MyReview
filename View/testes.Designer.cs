@@ -33,11 +33,12 @@ namespace MyReview.Visao
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlerta = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +73,7 @@ namespace MyReview.Visao
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.simpleButton6);
             this.panel1.Controls.Add(this.simpleButton5);
             this.panel1.Controls.Add(this.simpleButton4);
             this.panel1.Controls.Add(this.btnAlerta);
@@ -83,6 +85,15 @@ namespace MyReview.Visao
             this.panel1.Size = new System.Drawing.Size(435, 192);
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // simpleButton5
+            // 
+            this.simpleButton5.Location = new System.Drawing.Point(155, 61);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(138, 23);
+            this.simpleButton5.TabIndex = 5;
+            this.simpleButton5.Text = "FrmExibicaoCasoTeste";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // simpleButton4
             // 
@@ -120,14 +131,14 @@ namespace MyReview.Visao
             this.simpleButton2.Text = "TesteBanco";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click_1);
             // 
-            // simpleButton5
+            // simpleButton6
             // 
-            this.simpleButton5.Location = new System.Drawing.Point(155, 61);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(138, 23);
-            this.simpleButton5.TabIndex = 5;
-            this.simpleButton5.Text = "FrmListaUsuario";
-            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
+            this.simpleButton6.Location = new System.Drawing.Point(155, 90);
+            this.simpleButton6.Name = "simpleButton6";
+            this.simpleButton6.Size = new System.Drawing.Size(138, 23);
+            this.simpleButton6.TabIndex = 6;
+            this.simpleButton6.Text = "FrmExibicaoCasoTeste";
+            this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
             // 
             // testes
             // 
@@ -157,5 +168,6 @@ namespace MyReview.Visao
         private DevExpress.XtraEditors.SimpleButton btnAlerta;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.SimpleButton simpleButton6;
     }
 }

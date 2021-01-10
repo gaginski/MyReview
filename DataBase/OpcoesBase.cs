@@ -12,5 +12,7 @@ namespace MyReview.DataBase
         public bool UsarParaBuscar { get; set; }
         public bool ChavePrimaria { get; set; }
         public bool AutoIncremento { get; set; }
+        public bool Criptografado { get; set; }
+        public string chaveCripto { get; set; }
     }
 }

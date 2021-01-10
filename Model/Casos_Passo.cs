@@ -17,7 +17,7 @@ namespace MyReview.Model
         public String cps_descricao { get; set; }
 
         [OpcoesBase(UsarNoBanco = true, ChavePrimaria = true, UsarParaBuscar = true)]
-        public int cps_cts_id { get; set; }
+        public int? cps_cts_id { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]
         public string cps_dataInclusao { get; set; }

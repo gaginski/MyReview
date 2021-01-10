@@ -18,42 +18,49 @@ namespace MyReview.Visao
     {
         private bool editando;
         private Usuario usuarioLogado = new Usuario();
-        private SuiteTeste suite;
+        private SuiteTeste suite = new SuiteTeste();
 
 
         public FrmCadastroCasoTeste(bool editando, int idUsuarioLogado)
         {
             InitializeComponent();
 
-            gridPassos.Rows.Add(1, "");
-            suite = new SuiteTeste();
-
             this.editando = editando;
             usuarioLogado.usu_id = idUsuarioLogado;
 
+            List<Usuario> ListUsurio = usuarioLogado.Busca();
+
+            if (ListUsurio.Count > 0)
+                usuarioLogado = ListUsurio[0];
+
             if (editando)
                 carregaEditando();
+            else
+                carregaNovaSuite(false);
 
             carregaCombos();
-
-
         }
         private void carregaEditando()
         {
 
         }
-        private void carregaNovaSuite()
+        private void carregaNovaSuite(bool alteraBanco)
         {
-            suite.sts_descricao = txtTituloSuite.Text;
-            suite.sts_versao = txtVersao.Text;
-            suite.sts_usu_autor = usuarioLogado.usu_id;
-            suite.sts_prj_id = Int32.Parse(cmbProjeto.SelectedValue.ToString());
-            suite.sts_objetivo = txtObjetivo.Text;
+            txtCriador.Text = usuarioLogado.usu_nome;
 
-            suite.Salvar();
-            suite.sts_id = Int32.Parse(suite.max("sts_id"));
+            if (alteraBanco)
+            {
+                suite.sts_descricao = txtTituloSuite.Text;
+                suite.sts_versao = txtVersao.Text;
+                suite.sts_usu_autor = usuarioLogado.usu_id;
+                suite.sts_prj_id = Int32.Parse(cmbProjeto.SelectedValue.ToString());
+                suite.sts_objetivo = txtObjetivo.Text;
 
-            txtId.Text = suite.sts_id.ToString();
+                suite.Salvar();
+                suite.sts_id = Int32.Parse(suite.max("sts_id"));
+
+                txtId.Text = suite.sts_id.ToString();
+            }
         }
 
         private void btnNovoPasso_Click(object sender, EventArgs e)
@@ -113,19 +120,20 @@ namespace MyReview.Visao
                 bool valida = true;
 
                 if (suite.sts_id == null)
-                    carregaNovaSuite();
+                    carregaNovaSuite(true);
 
                 #region inclusaoNovo
                 CasoTeste casoAux = new CasoTeste();
 
                 casoAux.cts_sts_id = suite.sts_id;
-                casoAux.cts_indice = (Int32.Parse(casoAux.max("cts_indice")) == 0) ? Int32.Parse(casoAux.max("cts_indice")) : Int32.Parse(casoAux.max("cts_indice")) + 1;
-                casoAux.cts_dataInclusao = DateTime.Parse(DateTime.Now.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
+                casoAux.cts_descricao = txtDescricaoCaso.Text;
+                casoAux.cts_indice = Int32.Parse(casoAux.max("cts_indice")) + 1;
+                casoAux.cts_dataInclusao = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                 casoAux.cts_precondicoes = txtPrecondicao.Text;
                 casoAux.cts_prioridade = Int32.Parse(cmbPrioridade.SelectedValue.ToString());
                 casoAux.cts_resultadoEsperado = txtResultado.Text;
                 casoAux.cts_tempoEstimado = Int32.Parse(sedTempoEstimado.Text);
-                casoAux.cts_ultimaAlteracao = DateTime.Parse(DateTime.Now.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
+                casoAux.cts_ultimaAlteracao = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                 casoAux.cts_Observacao = txtObs.Text;
                 casoAux.cts_terminalUltimaAleracao = Environment.MachineName;
 
@@ -151,13 +159,12 @@ namespace MyReview.Visao
                     cmbPrioridade.SelectedIndex = 0;
                     new FrmAlerta("Salvo com Sucesso!");
                 }
-
-                atualizaGridCasos();                    
+                atualizaGridCasos();
             }
             #endregion
         }
 
-        private List<Casos_Passo> montaListaPassos(int idCasoTeste)
+        private List<Casos_Passo> montaListaPassos(int? idCasoTeste)
         {
             List<Casos_Passo> listaPassos = new List<Casos_Passo>();
 
@@ -182,7 +189,7 @@ namespace MyReview.Visao
         private bool validaCamposCT()
         {
             List<String> campos = new List<string>();
-            bool valida = false;
+            bool valida = true;
 
             if (txtDescricaoCaso.Text == "")
                 campos.Add("Descrição do caso de teste");
@@ -196,13 +203,13 @@ namespace MyReview.Visao
             if (campos.Count > 0)
             {
                 valida = false;
-                new FrmAlerta("Atenção! Alguns campos obrigatórios não foram preenchidos: " + string.Join(", ", campos.ToArray()) + ".");
+                new FrmAlerta("Atenção! Alguns campos obrigatórios não foram preenchidos: " + string.Join(", ", campos.ToArray()) + ".").ShowDialog();
             }
 
             if (gridPassos.Rows.Count == 2 && gridPassos.Rows[0].Cells[1].Value == "" && valida)
             {
                 valida = false;
-                new FrmAlerta("Atenção! Um caso de teste precisa ter ao menos um passo!");
+                new FrmAlerta("Atenção! Um caso de teste precisa ter ao menos um passo!").ShowDialog();
             }
 
             return valida;
@@ -223,15 +230,29 @@ namespace MyReview.Visao
             gridCasosTeste.Columns[1].Name = "Descrição";
             gridCasosTeste.Columns[2].Name = "Prioridade";
             gridCasosTeste.Columns[3].Name = "Tempo Estimado";
-            gridCasosTeste.Columns[4].Name = "Resulatado";
+            gridCasosTeste.Columns[4].Name = "Resultado";
 
             gridCasosTeste.Columns[0].Width = 30;
 
-             foreach (CasoTeste c in listaCasos)
+            foreach (CasoTeste c in listaCasos)
+                gridCasosTeste.Rows.Add(c.cts_indice.ToString(), c.cts_descricao, retornaPrioridade(c.cts_prioridade), c.cts_tempoEstimado.ToString(), c.cts_resultadoEsperado);
+
+        }
+
+        public string retornaPrioridade(int prioridade = 1)
+        {
+            switch (prioridade)
             {
-              
-                    String[] auxiliar = { c.cts_indice, c.};
-                    dtgListaUsuarios.Rows.Add(auxiliar);
+                case (1):
+                    return "Baixa";
+                case (2):
+                    return "Normal";
+                case (3):
+                    return "Alta";
+                case (4):
+                    return "Urgente";
+                default:
+                    return "Normal";
             }
         }
     }

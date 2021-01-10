@@ -13,7 +13,7 @@ namespace MyReview.View
 {
     public partial class FrmExibicaoCasoTeste : DevExpress.XtraEditors.XtraForm
     {
-        public FrmExibicaoCasoTeste()
+        public FrmExibicaoCasoTeste(int idExecucao)
         {
             InitializeComponent();
             progressBarControl1.PerformStep();

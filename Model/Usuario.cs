@@ -19,7 +19,7 @@ namespace MyReview.Model
         [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = false)]
         public string usu_login { get; set; }
 
-        [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = false)]
+        [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = false, Criptografado =true, chaveCripto = "2MilEVin")]
         public string usu_senha { get; set; }
 
         [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = false)]

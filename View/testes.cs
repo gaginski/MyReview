@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using MyReview.Controle;
 using MyReview.Model;
 using MyReview.View;
 using System;
@@ -22,7 +23,7 @@ namespace MyReview.Visao
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            FrmCadastroCasoTeste t = new FrmCadastroCasoTeste(false, 1);
+            FrmCadastroCasoTeste t = new FrmCadastroCasoTeste(false, 2);
             t.Show();
         }
 
@@ -71,7 +72,7 @@ namespace MyReview.Visao
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            FrmCadUsuario usuCad = new FrmCadUsuario(true, 2, 2);
+            FrmCadUsuario usuCad = new FrmCadUsuario(false, 2, 2);
                usuCad.Show();
 
         }
@@ -91,7 +92,32 @@ namespace MyReview.Visao
 
         private void simpleButton5_Click(object sender, EventArgs e)
         {
-            new FrmExibicaoCasoTeste().ShowDialog();
+            new FrmExibicaoCasoTeste(1).ShowDialog();
+        }
+
+        private void simpleButton6_Click(object sender, EventArgs e)
+        {
+            bool passou = false;
+            Util u = new Util();
+            String chave = "";
+            int contador = 0;
+            while (!passou)
+            {
+                chave += "a";
+                contador++;
+
+                try
+                {
+                    u.criptografa("teste", chave);
+
+                    new FrmAlerta("passou:" + contador).Show();
+                    passou = true;
+                }
+                catch (Exception error)
+                {
+
+                }
+            }
         }
     }
 }

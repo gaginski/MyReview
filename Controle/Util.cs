@@ -2,7 +2,9 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -61,6 +63,56 @@ namespace MyReview.Controle
                 _return = false;
             }
             return _return;
+        }
+        public string criptografa(string dado, string chave)
+        {
+            byte[] key = { }; 
+            byte[] IV = { 10, 20, 30, 40, 50, 60, 70, 80 };
+            byte[] inputByteArray;
+
+            try
+            {
+                key = Encoding.UTF8.GetBytes(chave);
+                
+                DESCryptoServiceProvider ObjDES = new DESCryptoServiceProvider();
+                inputByteArray = Encoding.UTF8.GetBytes(dado);
+                MemoryStream Objmst = new MemoryStream();
+                CryptoStream Objcs = new CryptoStream(Objmst, ObjDES.CreateEncryptor(key, IV), CryptoStreamMode.Write);
+                Objcs.Write(inputByteArray, 0, inputByteArray.Length);
+                Objcs.FlushFinalBlock();
+
+                return Convert.ToBase64String(Objmst.ToArray());
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public string descriptografa(string dado, string chave)
+        {
+            byte[] key = { };// chave   
+            byte[] IV = { 10, 20, 30, 40, 50, 60, 70, 80 };
+            byte[] inputByteArray = new byte[dado.Length];
+
+           try
+            {
+                key = Encoding.UTF8.GetBytes(chave);
+                DESCryptoServiceProvider ObjDES = new DESCryptoServiceProvider();
+                inputByteArray = Convert.FromBase64String(dado);
+
+                MemoryStream Objmst = new MemoryStream();
+                CryptoStream Objcs = new CryptoStream(Objmst, ObjDES.CreateDecryptor(key, IV), CryptoStreamMode.Write);
+                Objcs.Write(inputByteArray, 0, inputByteArray.Length);
+                Objcs.FlushFinalBlock();
+
+                Encoding encoding = Encoding.UTF8;
+                return encoding.GetString(Objmst.ToArray());
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
         }
 
     }
