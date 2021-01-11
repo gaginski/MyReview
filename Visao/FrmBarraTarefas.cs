@@ -19,13 +19,7 @@ namespace MyReview.Visao
 
         Usuario usuarioLogado = new Usuario();
 
-        public void UsuarioLogado(int idUsuario)
-        {
-            /*ControleUsuario contUsu = new ControleUsuario();
-            usuarioLogado = contUsu.pegaUsuario(idUsuario);
-            lblUsuarioLogado.Text = usuarioLogado.login.ToUpper();*/
-        }
-        public FrmBarraTarefas(int idUsuario)
+        public FrmBarraTarefas(int? idUsuario)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;

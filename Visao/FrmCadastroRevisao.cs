@@ -1,13 +1,8 @@
 ﻿using MyReview.Controle;
-using MyReview.Modelo;
+using MyReview.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyReview.Visao
@@ -17,8 +12,7 @@ namespace MyReview.Visao
         Boolean editando = false;
         Tarefa tarefa = new Tarefa();
         Revisao revisao = new Revisao();
-        DataTable dt = new DataTable();
-        DataTable modelo = new DataTable();
+
 
         ControleTarefas contTar = new ControleTarefas();
         ControleUsuario contUso = new ControleUsuario();
@@ -34,29 +28,30 @@ namespace MyReview.Visao
             InitializeComponent();
             atualizaLista();
             atualizaGrid(true);
-            txtCodigoSia.Enabled = false;
+            atualizaCombos();
+        }
+
+        private void atualizaCombos()
+        {
+            DataTable modelo = new DataTable();
+            Revisao aux = new Revisao;
+
+            aux.rev_modelo = true;
+
             modelo.Columns.Add("Id");
             modelo.Columns.Add("Titulo");
             modelo.Rows.Add(0, "");
-            List<Revisao> lr = contRev.selecionaRevisoes();
 
-            foreach (Revisao r in lr)
-            {
-                if (r.modelo)
-                {
-                    modelo.Rows.Add(r.id, r.descricao);
-                }
-            }
+            List<Revisao> listaModelos = aux.Busca();
+
+            foreach (Revisao r in listaModelos)
+                modelo.Rows.Add(r.rev_id, r.rev_descricao);
+
             cmbModelos.ValueMember = "Id";
             cmbModelos.DisplayMember = "Titulo";
             cmbModelos.DataSource = modelo;
 
             cmbModelos.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -159,6 +154,8 @@ namespace MyReview.Visao
 
             /*concatena lista principal com a auxiliar*/
             lista.AddRange(listaAux);
+
+            DataTable dt = new DataTable();
 
             List<Usuario> ListUsu = contUso.selecionaUsuarios();
 
@@ -266,9 +263,7 @@ namespace MyReview.Visao
                 foreach (Tarefa t in lista)
                 {
                     if (t.idRevisao.ToString() == revisao.id.ToString())
-                    {
                         contTar.criaVinculoRevisao(t);
-                    }
                 }
                 if (contRev.alteraRevisao(revisao))
                 {
@@ -278,9 +273,7 @@ namespace MyReview.Visao
 
             }
             else
-            {
                 MessageBox.Show("Informe a versão da revisão!");
-            }
         }
 
         private void btnPesquisa_Click(object sender, EventArgs e)
@@ -291,14 +284,7 @@ namespace MyReview.Visao
 
         private void chkModelo_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkModelo.Checked)
-            {
-                lblCampoRevisao.Text = "Título do modelo:";
-            }
-            else
-            {
-                lblCampoRevisao.Text = "Descrição:";
-            }
+            lblCampoRevisao.Text = (chkModelo.Checked) ? "Título do modelo:" : "Descrição:";
         }
         private void button3_Click(object sender, EventArgs e)
         {
@@ -311,41 +297,25 @@ namespace MyReview.Visao
                 List<int> clone = contTar.retornaClone(int.Parse(cmbModelos.SelectedValue.ToString()));
 
                 foreach (Tarefa tar in lista)
-                {
                     for (int i = 0; i < clone.Count; i++)
-                    {
                         if (tar.id == clone[i])
-                        {
                             tar.idRevisao = revisao.id;
-                        }
-                    }
-                }
                 atualizaGrid(false);
             }
             else
-            {
                 MessageBox.Show("Selecione um modelo para clonar.");
-            }
+
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkSia.Checked)
-            {
-                txtCodigoSia.Enabled = true;
-            }
-            else
-            {
-                txtCodigoSia.Enabled = false;
-            }
+            txtCodigoSia.Enabled = chkSia.Checked;
         }
 
         private void txtCodigoTarefa_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
                 e.Handled = true;
-            }
         }
         public void editar(int id)
         {
@@ -362,22 +332,13 @@ namespace MyReview.Visao
             listaAux.Clear();
 
             foreach (Tarefa tar in auxiliar)
-            {
                 if (tar.sia)
-                {
                     listaAux.Add(tar);
-                }
                 else
-                {
                     foreach (Tarefa t in lista)
-                    {
                         if (t.id == tar.id)
-                        {
                             t.idRevisao = id;
-                        }
-                    }
-                }
-            }
+
             lista.AddRange(listaAux);
             listaAux.Clear();
 
@@ -391,11 +352,6 @@ namespace MyReview.Visao
                     atualizaLista();
                     atualizaGrid(true);
                 }
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

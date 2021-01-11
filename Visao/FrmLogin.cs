@@ -1,4 +1,4 @@
-﻿using MyReview.Modelo;
+﻿using MyReview.Model;
 using MyReview.Visao;
 using System;
 using System.Collections.Generic;
@@ -48,7 +48,7 @@ namespace MyReview.Controle
             }
             else
             {
-                lblConexao.Text = ut.config.banco.ToLower()+" "+ ut.config.host.ToLower();
+                lblConexao.Text = ut.config.banco.ToLower() + " " + ut.config.host.ToLower();
             }
         }
 
@@ -75,13 +75,14 @@ namespace MyReview.Controle
 
             }
             /*Tecla entrer*/
-            else if (e.KeyCode == Keys.Enter) 
+            else if (e.KeyCode == Keys.Enter)
             {
                 if (txtSenha.Focused)
                     entrar();
                 else if (txtUsuario.Focused)
                     txtSenha.Focus();
-            } else if(e.KeyValue.Equals(27))
+            }
+            else if (e.KeyValue.Equals(27))
             {
                 Application.Exit();
             }
@@ -93,50 +94,32 @@ namespace MyReview.Controle
         }
         private void entrar()
         {
-            ControleUsuario contUsu = new ControleUsuario();
-            List<Usuario> usuarios = contUsu.selecionaUsuarios();
             Usuario usuLogin = new Usuario();
             Boolean valido = false;
 
-            foreach (Usuario u in usuarios)
-            {
-                if (u.login.Trim().ToUpper().Equals(txtUsuario.Text.ToUpper()) && u.senha.Equals(txtSenha.Text))
+            usuLogin.usu_ativo = true;
+
+            List<Usuario> listaUsuario = usuLogin.Busca();
+
+            foreach (Usuario u in listaUsuario)
+                if (u.usu_login.Trim().ToUpper().Equals(txtUsuario.Text.ToUpper()) && u.usu_senha.Equals(txtSenha.Text))
                 {
-                    if (u.status.Equals("F"))
-                    {
-                        valido = true;
-                        usuLogin = u;
-                        break;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Usuário inativo!");
-                    }
+                    valido = true;
+                    usuLogin = u;
+                    break;
                 }
-            }
             if (valido)
             {
-                FrmBarraTarefas f = new FrmBarraTarefas(2);
-                f.UsuarioLogado(2);
-                f.Show();
+               new FrmBarraTarefas(usuLogin.usu_id).Show();
                 this.Visible = false;
             }
             else
-            {
-                MessageBox.Show("Usuário ou Senha Invalido!");
-            }
+                new FrmAlerta("Usuário ou Senha Invalido!").ShowDialog();
         }
 
         private void chkViewSenha_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkViewSenha.Checked)
-            {
-                txtSenha.PasswordChar = '\0';
-            }
-            else
-            {
-                txtSenha.PasswordChar = '*';
-            }
+            txtSenha.PasswordChar =  (chkViewSenha.Checked)? '\0' : '*';
         }
     }
 }

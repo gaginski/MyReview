@@ -56,9 +56,7 @@ namespace MyReview.Model
         {
             var casoteste = new List<CasoTeste>();
             foreach (var ibase in base.Todos())
-            {
                 casoteste.Add((CasoTeste)ibase);
-            }
 
             return casoteste;
         }
@@ -66,9 +64,7 @@ namespace MyReview.Model
         {
             var casoteste = new List<CasoTeste>();
             foreach (var ibase in base.Busca())
-            {
                 casoteste.Add((CasoTeste)ibase);
-            }
 
             return casoteste;
         }
