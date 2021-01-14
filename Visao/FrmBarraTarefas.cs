@@ -84,7 +84,7 @@ namespace MyReview.Visao
 
         private void btnConfig_Click(object sender, EventArgs e)
         {
-            new FrmConfiguracao().ShowDialog();
+            new FrmConfiguracao(usuarioLogado.usu_id).ShowDialog();
         }
     }
 }

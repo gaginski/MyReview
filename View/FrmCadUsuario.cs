@@ -34,6 +34,7 @@ namespace MyReview.Visao
                 usu_editando.usu_id = usu_editar;
                 loadEditando();
             }
+            this.LookAndFeel.SkinName = usu_logado.GetUsu_tema();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -77,7 +78,7 @@ namespace MyReview.Visao
 
                 if (editando ? novoUsuario.update() : novoUsuario.Salvar())
                 {
-                    FrmAlerta alerta = new FrmAlerta("Salvo com sucesso!");
+                    FrmAlerta alerta = new FrmAlerta("Salvo com sucesso!", usu_logado.usu_id);
                     alerta.ShowDialog();
                     this.Close();
                 }
@@ -102,14 +103,14 @@ namespace MyReview.Visao
             if (campos.Count > 0)
             {
                 _return = false;
-                FrmAlerta alerta = new FrmAlerta("Atenção! Alguns campos obrigatórios não foram informados: " + string.Join(", ", campos.ToArray()));
+                FrmAlerta alerta = new FrmAlerta("Atenção! Alguns campos obrigatórios não foram informados: " + string.Join(", ", campos.ToArray()), usu_logado.usu_id);
                 alerta.ShowDialog();
             }
 
             if (!txtSenha.Text.Equals(txtConfirmaSenha.Text))
             {
                 _return = false;
-                FrmAlerta alerta = new FrmAlerta("Atenção! O campo senha difere do campo de confirmação de senha!");
+                FrmAlerta alerta = new FrmAlerta("Atenção! O campo senha difere do campo de confirmação de senha!", usu_logado.usu_id);
                 alerta.ShowDialog();
             }
 
@@ -118,7 +119,7 @@ namespace MyReview.Visao
             if (aux.selectGenerico("count(usu_login)", "usu_login = '" + txtLogin.Text + "'") != "0" && !editando)
             {
                 _return = false;
-                FrmAlerta alerta = new FrmAlerta("Atenção! Já existe um usuário cadastrado com esse login!");
+                FrmAlerta alerta = new FrmAlerta("Atenção! Já existe um usuário cadastrado com esse login!", usu_logado.usu_id);
                 alerta.ShowDialog();
             }
 

@@ -19,7 +19,7 @@ namespace MyReview.Model
         [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = false)]
         public string usu_login { get; set; }
 
-        [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = false, Criptografado =true, chaveCripto = "2MilEVin")]
+        [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = false, Criptografado = true, chaveCripto = "2MilEVin")]
         public string usu_senha { get; set; }
 
         [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = false)]
@@ -99,6 +99,14 @@ namespace MyReview.Model
 
         [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = false)]
         public string usu_terminal_alteracao { get; set; }
+
+        [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = false)]
+        public string usu_tema { set; private get; }
+
+        public string GetUsu_tema()
+        {
+            return usu_tema.Length > 2 ? usu_tema : "Basic";
+        }
 
         public new List<Usuario> Todos()
         {

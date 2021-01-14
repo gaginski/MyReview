@@ -29,6 +29,8 @@ namespace MyReview.Visao
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.cmbProjeto = new System.Windows.Forms.ComboBox();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -161,6 +163,14 @@ namespace MyReview.Visao
             this.Descricao,
             this.Prioridade,
             this.Tempo});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridCasosTeste.DefaultCellStyle = dataGridViewCellStyle1;
             this.gridCasosTeste.GridColor = System.Drawing.Color.White;
             this.gridCasosTeste.Location = new System.Drawing.Point(11, 472);
             this.gridCasosTeste.MultiSelect = false;
@@ -416,6 +426,14 @@ namespace MyReview.Visao
             this.gridPassos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Passo});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridPassos.DefaultCellStyle = dataGridViewCellStyle2;
             this.gridPassos.GridColor = System.Drawing.Color.Silver;
             this.gridPassos.Location = new System.Drawing.Point(5, 27);
             this.gridPassos.Name = "gridPassos";
@@ -533,10 +551,12 @@ namespace MyReview.Visao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(955, 738);
+            this.ClientSize = new System.Drawing.Size(955, 725);
             this.Controls.Add(this.panelControl1);
-            this.MaximumSize = new System.Drawing.Size(957, 770);
-            this.MinimumSize = new System.Drawing.Size(957, 726);
+            this.LookAndFeel.SkinName = "DevExpress Dark Style";
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.MaximumSize = new System.Drawing.Size(965, 757);
+            this.MinimumSize = new System.Drawing.Size(965, 719);
             this.Name = "FrmCadastroCasoTeste";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCadastroCasoTeste";
@@ -577,8 +597,6 @@ namespace MyReview.Visao
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.PanelControl pnlCadatroCasosTeste;
         private DevExpress.XtraEditors.TextEdit txtCriador;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit txtDescricaoCaso;
         private DevExpress.XtraEditors.LabelControl lblCaso;
         private DevExpress.XtraEditors.MemoEdit txtResultado;
@@ -591,23 +609,25 @@ namespace MyReview.Visao
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.SimpleButton btnIncluiCaso;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private System.Windows.Forms.DataGridView gridPassos;
         private System.Windows.Forms.DataGridView gridCasosTeste;
         private DevExpress.XtraEditors.MemoEdit txtObjetivo;
         private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.SimpleButton btnNovoPasso;
-        private DevExpress.XtraEditors.SimpleButton btnExclui;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.TextEdit txtId;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCasoTeste;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Prioridade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tempo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Passo;
         private System.Windows.Forms.ComboBox cmbPrioridade;
         private System.Windows.Forms.ComboBox cmbProjeto;
         private DevExpress.XtraEditors.MemoEdit txtObs;
         private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraEditors.SimpleButton btnNovoPasso;
+        private DevExpress.XtraEditors.SimpleButton btnExclui;
+        private System.Windows.Forms.DataGridView gridPassos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Passo;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
     }
 }

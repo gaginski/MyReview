@@ -28,6 +28,8 @@ namespace MyReview.View
 
             if (listUsu.Count > 0)
                 logado = listUsu[0];
+
+            this.LookAndFeel.SkinName = logado.GetUsu_tema();
         }
 
         private void carregaGrid()
@@ -125,7 +127,7 @@ namespace MyReview.View
             if (dtgListaUsuarios.CurrentRow.Cells[0].Value != null && dtgListaUsuarios.CurrentRow.Cells[0].Value.ToString() != "")
                 confirmacao = true;
             else
-                new FrmAlerta("Atenção! A linha selecionada é invalida!").ShowDialog();
+                new FrmAlerta("Atenção! A linha selecionada é invalida!", logado.usu_id).ShowDialog();
 
             return confirmacao;
         }

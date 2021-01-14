@@ -72,7 +72,7 @@ namespace Database
             }
             catch (Exception error)
             {
-                FrmAlerta alerta = new FrmAlerta("Ocorreu um erro ao salvar " + this.GetType().Name + ". Mensagem de erro:" + error.Message);
+                FrmAlerta alerta = new FrmAlerta("Ocorreu um erro ao salvar " + this.GetType().Name + ". Mensagem de erro:" + error.Message, null);
                 alerta.ShowDialog();
                 confirmacao = false;
             }
@@ -260,7 +260,7 @@ namespace Database
             }
             catch (Exception error)
             {
-                FrmAlerta alerta = new FrmAlerta("Ocorreu um erro ao salvar " + this.GetType().Name + ". Mensagem de erro:" + error.Message);
+                FrmAlerta alerta = new FrmAlerta("Ocorreu um erro ao salvar " + this.GetType().Name + ". Mensagem de erro:" + error.Message, null);
                 alerta.ShowDialog();
                 confirmacao = false;
             }

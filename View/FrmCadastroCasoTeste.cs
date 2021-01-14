@@ -39,6 +39,8 @@ namespace MyReview.Visao
                 carregaNovaSuite(false);
 
             carregaCombos();
+
+            this.LookAndFeel.SkinName = usuarioLogado.GetUsu_tema();
         }
         private void carregaEditando()
         {
@@ -70,7 +72,7 @@ namespace MyReview.Visao
             {
                 if (gridPassos.Rows[i].Cells[1].Value == "" && gridPassos.Rows[i].Cells[0].Value != "" && verificador)
                 {
-                    new FrmAlerta("Atenção! Informe a descrição de todos os passos antes de inserir um novo!").ShowDialog();
+                    new FrmAlerta("Atenção! Informe a descrição de todos os passos antes de inserir um novo!", usuarioLogado.usu_id).ShowDialog();
                     verificador = false;
                 }
             }
@@ -157,7 +159,7 @@ namespace MyReview.Visao
                     txtObs.Text = "";
                     sedTempoEstimado.Text = "0";
                     cmbPrioridade.SelectedIndex = 0;
-                    new FrmAlerta("Salvo com Sucesso!");
+                    new FrmAlerta("Salvo com Sucesso!", usuarioLogado.usu_id);
                 }
                 atualizaGridCasos();
             }
@@ -203,13 +205,13 @@ namespace MyReview.Visao
             if (campos.Count > 0)
             {
                 valida = false;
-                new FrmAlerta("Atenção! Alguns campos obrigatórios não foram preenchidos: " + string.Join(", ", campos.ToArray()) + ".").ShowDialog();
+                new FrmAlerta("Atenção! Alguns campos obrigatórios não foram preenchidos: " + string.Join(", ", campos.ToArray()) + ".", usuarioLogado.usu_id).ShowDialog();
             }
 
             if (gridPassos.Rows.Count == 2 && gridPassos.Rows[0].Cells[1].Value == "" && valida)
             {
                 valida = false;
-                new FrmAlerta("Atenção! Um caso de teste precisa ter ao menos um passo!").ShowDialog();
+                new FrmAlerta("Atenção! Um caso de teste precisa ter ao menos um passo!", usuarioLogado.usu_id).ShowDialog();
             }
 
             return valida;

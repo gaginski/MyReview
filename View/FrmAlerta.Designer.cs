@@ -75,13 +75,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 144);
+            this.ClientSize = new System.Drawing.Size(540, 158);
             this.Controls.Add(this.btnYes);
             this.Controls.Add(this.lblMensagem);
             this.Controls.Add(this.label1);
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("FrmAlerta.IconOptions.Image")));
-            this.MaximumSize = new System.Drawing.Size(542, 176);
-            this.MinimumSize = new System.Drawing.Size(542, 176);
+            this.LookAndFeel.SkinName = "DevExpress Style";
+            this.LookAndFeel.TouchUIMode = DevExpress.Utils.DefaultBoolean.False;
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.MaximumSize = new System.Drawing.Size(550, 190);
+            this.MinimumSize = new System.Drawing.Size(550, 176);
             this.Name = "FrmAlerta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Atenção!";

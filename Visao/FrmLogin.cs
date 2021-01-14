@@ -114,7 +114,7 @@ namespace MyReview.Controle
                 this.Visible = false;
             }
             else
-                new FrmAlerta("Usuário ou Senha Invalido!").ShowDialog();
+                new FrmAlerta("Usuário ou Senha Invalido!", null).ShowDialog();
         }
 
         private void chkViewSenha_CheckedChanged(object sender, EventArgs e)

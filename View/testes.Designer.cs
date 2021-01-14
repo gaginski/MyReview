@@ -33,13 +33,22 @@ namespace MyReview.Visao
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlerta = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleButton1
@@ -73,6 +82,7 @@ namespace MyReview.Visao
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.simpleButton8);
             this.panel1.Controls.Add(this.simpleButton6);
             this.panel1.Controls.Add(this.simpleButton5);
             this.panel1.Controls.Add(this.simpleButton4);
@@ -82,9 +92,18 @@ namespace MyReview.Visao
             this.panel1.Controls.Add(this.simpleButton1);
             this.panel1.Location = new System.Drawing.Point(4, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(435, 192);
+            this.panel1.Size = new System.Drawing.Size(435, 129);
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // simpleButton6
+            // 
+            this.simpleButton6.Location = new System.Drawing.Point(155, 90);
+            this.simpleButton6.Name = "simpleButton6";
+            this.simpleButton6.Size = new System.Drawing.Size(138, 23);
+            this.simpleButton6.TabIndex = 6;
+            this.simpleButton6.Text = "FrmExibicaoCasoTeste";
+            this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
             // 
             // simpleButton5
             // 
@@ -131,27 +150,77 @@ namespace MyReview.Visao
             this.simpleButton2.Text = "TesteBanco";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click_1);
             // 
-            // simpleButton6
+            // comboBox1
             // 
-            this.simpleButton6.Location = new System.Drawing.Point(155, 90);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(138, 23);
-            this.simpleButton6.TabIndex = 6;
-            this.simpleButton6.Text = "FrmExibicaoCasoTeste";
-            this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(0, 0);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 6;
+            // 
+            // cmb
+            // 
+            this.cmb.Location = new System.Drawing.Point(12, 420);
+            this.cmb.Name = "cmb";
+            this.cmb.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmb.Size = new System.Drawing.Size(100, 20);
+            this.cmb.TabIndex = 7;
+            // 
+            // simpleButton7
+            // 
+            this.simpleButton7.Location = new System.Drawing.Point(135, 417);
+            this.simpleButton7.Name = "simpleButton7";
+            this.simpleButton7.Size = new System.Drawing.Size(85, 39);
+            this.simpleButton7.TabIndex = 8;
+            this.simpleButton7.Text = "simpleButton7";
+            this.simpleButton7.Click += new System.EventHandler(this.simpleButton7_Click);
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(4, 199);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(434, 188);
+            this.gridControl1.TabIndex = 9;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            // 
+            // simpleButton8
+            // 
+            this.simpleButton8.Location = new System.Drawing.Point(11, 90);
+            this.simpleButton8.Name = "simpleButton8";
+            this.simpleButton8.Size = new System.Drawing.Size(138, 23);
+            this.simpleButton8.TabIndex = 7;
+            this.simpleButton8.Text = "FrmCadRevisao";
+            this.simpleButton8.Click += new System.EventHandler(this.simpleButton8_Click);
             // 
             // testes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 268);
+            this.ClientSize = new System.Drawing.Size(453, 470);
+            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.simpleButton7);
+            this.Controls.Add(this.cmb);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
+            this.LookAndFeel.SkinName = "The Bezier";
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "testes";
             this.Text = "testes";
             this.Load += new System.EventHandler(this.testes_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmb.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,5 +238,11 @@ namespace MyReview.Visao
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private DevExpress.XtraEditors.ComboBoxEdit cmb;
+        private DevExpress.XtraEditors.SimpleButton simpleButton7;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton8;
     }
 }

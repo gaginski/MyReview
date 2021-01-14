@@ -74,6 +74,7 @@
     <Reference Include="DevExpress.XtraCharts.v20.2.Wizard, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGauges.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v20.2.Win, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraLayout.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -129,11 +130,10 @@
     <Compile Include="Modelo\Config.cs" />
     <Compile Include="Model\Casos_Passo.cs" />
     <Compile Include="Model\CasoTeste.cs" />
+    <Compile Include="Model\SuiteTeste.cs" />
     <Compile Include="Model\Revisao.cs" />
     <Compile Include="Model\Projeto.cs" />
-    <Compile Include="Model\SuiteTeste.cs" />
     <Compile Include="Model\Usuario.cs" />
-    <Compile Include="Model\SuiteTeste.cs" />
     <Compile Include="View\FrmAlerta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +145,12 @@
     </Compile>
     <Compile Include="View\FrmCadastroCasoTeste.Designer.cs">
       <DependentUpon>FrmCadastroCasoTeste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmCadRevisao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmCadRevisao.Designer.cs">
+      <DependentUpon>FrmCadRevisao.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmConfiguracao.cs">
       <SubType>Form</SubType>
@@ -163,6 +169,12 @@
     </Compile>
     <Compile Include="View\FrmListaUsuarios.Designer.cs">
       <DependentUpon>FrmListaUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmMenu.Designer.cs">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Visao\FrmCadastroUsuarios_Antigo.cs">
       <SubType>Form</SubType>
@@ -257,6 +269,9 @@
     <EmbeddedResource Include="View\FrmCadastroCasoTeste.resx">
       <DependentUpon>FrmCadastroCasoTeste.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmCadRevisao.resx">
+      <DependentUpon>FrmCadRevisao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmConfiguracao.resx">
       <DependentUpon>FrmConfiguracao.cs</DependentUpon>
     </EmbeddedResource>
@@ -265,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmListaUsuarios.resx">
       <DependentUpon>FrmListaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmMenu.resx">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Visao\FrmCadatroTarefas.resx">
       <DependentUpon>FrmCadatroTarefas.cs</DependentUpon>

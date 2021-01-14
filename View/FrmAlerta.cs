@@ -8,16 +8,23 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using MyReview.Model;
 
 namespace MyReview.Visao
 {
     public partial class FrmAlerta : DevExpress.XtraEditors.XtraForm
     {
-        public FrmAlerta(String Mensagem)
+        Usuario usuLogado = new Usuario();
+
+        public FrmAlerta(String Mensagem, int? usuId)
         {
             InitializeComponent();
 
+            usuLogado.usu_id = usuId;
+            usuLogado = usuLogado.Busca().Count > 0 ? usuLogado.Busca()[0] : new Usuario();
+
             this.lblMensagem.Text = Mensagem;
+            this.LookAndFeel.SkinName = usuLogado.GetUsu_tema();
         }
 
 

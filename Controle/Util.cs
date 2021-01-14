@@ -24,7 +24,7 @@ namespace MyReview.Controle
         public Util(Config _config)
         {
             chave = "SemSalsichaEhRuim_ByMarcosPauloJesus";
-           cmd = new MySqlCommand();
+            cmd = new MySqlCommand();
             config = _config;
             atualizaStringConexao();
             cmd.Connection = con;
@@ -52,7 +52,7 @@ namespace MyReview.Controle
         public Boolean VerificaConexao()
         {
             Boolean _return = true;
-             try
+            try
             {
                 con.Open();
                 con.Close();
@@ -66,14 +66,14 @@ namespace MyReview.Controle
         }
         public string criptografa(string dado, string chave)
         {
-            byte[] key = { }; 
+            byte[] key = { };
             byte[] IV = { 10, 20, 30, 40, 50, 60, 70, 80 };
             byte[] inputByteArray;
 
             try
             {
                 key = Encoding.UTF8.GetBytes(chave);
-                
+
                 DESCryptoServiceProvider ObjDES = new DESCryptoServiceProvider();
                 inputByteArray = Encoding.UTF8.GetBytes(dado);
                 MemoryStream Objmst = new MemoryStream();
@@ -95,7 +95,7 @@ namespace MyReview.Controle
             byte[] IV = { 10, 20, 30, 40, 50, 60, 70, 80 };
             byte[] inputByteArray = new byte[dado.Length];
 
-           try
+            try
             {
                 key = Encoding.UTF8.GetBytes(chave);
                 DESCryptoServiceProvider ObjDES = new DESCryptoServiceProvider();
@@ -114,6 +114,35 @@ namespace MyReview.Controle
                 throw ex;
             }
         }
+        public List<String> GetTheme()
+        {
+            // **** atualizado em 01/21 **** 
+            List<String> temas = new List<string>(); 
 
+            temas.Add("DevExpress Style");
+            temas.Add("DevExpress Dark Style");
+            temas.Add("VS2010");
+            temas.Add("Seven Classic");
+            temas.Add("Office 2010 Blue");
+            temas.Add("Office 2010 Black");
+            temas.Add("Office 2010 Silver");
+            temas.Add("Office 2013");
+            temas.Add("Office 2013 Dark Gray");
+            temas.Add("Office 2013 Light Gray");
+            temas.Add("Visual Studio 2013 Blue");
+            temas.Add("Visual Studio 2013 Light");
+            temas.Add("Visual Studio 2013 Dark");
+            temas.Add("Office 2016 Colorful");
+            temas.Add("Office 2016 Dark");
+            temas.Add("Office 2016 Black");
+            temas.Add("The Bezier");
+            temas.Add("Basic");
+            temas.Add("Office 2019 Colorful");
+            temas.Add("Office 2019 Black");
+            temas.Add("Office 2019 White");
+            temas.Add("Office 2019 Dark Gray");
+
+            return temas;
+        }
     }
 }
