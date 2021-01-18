@@ -11,7 +11,7 @@ namespace MyReview.Model
     class Revisao : Base
     {
         [OpcoesBase(UsarNoBanco =true, UsarParaBuscar =true, ChavePrimaria =true, AutoIncremento = true)]
-        public int rev_id { get; set; }
+        public int? rev_id { get; set; }
 
         [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = true)]
         public string rev_versao { get; set; }
@@ -19,23 +19,29 @@ namespace MyReview.Model
         [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = true)]
         public string rev_descricao { get; set; }
 
-        [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = true)]
-        public char rev_status { get; set; }
+        [OpcoesBase(UsarNoBanco = true)]
+        public string rev_status { get; set; }
 
         [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = true)]
         public bool rev_modelo { get; set; }
 
-        [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = true)]
-        public int rev_usu_cadastro { get; set; }
+        [OpcoesBase(UsarNoBanco = true)]
+        public int? rev_usu_cadastro { get; set; }
 
-        [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = true)]
+        [OpcoesBase(UsarNoBanco = true)]
         public DateTime rev_dataCad { get; set; }
 
-        [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = true)]
+        [OpcoesBase(UsarNoBanco = true)]
         public DateTime rev_ultimaAlteracao { get; set; }
 
-        [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = true)]
+        [OpcoesBase(UsarNoBanco = true)]
         public string rev_terminalUltimaAlteracao { get; set; }
+
+        [OpcoesBase(UsarNoBanco = true)]
+        public int? rev_suite_Sia { get; set; }
+
+        [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = true)]
+        public int? rev_pjt_id { get; set; }
 
         public new List<Revisao> Todos()
         {

@@ -16,7 +16,7 @@ namespace MyReview.Model
         [OpcoesBase(UsarNoBanco = true)]
         public int cts_indice { get; set; }
 
-        [OpcoesBase(UsarNoBanco = true)]
+        [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = true)]
         public string cts_descricao { get; set; }
 
         [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = true)]
@@ -38,7 +38,7 @@ namespace MyReview.Model
         public DateTime cts_dataInclusao { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]
-        public int cts_usu_inclusao { get; set; }
+        public int? cts_usu_inclusao { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]
         public DateTime cts_ultimaAlteracao { get; set; }
@@ -51,7 +51,7 @@ namespace MyReview.Model
 
         [OpcoesBase(UsarNoBanco = true)]
         public string cts_Observacao { get; set; }
-
+        
         public new List<CasoTeste> Todos()
         {
             var casoteste = new List<CasoTeste>();

@@ -105,7 +105,11 @@ namespace MyReview.Model
 
         public string GetUsu_tema()
         {
-            return usu_tema.Length > 2 ? usu_tema : "Basic";
+            if (usu_tema != null)
+                return usu_tema.Length > 2 ? usu_tema : "Basic";
+            else
+                return "Basic";
+
         }
 
         public new List<Usuario> Todos()

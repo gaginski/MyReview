@@ -55,9 +55,14 @@ namespace Database
                         {
                             campos.Add(pi.Name);
                             if (!pOpcoesBase.Criptografado)
-                                valores.Add("'" + pi.GetValue(this) + "'");
+                            {
+                                if (pi.PropertyType.Name.ToString().Equals("DateTime"))
+                                    valores.Add("'" + DateTime.Parse(pi.GetValue(this).ToString()).ToString("yyyy-MM-dd HH:mm:ss") + "'");
+                                else
+                                    valores.Add("'" + pi.GetValue(this) + "'");
+                            }
                             else
-                                valores.Add("'"+util.criptografa(pi.GetValue(this).ToString(), pOpcoesBase.chaveCripto) + "'");
+                                valores.Add("'" + util.criptografa(pi.GetValue(this).ToString(), pOpcoesBase.chaveCripto) + "'");
                         }
                     }
 
@@ -117,11 +122,9 @@ namespace Database
                             chavePrimaria = pi.Name;
 
                         if (pOpcoesBase.UsarNoBanco && pOpcoesBase.UsarParaBuscar)
-                        {
-                            var valor = pi.GetValue(this);
-                            if (valor != null)
-                                where.Add(pi.Name + " = '" + valor + "'");
-                        }
+                            if (pi.GetValue(this) != null)
+                                where.Add(pi.Name + " = '" + pi.GetValue(this) + "'");
+
                     }
                 }
 
@@ -233,7 +236,12 @@ namespace Database
                         if (pOpcoesBase != null && pOpcoesBase.UsarNoBanco && !pOpcoesBase.UsarParaBuscar)
                         {
                             if (!pOpcoesBase.Criptografado)
-                                campos.Add(pi.Name + " = '" + pi.GetValue(this) + "'");
+                            {
+                                if (pi.PropertyType.Name.ToString().Equals("DateTime"))
+                                    campos.Add(pi.Name + " = '" + DateTime.Parse(pi.GetValue(this).ToString()).ToString("yyyy-MM-dd HH:mm:ss") + "'");
+                                else
+                                    campos.Add(pi.Name + " = '" + pi.GetValue(this) + "'");
+                            }
                             else
                                 campos.Add(pi.Name + " = '" + util.criptografa(pi.GetValue(this).ToString(), pOpcoesBase.chaveCripto) + "'");
                         }
