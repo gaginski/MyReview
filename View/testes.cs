@@ -175,7 +175,7 @@ namespace MyReview.Visao
 
         private void simpleButton8_Click(object sender, EventArgs e)
         {
-            new FrmCadRevisao(10).Show();
+            new FrmCadRevisao(10, false).Show();
         }
     }
 }

@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using MyReview.Model;
 using MyReview.Visao;
 using System.Globalization;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace MyReview.View
 {
@@ -18,26 +19,38 @@ namespace MyReview.View
     {
         Usuario usuLogado = new Usuario();
         Revisao revAtual = new Revisao();
+        bool editando = false;
 
-        public FrmCadRevisao(int idUsuario)
+        public FrmCadRevisao(int idUsuario, bool _editando)
         {
             InitializeComponent();
 
             usuLogado.usu_id = idUsuario;
             usuLogado = usuLogado.Busca()[0];
 
+            editando = _editando;
+
+            gridView1.OptionsView.ShowGroupPanel = false;
+            gridView2.OptionsView.ShowGroupPanel = false; //queria utillizar a busca do próprio componente. MAS.... é bugada :(
+
             this.LookAndFeel.SkinName = usuLogado.GetUsu_tema();
             atualizaCombobox();
+            atualizaGrid(true, true);
         }
 
-        private void simpleButton2_Click(object sender, EventArgs e)
+        private void btnSalvaRevisao_Click(object sender, EventArgs e)
         {
-            atualizaGrid(false, false);
+            if (validaCamposRevisao(false))
+                if (salvaRevisao(true))
+                {
+                    new FrmAlerta("Salvo com sucesso!", usuLogado.usu_id).ShowDialog();
+                    this.Close();
+                }
         }
 
         private void btnAdicionar_TarSia_Click(object sender, EventArgs e)
         {
-            if (validaCamposRevisao())
+            if (validaCamposRevisao(true))
             {
                 if (revAtual.rev_id == 0 || revAtual.rev_id == null)
                     salvaRevisao(false);
@@ -49,14 +62,17 @@ namespace MyReview.View
                 tarefaSia.cts_precondicoes = txtRevDescricao.Text;
                 tarefaSia.cts_ultimaAlteracao = DateTime.Parse((DateTime.Now).ToString("yyyyy-MM-dd HH:mm:ss"));
                 tarefaSia.cts_dataInclusao = DateTime.Parse((DateTime.Now).ToString("yyyyy-MM-dd HH:mm:ss"));
-                
+
                 tarefaSia.cts_terminalUltimaAleracao = Environment.MachineName;
                 tarefaSia.cts_usu_inclusao = usuLogado.usu_id;
 
-                vincuaTarefaSia(tarefaSia);
-
-                atualizaGrid(true, false);
-
+                if (vincuaTarefaSia(tarefaSia))
+                {
+                    txtDescricao_TarSia.Text = "";
+                    txtObs_TarSia.Text = "";
+                    txtTitulo_TarSia.Text = "";
+                    atualizaGrid(true, false);
+                }
             }
         }
 
@@ -67,6 +83,7 @@ namespace MyReview.View
             {
                 DataTable dtSia = new DataTable();
                 CasoTeste casoAux = new CasoTeste();
+                List<CasoTeste> listaTarefasSia = new List<CasoTeste>();
 
                 dtSia.Columns.AddRange(new DataColumn[]
                             {
@@ -74,8 +91,11 @@ namespace MyReview.View
                              new DataColumn("Título"),
                             });
 
-                casoAux.cts_sts_id = revAtual.rev_suite_Sia;
-                List<CasoTeste> listaTarefasSia = casoAux.Busca();
+                if (casoAux.cts_sts_id == null && revAtual.rev_suite_Sia != null)
+                {
+                    casoAux.cts_sts_id = revAtual.rev_suite_Sia;
+                    listaTarefasSia = casoAux.Busca();
+                }
 
                 foreach (CasoTeste c in listaTarefasSia)
                     dtSia.Rows.Add(c.cts_id, c.cts_descricao);
@@ -86,12 +106,38 @@ namespace MyReview.View
             // atualiza grid com a suite de testes
             if (suites)
             {
-                // atualizar apenas as do projeto selecionado
+                SuiteTeste suiteAux = new SuiteTeste();
+                List<SuiteTeste> listaSuite = new List<SuiteTeste>();
+
+                if (cmbProjeto.EditValue.ToString() != "")
+                {
+                    suiteAux.sts_prj_id = int.Parse(cmbProjeto.EditValue.ToString());
+                    suiteAux.sts_Sia = false;
+                    listaSuite = suiteAux.Busca();
+                }
+
+                DataTable dtSuite = new DataTable();
+
+                dtSuite.Columns.AddRange(new DataColumn[]
+                            {
+                             new DataColumn("ID"),
+                             new DataColumn("Título"),
+                             new DataColumn("Versão")
+                            });
+
+                foreach (SuiteTeste s in listaSuite)
+                    dtSuite.Rows.Add(s.sts_id, s.sts_descricao, s.sts_versao);
+
+                gridSuite.DataSource = dtSuite;
+
+                gridView2.OptionsSelection.MultiSelect = true;
+                gridView2.OptionsSelection.MultiSelectMode = GridMultiSelectMode.CheckBoxRowSelect;
             }
         }
-        private void vincuaTarefaSia(CasoTeste tarefaSia)
+
+        private bool vincuaTarefaSia(CasoTeste tarefaSia)
         {
-            if (revAtual.rev_suite_Sia == null)
+            if (revAtual.rev_suite_Sia == null || revAtual.rev_suite_Sia == 0)
             {
                 SuiteTeste suiteSia = new SuiteTeste();
 
@@ -109,8 +155,9 @@ namespace MyReview.View
                 revAtual.rev_suite_Sia = suiteSia.sts_id;
             }
             tarefaSia.cts_sts_id = revAtual.rev_suite_Sia;
-            tarefaSia.Salvar();
+            return tarefaSia.Salvar();
         }
+
         private void atualizaCombobox()
         {
             DataTable DtProjeto = new DataTable();
@@ -132,7 +179,7 @@ namespace MyReview.View
                 cmbProjeto.SelectionStart = 0;
         }
 
-        public bool validaCamposRevisao()
+        public bool validaCamposRevisao(bool sia)
         {
             List<String> campos = new List<string>();
 
@@ -140,15 +187,26 @@ namespace MyReview.View
                 campos.Add("Versão");
             if (txtRevDescricao.Text.Equals(""))
                 campos.Add("Descrição");
-            if (cmbProjeto.SelectedText == cmbProjeto.Properties.NullText)
+            if (cmbProjeto.EditValue.ToString() == "")
                 campos.Add("Projeto");
+            if (!sia && revAtual.rev_suite_Sia == null && gridView2.SelectedRowsCount == 0 )
+                campos.Add("Suite de Testes");
+
+            if (sia)
+            {
+                if (txtTitulo_TarSia.Text.Equals(""))
+                    campos.Add("Título Sia");
+                if (txtDescricao_TarSia.Text.Equals(""))
+                    campos.Add("Descrição Sia");
+            }
 
             if (campos.Count > 0)
                 new FrmAlerta("Atenção! Alguns campo obrigatórios não foram preenchidos: " + string.Join(", ", campos.ToArray()), usuLogado.usu_id).ShowDialog();
 
             return campos.Count > 0 ? false : true;
         }
-        public void salvaRevisao(bool finalizado)
+
+        public bool salvaRevisao(bool finalizado)
         {
             revAtual.rev_status = finalizado ? "F" : "A";
             revAtual.rev_descricao = txtRevDescricao.Text;
@@ -162,12 +220,64 @@ namespace MyReview.View
 
             if (revAtual.rev_id == 0 || revAtual.rev_id == null)
             {
-                revAtual.Salvar();
+                if (!revAtual.Salvar())
+                    return false;
                 revAtual = revAtual.Busca()[0];
             }
             else
-                revAtual.update();
+                if (!revAtual.update())
+                return false;
 
+            if (finalizado)
+            {
+                if (editando) // deleta caso já exista vinculos. ATENÇÃO!! DEVE SER EDITADO APENAS SE AINDA NÃO TIVER INICIADO
+                {
+                    SuitesRevisao aux = new SuitesRevisao();
+                    aux.srv_rev_id = revAtual.rev_id;
+                    if (!aux.delete())
+                        return false;
+                }
+
+                // vai varrer e criar lista com todos os vinculos selecionados no grid
+                List<SuitesRevisao> listaVinculo = new List<SuitesRevisao>();
+
+                for (int i = 0; i < gridView2.RowCount; i++)
+                    if (gridView2.IsRowSelected(i))
+                    {
+                        SuitesRevisao aux = new SuitesRevisao();
+                        aux.srv_rev_id = revAtual.rev_id;
+                        aux.srv_dataInclusao = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                        aux.srv_usuarioInclusao = usuLogado.usu_id;
+                        aux.srv_sts_id = int.Parse(gridView2.GetRowCellValue(i, "ID").ToString());
+                        aux.srv_status = "F";
+
+                        listaVinculo.Add(aux);
+                    }
+
+                if(revAtual.rev_suite_Sia != null && revAtual.rev_suite_Sia != 0)
+                {
+                    SuitesRevisao aux = new SuitesRevisao();
+                    aux.srv_rev_id = revAtual.rev_id;
+                    aux.srv_dataInclusao = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    aux.srv_usuarioInclusao = usuLogado.usu_id;
+                    aux.srv_sts_id = revAtual.rev_suite_Sia;
+                    aux.srv_status = "F";
+
+                    listaVinculo.Add(aux);
+                }
+
+                foreach (SuitesRevisao st in listaVinculo)
+                    if (!st.Salvar())
+                        return false;
+            }
+
+            return true;
+        }
+
+        private void cmbProjeto_EditValueChanged(object sender, EventArgs e)
+        {
+            if (cmbProjeto.EditValue.ToString() != "")
+                atualizaGrid(false, true);
         }
     }
 }

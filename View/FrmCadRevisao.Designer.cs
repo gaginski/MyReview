@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadRevisao));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.cmbProjeto = new DevExpress.XtraEditors.LookUpEdit();
             this.txtRevDescricao = new DevExpress.XtraEditors.MemoEdit();
             this.label3 = new System.Windows.Forms.Label();
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
@@ -46,13 +47,13 @@
             this.txtTitulo_TarSia = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridSuite = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.cmbProjeto = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbProjeto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRevDescricao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVersao.Properties)).BeginInit();
@@ -65,9 +66,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTitulo_TarSia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSuite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbProjeto.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -84,6 +84,20 @@
             this.panelControl1.Size = new System.Drawing.Size(743, 100);
             this.panelControl1.TabIndex = 0;
             // 
+            // cmbProjeto
+            // 
+            this.cmbProjeto.EditValue = "";
+            this.cmbProjeto.Location = new System.Drawing.Point(8, 76);
+            this.cmbProjeto.Name = "cmbProjeto";
+            this.cmbProjeto.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProjeto.Properties.Appearance.Options.UseFont = true;
+            this.cmbProjeto.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbProjeto.Properties.NullText = "Selecione o Projeto";
+            this.cmbProjeto.Size = new System.Drawing.Size(164, 22);
+            this.cmbProjeto.TabIndex = 3;
+            this.cmbProjeto.EditValueChanged += new System.EventHandler(this.cmbProjeto_EditValueChanged);
+            // 
             // txtRevDescricao
             // 
             this.txtRevDescricao.Location = new System.Drawing.Point(180, 23);
@@ -91,7 +105,7 @@
             this.txtRevDescricao.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRevDescricao.Properties.Appearance.Options.UseFont = true;
             this.txtRevDescricao.Size = new System.Drawing.Size(558, 75);
-            this.txtRevDescricao.TabIndex = 9;
+            this.txtRevDescricao.TabIndex = 4;
             // 
             // label3
             // 
@@ -112,7 +126,7 @@
             this.checkEdit1.Properties.Caption = "Revisão Modelo";
             this.checkEdit1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.checkEdit1.Size = new System.Drawing.Size(164, 20);
-            this.checkEdit1.TabIndex = 7;
+            this.checkEdit1.TabIndex = 2;
             // 
             // txtVersao
             // 
@@ -124,7 +138,7 @@
             this.txtVersao.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
             this.txtVersao.Properties.MaskSettings.Set("mask", "#.##.##.####");
             this.txtVersao.Size = new System.Drawing.Size(164, 22);
-            this.txtVersao.TabIndex = 6;
+            this.txtVersao.TabIndex = 1;
             // 
             // label4
             // 
@@ -159,7 +173,7 @@
             this.btnAdicionar_TarSia.Location = new System.Drawing.Point(325, 185);
             this.btnAdicionar_TarSia.Name = "btnAdicionar_TarSia";
             this.btnAdicionar_TarSia.Size = new System.Drawing.Size(75, 23);
-            this.btnAdicionar_TarSia.TabIndex = 17;
+            this.btnAdicionar_TarSia.TabIndex = 9;
             this.btnAdicionar_TarSia.Text = "Adicionar";
             this.btnAdicionar_TarSia.Click += new System.EventHandler(this.btnAdicionar_TarSia_Click);
             // 
@@ -170,7 +184,7 @@
             this.txtObs_TarSia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtObs_TarSia.Properties.Appearance.Options.UseFont = true;
             this.txtObs_TarSia.Size = new System.Drawing.Size(323, 58);
-            this.txtObs_TarSia.TabIndex = 16;
+            this.txtObs_TarSia.TabIndex = 7;
             // 
             // label5
             // 
@@ -188,7 +202,7 @@
             this.gridSia.MainView = this.gridView1;
             this.gridSia.Name = "gridSia";
             this.gridSia.Size = new System.Drawing.Size(332, 173);
-            this.gridSia.TabIndex = 14;
+            this.gridSia.TabIndex = 8;
             this.gridSia.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
@@ -199,12 +213,13 @@
             // 
             // txtDescricao_TarSia
             // 
+            this.txtDescricao_TarSia.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.txtDescricao_TarSia.Location = new System.Drawing.Point(77, 59);
             this.txtDescricao_TarSia.Name = "txtDescricao_TarSia";
             this.txtDescricao_TarSia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescricao_TarSia.Properties.Appearance.Options.UseFont = true;
             this.txtDescricao_TarSia.Size = new System.Drawing.Size(323, 58);
-            this.txtDescricao_TarSia.TabIndex = 13;
+            this.txtDescricao_TarSia.TabIndex = 6;
             // 
             // label2
             // 
@@ -223,7 +238,7 @@
             this.txtTitulo_TarSia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTitulo_TarSia.Properties.Appearance.Options.UseFont = true;
             this.txtTitulo_TarSia.Size = new System.Drawing.Size(323, 22);
-            this.txtTitulo_TarSia.TabIndex = 11;
+            this.txtTitulo_TarSia.TabIndex = 5;
             // 
             // label1
             // 
@@ -237,26 +252,26 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.gridControl2);
+            this.groupControl2.Controls.Add(this.gridSuite);
             this.groupControl2.Location = new System.Drawing.Point(12, 329);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(743, 259);
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "Suites de Testes";
             // 
-            // gridControl2
+            // gridSuite
             // 
-            this.gridControl2.Location = new System.Drawing.Point(5, 26);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(733, 228);
-            this.gridControl2.TabIndex = 18;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridSuite.Location = new System.Drawing.Point(5, 26);
+            this.gridSuite.MainView = this.gridView2;
+            this.gridSuite.Name = "gridSuite";
+            this.gridSuite.Size = new System.Drawing.Size(733, 228);
+            this.gridSuite.TabIndex = 10;
+            this.gridSuite.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
             // gridView2
             // 
-            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.GridControl = this.gridSuite;
             this.gridView2.Name = "gridView2";
             // 
             // simpleButton2
@@ -266,9 +281,9 @@
             this.simpleButton2.Location = new System.Drawing.Point(680, 594);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 18;
+            this.simpleButton2.TabIndex = 11;
             this.simpleButton2.Text = "Salvar";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.simpleButton2.Click += new System.EventHandler(this.btnSalvaRevisao_Click);
             // 
             // simpleButton3
             // 
@@ -277,21 +292,8 @@
             this.simpleButton3.Location = new System.Drawing.Point(599, 594);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton3.TabIndex = 19;
+            this.simpleButton3.TabIndex = 12;
             this.simpleButton3.Text = "Cancelar";
-            // 
-            // cmbProjeto
-            // 
-            this.cmbProjeto.EditValue = "";
-            this.cmbProjeto.Location = new System.Drawing.Point(8, 76);
-            this.cmbProjeto.Name = "cmbProjeto";
-            this.cmbProjeto.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbProjeto.Properties.Appearance.Options.UseFont = true;
-            this.cmbProjeto.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbProjeto.Properties.NullText = "Selecione o Projeto";
-            this.cmbProjeto.Size = new System.Drawing.Size(164, 22);
-            this.cmbProjeto.TabIndex = 11;
             // 
             // FrmCadRevisao
             // 
@@ -311,6 +313,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbProjeto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRevDescricao.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVersao.Properties)).EndInit();
@@ -324,9 +327,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTitulo_TarSia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSuite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbProjeto.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -350,7 +352,7 @@
         private DevExpress.XtraEditors.TextEdit txtTitulo_TarSia;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.GridControl gridSuite;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;

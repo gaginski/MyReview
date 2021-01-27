@@ -84,6 +84,48 @@ namespace Database
             return confirmacao;
         }
 
+        public virtual bool delete()
+        {
+            bool confirmacao = false;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(
+                  util.stringConexaoSql))
+                {
+                    List<string> campos = new List<string>();
+                    List<string> where = new List<string>();
+
+                    foreach (PropertyInfo pi in this.GetType().GetProperties())
+                    {
+                        OpcoesBase pOpcoesBase = (OpcoesBase)pi.GetCustomAttribute(typeof(OpcoesBase));
+                        if (pOpcoesBase != null && pOpcoesBase.UsarNoBanco && !pOpcoesBase.UsarParaBuscar)
+                        {
+                            if (pOpcoesBase.UsarNoBanco && pOpcoesBase.UsarParaBuscar)
+                                if (pi.GetValue(this) != null)
+                                    where.Add(pi.Name + " = '" + pi.GetValue(this) + "'");
+
+                            string queryString = "DELETE FROM " + this.GetType().Name + "s";
+                            if (where.Count > 0)
+                                queryString += " where " + string.Join(" and ", where.ToArray());
+
+                            SqlCommand command = new SqlCommand(queryString, connection);
+                            command.Connection.Open();
+                            command.ExecuteNonQuery();
+
+                            confirmacao = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                FrmAlerta alerta = new FrmAlerta("Ocorreu um erro ao salvar " + this.GetType().Name + ". Mensagem de erro:" + error.Message, null);
+                alerta.ShowDialog();
+                confirmacao = false;
+            }
+            return confirmacao;
+        }
+
         public virtual List<IBase> Todos()
         {
             var list = new List<IBase>();

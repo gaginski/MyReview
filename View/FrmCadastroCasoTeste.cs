@@ -57,6 +57,8 @@ namespace MyReview.Visao
                 suite.sts_usu_autor = usuarioLogado.usu_id;
                 suite.sts_prj_id = Int32.Parse(cmbProjeto.SelectedValue.ToString());
                 suite.sts_objetivo = txtObjetivo.Text;
+                suite.sts_dataCadastro = DateTime.Now;
+                suite.sts_ultimaAlteracao = DateTime.Now;
 
                 suite.Salvar();
                 suite.sts_id = Int32.Parse(suite.max("sts_id"));
@@ -130,12 +132,12 @@ namespace MyReview.Visao
                 casoAux.cts_sts_id = suite.sts_id;
                 casoAux.cts_descricao = txtDescricaoCaso.Text;
                 casoAux.cts_indice = Int32.Parse(casoAux.max("cts_indice")) + 1;
-                casoAux.cts_dataInclusao = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                casoAux.cts_dataInclusao = DateTime.Now;
                 casoAux.cts_precondicoes = txtPrecondicao.Text;
                 casoAux.cts_prioridade = Int32.Parse(cmbPrioridade.SelectedValue.ToString());
                 casoAux.cts_resultadoEsperado = txtResultado.Text;
                 casoAux.cts_tempoEstimado = Int32.Parse(sedTempoEstimado.Text);
-                casoAux.cts_ultimaAlteracao = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                casoAux.cts_ultimaAlteracao = DateTime.Now;
                 casoAux.cts_Observacao = txtObs.Text;
                 casoAux.cts_terminalUltimaAleracao = Environment.MachineName;
 
@@ -179,8 +181,8 @@ namespace MyReview.Visao
                     aux.cps_indice = Int32.Parse(gridPassos.Rows[i].Cells[0].Value.ToString());
                     aux.cps_descricao = gridPassos.Rows[i].Cells[1].Value.ToString();
                     aux.cps_cts_id = idCasoTeste;
-                    aux.cps_dataInclusao = DateTime.Parse(DateTime.Now.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-                    aux.cps_ultimaAlteracao = DateTime.Parse(DateTime.Now.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
+                    aux.cps_dataInclusao =  DateTime.Now;
+                    aux.cps_ultimaAlteracao = DateTime.Now;
                     aux.cps_terminalUltimaAleracao = Environment.MachineName;
 
                     listaPassos.Add(aux);

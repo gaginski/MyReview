@@ -20,13 +20,13 @@ namespace MyReview.Model
         public int? cps_cts_id { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]
-        public string cps_dataInclusao { get; set; }
+        public  DateTime cps_dataInclusao { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]
         public int cps_usu_inclusao { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]
-        public string cps_ultimaAlteracao { get; set; }
+        public DateTime cps_ultimaAlteracao { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]
         public int cps_usu_ultimaAlteracao { get; set; }

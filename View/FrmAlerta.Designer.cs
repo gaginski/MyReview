@@ -34,6 +34,7 @@
             this.lblMensagem = new System.Windows.Forms.Label();
             this.btnYes = new DevExpress.XtraEditors.SimpleButton();
             this.reportGenerator1 = new DevExpress.XtraReports.ReportGeneration.ReportGenerator(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -101,5 +102,6 @@
         private System.Windows.Forms.Label lblMensagem;
         private DevExpress.XtraEditors.SimpleButton btnYes;
         private DevExpress.XtraReports.ReportGeneration.ReportGenerator reportGenerator1;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
     }
 }
