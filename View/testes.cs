@@ -46,7 +46,7 @@ namespace MyReview.Visao
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            FrmCadastroCasoTeste t = new FrmCadastroCasoTeste(false, 2);
+            FrmCadastroCasoTeste t = new FrmCadastroCasoTeste(false, 10);
             t.Show();
         }
 
@@ -95,7 +95,7 @@ namespace MyReview.Visao
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            FrmCadUsuario usuCad = new FrmCadUsuario(false, 2, 2);
+            FrmCadUsuario usuCad = new FrmCadUsuario(false, 10, 2);
             usuCad.Show();
 
         }
@@ -115,7 +115,7 @@ namespace MyReview.Visao
 
         private void simpleButton5_Click(object sender, EventArgs e)
         {
-            new FrmExibicaoCasoTeste(1, 1).ShowDialog();
+            new FrmExibicaoCasoTeste(1, 10).ShowDialog();
         }
 
         private void simpleButton6_Click(object sender, EventArgs e)

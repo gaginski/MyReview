@@ -25,7 +25,7 @@ namespace MyReview.Visao
             InitializeComponent();
 
             usu_logado.usu_id = Id_usuLogado;
-            usu_logado.Busca();
+            usu_logado = usu_logado.Busca()[0];
             this.editando = editando;
 
 
@@ -128,50 +128,25 @@ namespace MyReview.Visao
 
         private void chkTodos_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkTodos.Checked)
-            {
-                chkCTAdicionar.Checked = true;
-                chkCTAutoriaPropria.Checked = true;
-                chkCTEditar.Checked = true;
-                chkCTListar.Checked = true;
-                chkCTRemover.Checked = true;
-                chkExCTAbrir.Checked = true;
-                chkExCTIniFim.Checked = true;
-                chkExCTListar.Checked = true;
-                chkExCTOutrosUsu.Checked = true;
-                chkOutrasConfig.Checked = true;
-                chkRevAdicionar.Checked = true;
-                chkRevEditar.Checked = true;
-                chkRevListar.Checked = true;
-                chkRevRemover.Checked = true;
-                chkUsuAdicionar.Checked = true;
-                chkUsuEditar.Checked = true;
-                chkUsuListar.Checked = true;
-                chkUsuPermissoes.Checked = true;
-                chkUsuRemover.Checked = true;
-            }
-            else
-            {
-                chkCTAdicionar.Checked = false;
-                chkCTAutoriaPropria.Checked = false;
-                chkCTEditar.Checked = false;
-                chkCTListar.Checked = false;
-                chkCTRemover.Checked = false;
-                chkExCTAbrir.Checked = false;
-                chkExCTIniFim.Checked = false;
-                chkExCTListar.Checked = false;
-                chkExCTOutrosUsu.Checked = false;
-                chkOutrasConfig.Checked = false;
-                chkRevAdicionar.Checked = false;
-                chkRevEditar.Checked = false;
-                chkRevListar.Checked = false;
-                chkRevRemover.Checked = false;
-                chkUsuAdicionar.Checked = false;
-                chkUsuEditar.Checked = false;
-                chkUsuListar.Checked = false;
-                chkUsuPermissoes.Checked = false;
-                chkUsuRemover.Checked = false;
-            }
+            chkCTAdicionar.Checked = chkTodos.Checked;
+            chkCTAutoriaPropria.Checked = chkTodos.Checked;
+            chkCTEditar.Checked = chkTodos.Checked;
+            chkCTListar.Checked = chkTodos.Checked;
+            chkCTRemover.Checked = chkTodos.Checked;
+            chkExCTAbrir.Checked = chkTodos.Checked;
+            chkExCTIniFim.Checked = chkTodos.Checked;
+            chkExCTListar.Checked = chkTodos.Checked;
+            chkExCTOutrosUsu.Checked = chkTodos.Checked;
+            chkOutrasConfig.Checked = chkTodos.Checked;
+            chkRevAdicionar.Checked = chkTodos.Checked;
+            chkRevEditar.Checked = chkTodos.Checked;
+            chkRevListar.Checked = chkTodos.Checked;
+            chkRevRemover.Checked = chkTodos.Checked;
+            chkUsuAdicionar.Checked = chkTodos.Checked;
+            chkUsuEditar.Checked = chkTodos.Checked;
+            chkUsuListar.Checked = chkTodos.Checked;
+            chkUsuPermissoes.Checked = chkTodos.Checked;
+            chkUsuRemover.Checked = chkTodos.Checked;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

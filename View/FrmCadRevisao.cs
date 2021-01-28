@@ -279,5 +279,10 @@ namespace MyReview.View
             if (cmbProjeto.EditValue.ToString() != "")
                 atualizaGrid(false, true);
         }
+
+        private void FrmCadRevisao_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

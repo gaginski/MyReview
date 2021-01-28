@@ -42,34 +42,34 @@
             this.txtConfirmaSenha = new DevExpress.XtraEditors.TextEdit();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSenha = new DevExpress.XtraEditors.TextEdit();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.chkUsuAdicionar = new DevExpress.XtraEditors.CheckEdit();
-            this.chkUsuEditar = new DevExpress.XtraEditors.CheckEdit();
-            this.chkUsuRemover = new DevExpress.XtraEditors.CheckEdit();
-            this.chkUsuPermissoes = new DevExpress.XtraEditors.CheckEdit();
-            this.chkUsuListar = new DevExpress.XtraEditors.CheckEdit();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.chkTodos = new DevExpress.XtraEditors.CheckEdit();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.chkOutrasConfig = new DevExpress.XtraEditors.CheckEdit();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.chkExCTIniFim = new DevExpress.XtraEditors.CheckEdit();
             this.chkExCTOutrosUsu = new DevExpress.XtraEditors.CheckEdit();
             this.chkExCTAbrir = new DevExpress.XtraEditors.CheckEdit();
             this.chkExCTListar = new DevExpress.XtraEditors.CheckEdit();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.chkCTAutoriaPropria = new DevExpress.XtraEditors.CheckEdit();
             this.chkCTAdicionar = new DevExpress.XtraEditors.CheckEdit();
             this.chkCTEditar = new DevExpress.XtraEditors.CheckEdit();
             this.chkCTRemover = new DevExpress.XtraEditors.CheckEdit();
             this.chkCTListar = new DevExpress.XtraEditors.CheckEdit();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.chkRevAdicionar = new DevExpress.XtraEditors.CheckEdit();
             this.chkRevEditar = new DevExpress.XtraEditors.CheckEdit();
             this.chkRevRemover = new DevExpress.XtraEditors.CheckEdit();
             this.chkRevListar = new DevExpress.XtraEditors.CheckEdit();
             this.btnSalvar = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
+            this.groupUsuarios = new DevExpress.XtraEditors.GroupControl();
+            this.chkUsuRemover = new DevExpress.XtraEditors.CheckEdit();
+            this.chkUsuPermissoes = new DevExpress.XtraEditors.CheckEdit();
+            this.chkUsuEditar = new DevExpress.XtraEditors.CheckEdit();
+            this.chkUsuListar = new DevExpress.XtraEditors.CheckEdit();
+            this.chkUsuAdicionar = new DevExpress.XtraEditors.CheckEdit();
+            this.groupRevisao = new DevExpress.XtraEditors.GroupControl();
+            this.groupCasoTeste = new DevExpress.XtraEditors.GroupControl();
+            this.groupExCT = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.chkTodos = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNome.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLogin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -79,32 +79,38 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtConfirmaSenha.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSenha.Properties)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkUsuAdicionar.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkUsuEditar.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkUsuRemover.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkUsuPermissoes.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkUsuListar.Properties)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkTodos.Properties)).BeginInit();
-            this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkOutrasConfig.Properties)).BeginInit();
-            this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkExCTIniFim.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkExCTOutrosUsu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkExCTAbrir.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkExCTListar.Properties)).BeginInit();
-            this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkCTAutoriaPropria.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkCTAdicionar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkCTEditar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkCTRemover.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkCTListar.Properties)).BeginInit();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkRevAdicionar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkRevEditar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkRevRemover.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkRevListar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupUsuarios)).BeginInit();
+            this.groupUsuarios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkUsuRemover.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkUsuPermissoes.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkUsuEditar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkUsuListar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkUsuAdicionar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupRevisao)).BeginInit();
+            this.groupRevisao.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupCasoTeste)).BeginInit();
+            this.groupCasoTeste.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupExCT)).BeginInit();
+            this.groupExCT.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkTodos.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNome
@@ -245,111 +251,9 @@
             this.txtSenha.Size = new System.Drawing.Size(195, 22);
             this.txtSenha.TabIndex = 5;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.chkUsuAdicionar);
-            this.groupBox2.Controls.Add(this.chkUsuEditar);
-            this.groupBox2.Controls.Add(this.chkUsuRemover);
-            this.groupBox2.Controls.Add(this.chkUsuPermissoes);
-            this.groupBox2.Controls.Add(this.chkUsuListar);
-            this.groupBox2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(6, 20);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(127, 148);
-            this.groupBox2.TabIndex = 9;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Usuários";
-            // 
-            // chkUsuAdicionar
-            // 
-            this.chkUsuAdicionar.Location = new System.Drawing.Point(6, 46);
-            this.chkUsuAdicionar.Name = "chkUsuAdicionar";
-            this.chkUsuAdicionar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkUsuAdicionar.Properties.Appearance.Options.UseFont = true;
-            this.chkUsuAdicionar.Properties.Caption = "Adicionar";
-            this.chkUsuAdicionar.Size = new System.Drawing.Size(75, 20);
-            this.chkUsuAdicionar.TabIndex = 5;
-            // 
-            // chkUsuEditar
-            // 
-            this.chkUsuEditar.Location = new System.Drawing.Point(6, 72);
-            this.chkUsuEditar.Name = "chkUsuEditar";
-            this.chkUsuEditar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkUsuEditar.Properties.Appearance.Options.UseFont = true;
-            this.chkUsuEditar.Properties.Caption = "Editar";
-            this.chkUsuEditar.Size = new System.Drawing.Size(75, 20);
-            this.chkUsuEditar.TabIndex = 6;
-            // 
-            // chkUsuRemover
-            // 
-            this.chkUsuRemover.Location = new System.Drawing.Point(6, 98);
-            this.chkUsuRemover.Name = "chkUsuRemover";
-            this.chkUsuRemover.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkUsuRemover.Properties.Appearance.Options.UseFont = true;
-            this.chkUsuRemover.Properties.Caption = "Remover";
-            this.chkUsuRemover.Size = new System.Drawing.Size(75, 20);
-            this.chkUsuRemover.TabIndex = 7;
-            // 
-            // chkUsuPermissoes
-            // 
-            this.chkUsuPermissoes.Location = new System.Drawing.Point(6, 124);
-            this.chkUsuPermissoes.Name = "chkUsuPermissoes";
-            this.chkUsuPermissoes.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkUsuPermissoes.Properties.Appearance.Options.UseFont = true;
-            this.chkUsuPermissoes.Properties.Caption = "Permissões";
-            this.chkUsuPermissoes.Size = new System.Drawing.Size(112, 20);
-            this.chkUsuPermissoes.TabIndex = 4;
-            // 
-            // chkUsuListar
-            // 
-            this.chkUsuListar.Location = new System.Drawing.Point(6, 20);
-            this.chkUsuListar.Name = "chkUsuListar";
-            this.chkUsuListar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkUsuListar.Properties.Appearance.Options.UseFont = true;
-            this.chkUsuListar.Properties.Caption = "Listar";
-            this.chkUsuListar.Size = new System.Drawing.Size(75, 20);
-            this.chkUsuListar.TabIndex = 3;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.chkTodos);
-            this.groupBox1.Controls.Add(this.groupBox6);
-            this.groupBox1.Controls.Add(this.groupBox5);
-            this.groupBox1.Controls.Add(this.groupBox4);
-            this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 155);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(545, 223);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Permissões";
-            // 
-            // chkTodos
-            // 
-            this.chkTodos.Location = new System.Drawing.Point(411, 190);
-            this.chkTodos.Name = "chkTodos";
-            this.chkTodos.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkTodos.Properties.Appearance.Options.UseFont = true;
-            this.chkTodos.Properties.Caption = "Marcar Todos";
-            this.chkTodos.Size = new System.Drawing.Size(112, 20);
-            this.chkTodos.TabIndex = 4;
-            this.chkTodos.CheckedChanged += new System.EventHandler(this.chkTodos_CheckedChanged);
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.chkOutrasConfig);
-            this.groupBox6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(6, 170);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(393, 47);
-            this.groupBox6.TabIndex = 13;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Outras Permissões";
-            // 
             // chkOutrasConfig
             // 
-            this.chkOutrasConfig.Location = new System.Drawing.Point(6, 20);
+            this.chkOutrasConfig.Location = new System.Drawing.Point(5, 20);
             this.chkOutrasConfig.Name = "chkOutrasConfig";
             this.chkOutrasConfig.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkOutrasConfig.Properties.Appearance.Options.UseFont = true;
@@ -357,23 +261,9 @@
             this.chkOutrasConfig.Size = new System.Drawing.Size(112, 20);
             this.chkOutrasConfig.TabIndex = 3;
             // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.chkExCTIniFim);
-            this.groupBox5.Controls.Add(this.chkExCTOutrosUsu);
-            this.groupBox5.Controls.Add(this.chkExCTAbrir);
-            this.groupBox5.Controls.Add(this.chkExCTListar);
-            this.groupBox5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(405, 20);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(127, 148);
-            this.groupBox5.TabIndex = 12;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Execução de CT";
-            // 
             // chkExCTIniFim
             // 
-            this.chkExCTIniFim.Location = new System.Drawing.Point(6, 72);
+            this.chkExCTIniFim.Location = new System.Drawing.Point(5, 75);
             this.chkExCTIniFim.Name = "chkExCTIniFim";
             this.chkExCTIniFim.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkExCTIniFim.Properties.Appearance.Options.UseFont = true;
@@ -383,7 +273,7 @@
             // 
             // chkExCTOutrosUsu
             // 
-            this.chkExCTOutrosUsu.Location = new System.Drawing.Point(6, 98);
+            this.chkExCTOutrosUsu.Location = new System.Drawing.Point(5, 101);
             this.chkExCTOutrosUsu.Name = "chkExCTOutrosUsu";
             this.chkExCTOutrosUsu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkExCTOutrosUsu.Properties.Appearance.Options.UseFont = true;
@@ -393,7 +283,7 @@
             // 
             // chkExCTAbrir
             // 
-            this.chkExCTAbrir.Location = new System.Drawing.Point(6, 46);
+            this.chkExCTAbrir.Location = new System.Drawing.Point(5, 49);
             this.chkExCTAbrir.Name = "chkExCTAbrir";
             this.chkExCTAbrir.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkExCTAbrir.Properties.Appearance.Options.UseFont = true;
@@ -403,7 +293,7 @@
             // 
             // chkExCTListar
             // 
-            this.chkExCTListar.Location = new System.Drawing.Point(6, 20);
+            this.chkExCTListar.Location = new System.Drawing.Point(5, 23);
             this.chkExCTListar.Name = "chkExCTListar";
             this.chkExCTListar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkExCTListar.Properties.Appearance.Options.UseFont = true;
@@ -411,24 +301,9 @@
             this.chkExCTListar.Size = new System.Drawing.Size(75, 20);
             this.chkExCTListar.TabIndex = 3;
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.chkCTAutoriaPropria);
-            this.groupBox4.Controls.Add(this.chkCTAdicionar);
-            this.groupBox4.Controls.Add(this.chkCTEditar);
-            this.groupBox4.Controls.Add(this.chkCTRemover);
-            this.groupBox4.Controls.Add(this.chkCTListar);
-            this.groupBox4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(272, 20);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(127, 148);
-            this.groupBox4.TabIndex = 11;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Casos de Teste";
-            // 
             // chkCTAutoriaPropria
             // 
-            this.chkCTAutoriaPropria.Location = new System.Drawing.Point(6, 122);
+            this.chkCTAutoriaPropria.Location = new System.Drawing.Point(5, 125);
             this.chkCTAutoriaPropria.Name = "chkCTAutoriaPropria";
             this.chkCTAutoriaPropria.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkCTAutoriaPropria.Properties.Appearance.Options.UseFont = true;
@@ -438,7 +313,7 @@
             // 
             // chkCTAdicionar
             // 
-            this.chkCTAdicionar.Location = new System.Drawing.Point(6, 46);
+            this.chkCTAdicionar.Location = new System.Drawing.Point(5, 49);
             this.chkCTAdicionar.Name = "chkCTAdicionar";
             this.chkCTAdicionar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkCTAdicionar.Properties.Appearance.Options.UseFont = true;
@@ -448,7 +323,7 @@
             // 
             // chkCTEditar
             // 
-            this.chkCTEditar.Location = new System.Drawing.Point(6, 72);
+            this.chkCTEditar.Location = new System.Drawing.Point(5, 75);
             this.chkCTEditar.Name = "chkCTEditar";
             this.chkCTEditar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkCTEditar.Properties.Appearance.Options.UseFont = true;
@@ -458,7 +333,7 @@
             // 
             // chkCTRemover
             // 
-            this.chkCTRemover.Location = new System.Drawing.Point(6, 98);
+            this.chkCTRemover.Location = new System.Drawing.Point(5, 101);
             this.chkCTRemover.Name = "chkCTRemover";
             this.chkCTRemover.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkCTRemover.Properties.Appearance.Options.UseFont = true;
@@ -468,7 +343,7 @@
             // 
             // chkCTListar
             // 
-            this.chkCTListar.Location = new System.Drawing.Point(6, 20);
+            this.chkCTListar.Location = new System.Drawing.Point(5, 23);
             this.chkCTListar.Name = "chkCTListar";
             this.chkCTListar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkCTListar.Properties.Appearance.Options.UseFont = true;
@@ -476,23 +351,9 @@
             this.chkCTListar.Size = new System.Drawing.Size(75, 20);
             this.chkCTListar.TabIndex = 3;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.chkRevAdicionar);
-            this.groupBox3.Controls.Add(this.chkRevEditar);
-            this.groupBox3.Controls.Add(this.chkRevRemover);
-            this.groupBox3.Controls.Add(this.chkRevListar);
-            this.groupBox3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(139, 20);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(127, 148);
-            this.groupBox3.TabIndex = 10;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Revisões";
-            // 
             // chkRevAdicionar
             // 
-            this.chkRevAdicionar.Location = new System.Drawing.Point(6, 46);
+            this.chkRevAdicionar.Location = new System.Drawing.Point(5, 50);
             this.chkRevAdicionar.Name = "chkRevAdicionar";
             this.chkRevAdicionar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRevAdicionar.Properties.Appearance.Options.UseFont = true;
@@ -502,7 +363,7 @@
             // 
             // chkRevEditar
             // 
-            this.chkRevEditar.Location = new System.Drawing.Point(6, 72);
+            this.chkRevEditar.Location = new System.Drawing.Point(5, 76);
             this.chkRevEditar.Name = "chkRevEditar";
             this.chkRevEditar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRevEditar.Properties.Appearance.Options.UseFont = true;
@@ -512,7 +373,7 @@
             // 
             // chkRevRemover
             // 
-            this.chkRevRemover.Location = new System.Drawing.Point(6, 98);
+            this.chkRevRemover.Location = new System.Drawing.Point(5, 102);
             this.chkRevRemover.Name = "chkRevRemover";
             this.chkRevRemover.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRevRemover.Properties.Appearance.Options.UseFont = true;
@@ -522,7 +383,7 @@
             // 
             // chkRevListar
             // 
-            this.chkRevListar.Location = new System.Drawing.Point(6, 20);
+            this.chkRevListar.Location = new System.Drawing.Point(5, 24);
             this.chkRevListar.Name = "chkRevListar";
             this.chkRevListar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRevListar.Properties.Appearance.Options.UseFont = true;
@@ -534,7 +395,7 @@
             // 
             this.btnSalvar.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.Appearance.Options.UseFont = true;
-            this.btnSalvar.Location = new System.Drawing.Point(468, 384);
+            this.btnSalvar.Location = new System.Drawing.Point(468, 399);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(89, 23);
             this.btnSalvar.TabIndex = 11;
@@ -545,23 +406,159 @@
             // 
             this.btnCancelar.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Appearance.Options.UseFont = true;
-            this.btnCancelar.Location = new System.Drawing.Point(373, 384);
+            this.btnCancelar.Location = new System.Drawing.Point(373, 399);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(89, 23);
             this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // groupUsuarios
+            // 
+            this.groupUsuarios.Controls.Add(this.chkUsuAdicionar);
+            this.groupUsuarios.Controls.Add(this.chkUsuListar);
+            this.groupUsuarios.Controls.Add(this.chkUsuEditar);
+            this.groupUsuarios.Controls.Add(this.chkUsuPermissoes);
+            this.groupUsuarios.Controls.Add(this.chkUsuRemover);
+            this.groupUsuarios.Location = new System.Drawing.Point(5, 24);
+            this.groupUsuarios.Name = "groupUsuarios";
+            this.groupUsuarios.Size = new System.Drawing.Size(128, 155);
+            this.groupUsuarios.TabIndex = 14;
+            this.groupUsuarios.Text = "Usuários";
+            // 
+            // chkUsuRemover
+            // 
+            this.chkUsuRemover.Location = new System.Drawing.Point(5, 101);
+            this.chkUsuRemover.Name = "chkUsuRemover";
+            this.chkUsuRemover.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkUsuRemover.Properties.Appearance.Options.UseFont = true;
+            this.chkUsuRemover.Properties.Caption = "Remover";
+            this.chkUsuRemover.Size = new System.Drawing.Size(75, 20);
+            this.chkUsuRemover.TabIndex = 7;
+            // 
+            // chkUsuPermissoes
+            // 
+            this.chkUsuPermissoes.Location = new System.Drawing.Point(5, 127);
+            this.chkUsuPermissoes.Name = "chkUsuPermissoes";
+            this.chkUsuPermissoes.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkUsuPermissoes.Properties.Appearance.Options.UseFont = true;
+            this.chkUsuPermissoes.Properties.Caption = "Permissões";
+            this.chkUsuPermissoes.Size = new System.Drawing.Size(112, 20);
+            this.chkUsuPermissoes.TabIndex = 4;
+            // 
+            // chkUsuEditar
+            // 
+            this.chkUsuEditar.Location = new System.Drawing.Point(5, 75);
+            this.chkUsuEditar.Name = "chkUsuEditar";
+            this.chkUsuEditar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkUsuEditar.Properties.Appearance.Options.UseFont = true;
+            this.chkUsuEditar.Properties.Caption = "Editar";
+            this.chkUsuEditar.Size = new System.Drawing.Size(75, 20);
+            this.chkUsuEditar.TabIndex = 6;
+            // 
+            // chkUsuListar
+            // 
+            this.chkUsuListar.Location = new System.Drawing.Point(5, 23);
+            this.chkUsuListar.Name = "chkUsuListar";
+            this.chkUsuListar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkUsuListar.Properties.Appearance.Options.UseFont = true;
+            this.chkUsuListar.Properties.Caption = "Listar";
+            this.chkUsuListar.Size = new System.Drawing.Size(75, 20);
+            this.chkUsuListar.TabIndex = 3;
+            // 
+            // chkUsuAdicionar
+            // 
+            this.chkUsuAdicionar.Location = new System.Drawing.Point(5, 49);
+            this.chkUsuAdicionar.Name = "chkUsuAdicionar";
+            this.chkUsuAdicionar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkUsuAdicionar.Properties.Appearance.Options.UseFont = true;
+            this.chkUsuAdicionar.Properties.Caption = "Adicionar";
+            this.chkUsuAdicionar.Size = new System.Drawing.Size(75, 20);
+            this.chkUsuAdicionar.TabIndex = 5;
+            // 
+            // groupRevisao
+            // 
+            this.groupRevisao.Controls.Add(this.chkRevAdicionar);
+            this.groupRevisao.Controls.Add(this.chkRevListar);
+            this.groupRevisao.Controls.Add(this.chkRevEditar);
+            this.groupRevisao.Controls.Add(this.chkRevRemover);
+            this.groupRevisao.Location = new System.Drawing.Point(139, 23);
+            this.groupRevisao.Name = "groupRevisao";
+            this.groupRevisao.Size = new System.Drawing.Size(128, 156);
+            this.groupRevisao.TabIndex = 15;
+            this.groupRevisao.Text = "Revisão";
+            // 
+            // groupCasoTeste
+            // 
+            this.groupCasoTeste.Controls.Add(this.chkCTAutoriaPropria);
+            this.groupCasoTeste.Controls.Add(this.chkCTListar);
+            this.groupCasoTeste.Controls.Add(this.chkCTAdicionar);
+            this.groupCasoTeste.Controls.Add(this.chkCTRemover);
+            this.groupCasoTeste.Controls.Add(this.chkCTEditar);
+            this.groupCasoTeste.Location = new System.Drawing.Point(273, 24);
+            this.groupCasoTeste.Name = "groupCasoTeste";
+            this.groupCasoTeste.Size = new System.Drawing.Size(128, 156);
+            this.groupCasoTeste.TabIndex = 16;
+            this.groupCasoTeste.Text = "Caso de Teste";
+            // 
+            // groupExCT
+            // 
+            this.groupExCT.Controls.Add(this.chkExCTIniFim);
+            this.groupExCT.Controls.Add(this.chkExCTListar);
+            this.groupExCT.Controls.Add(this.chkExCTOutrosUsu);
+            this.groupExCT.Controls.Add(this.chkExCTAbrir);
+            this.groupExCT.Location = new System.Drawing.Point(407, 24);
+            this.groupExCT.Name = "groupExCT";
+            this.groupExCT.Size = new System.Drawing.Size(128, 156);
+            this.groupExCT.TabIndex = 17;
+            this.groupExCT.Text = "Execução CT";
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.chkOutrasConfig);
+            this.groupControl1.Location = new System.Drawing.Point(5, 185);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(394, 45);
+            this.groupControl1.TabIndex = 18;
+            this.groupControl1.Text = "Outras Permissões";
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.chkTodos);
+            this.groupControl2.Controls.Add(this.groupControl1);
+            this.groupControl2.Controls.Add(this.groupRevisao);
+            this.groupControl2.Controls.Add(this.groupExCT);
+            this.groupControl2.Controls.Add(this.groupUsuarios);
+            this.groupControl2.Controls.Add(this.groupCasoTeste);
+            this.groupControl2.Location = new System.Drawing.Point(12, 155);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(545, 238);
+            this.groupControl2.TabIndex = 19;
+            this.groupControl2.Text = "Permissões";
+            // 
+            // chkTodos
+            // 
+            this.chkTodos.Location = new System.Drawing.Point(423, 205);
+            this.chkTodos.Name = "chkTodos";
+            this.chkTodos.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkTodos.Properties.Appearance.Options.UseFont = true;
+            this.chkTodos.Properties.Caption = "Marcar Todos";
+            this.chkTodos.Size = new System.Drawing.Size(112, 20);
+            this.chkTodos.TabIndex = 4;
+            this.chkTodos.CheckedChanged += new System.EventHandler(this.chkTodos_CheckedChanged);
+            // 
             // FrmCadUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 416);
+            this.ClientSize = new System.Drawing.Size(571, 429);
+            this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panelControl1);
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("FrmCadUsuario.IconOptions.Image")));
+            this.LookAndFeel.SkinName = "DevExpress Dark Style";
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "FrmCadUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Usuários";
@@ -576,32 +573,38 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtConfirmaSenha.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSenha.Properties)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chkUsuAdicionar.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkUsuEditar.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkUsuRemover.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkUsuPermissoes.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkUsuListar.Properties)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chkTodos.Properties)).EndInit();
-            this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chkOutrasConfig.Properties)).EndInit();
-            this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chkExCTIniFim.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkExCTOutrosUsu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkExCTAbrir.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkExCTListar.Properties)).EndInit();
-            this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chkCTAutoriaPropria.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkCTAdicionar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkCTEditar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkCTRemover.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkCTListar.Properties)).EndInit();
-            this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chkRevAdicionar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkRevEditar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkRevRemover.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkRevListar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupUsuarios)).EndInit();
+            this.groupUsuarios.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chkUsuRemover.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkUsuPermissoes.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkUsuEditar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkUsuListar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkUsuAdicionar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupRevisao)).EndInit();
+            this.groupRevisao.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupCasoTeste)).EndInit();
+            this.groupCasoTeste.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupExCT)).EndInit();
+            this.groupExCT.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chkTodos.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -620,34 +623,34 @@
         private DevExpress.XtraEditors.TextEdit txtConfirmaSenha;
         private System.Windows.Forms.Label label3;
         private DevExpress.XtraEditors.TextEdit txtSenha;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private DevExpress.XtraEditors.CheckEdit chkUsuAdicionar;
-        private DevExpress.XtraEditors.CheckEdit chkUsuEditar;
-        private DevExpress.XtraEditors.CheckEdit chkUsuRemover;
-        private DevExpress.XtraEditors.CheckEdit chkUsuPermissoes;
-        private DevExpress.XtraEditors.CheckEdit chkUsuListar;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox5;
         private DevExpress.XtraEditors.CheckEdit chkExCTOutrosUsu;
         private DevExpress.XtraEditors.CheckEdit chkExCTAbrir;
         private DevExpress.XtraEditors.CheckEdit chkExCTListar;
-        private System.Windows.Forms.GroupBox groupBox4;
         private DevExpress.XtraEditors.CheckEdit chkCTAutoriaPropria;
         private DevExpress.XtraEditors.CheckEdit chkCTAdicionar;
         private DevExpress.XtraEditors.CheckEdit chkCTEditar;
         private DevExpress.XtraEditors.CheckEdit chkCTRemover;
         private DevExpress.XtraEditors.CheckEdit chkCTListar;
-        private System.Windows.Forms.GroupBox groupBox3;
         private DevExpress.XtraEditors.CheckEdit chkRevAdicionar;
         private DevExpress.XtraEditors.CheckEdit chkRevEditar;
         private DevExpress.XtraEditors.CheckEdit chkRevRemover;
         private DevExpress.XtraEditors.CheckEdit chkRevListar;
-        private System.Windows.Forms.GroupBox groupBox6;
         private DevExpress.XtraEditors.CheckEdit chkOutrasConfig;
         private DevExpress.XtraEditors.CheckEdit chkExCTIniFim;
         private DevExpress.XtraEditors.SimpleButton btnSalvar;
         private DevExpress.XtraEditors.SimpleButton btnCancelar;
         private DevExpress.XtraEditors.CheckEdit chkAtivo;
+        private DevExpress.XtraEditors.GroupControl groupUsuarios;
+        private DevExpress.XtraEditors.CheckEdit chkUsuAdicionar;
+        private DevExpress.XtraEditors.CheckEdit chkUsuListar;
+        private DevExpress.XtraEditors.CheckEdit chkUsuEditar;
+        private DevExpress.XtraEditors.CheckEdit chkUsuPermissoes;
+        private DevExpress.XtraEditors.CheckEdit chkUsuRemover;
+        private DevExpress.XtraEditors.GroupControl groupRevisao;
+        private DevExpress.XtraEditors.GroupControl groupCasoTeste;
+        private DevExpress.XtraEditors.GroupControl groupExCT;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.CheckEdit chkTodos;
     }
 }

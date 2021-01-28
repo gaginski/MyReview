@@ -30,10 +30,8 @@ namespace MyReview.View
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmExibicaoCasoTeste));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.progressBarControl2 = new DevExpress.XtraEditors.ProgressBarControl();
+            this.pbrSuiteTeste = new DevExpress.XtraEditors.ProgressBarControl();
             this.lblObjetivo = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblDataCriacao = new System.Windows.Forms.Label();
@@ -46,7 +44,9 @@ namespace MyReview.View
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.progressBarControl1 = new DevExpress.XtraEditors.ProgressBarControl();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.pbrCasoTeste = new DevExpress.XtraEditors.ProgressBarControl();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -57,7 +57,6 @@ namespace MyReview.View
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -66,21 +65,24 @@ namespace MyReview.View
             this.label6 = new System.Windows.Forms.Label();
             this.lblDescricaoCasoTeste = new System.Windows.Forms.Label();
             this.lblCasoId = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label22 = new System.Windows.Forms.Label();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbrSuiteTeste.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbrCasoTeste.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.progressBarControl2);
+            this.panel1.Controls.Add(this.pbrSuiteTeste);
             this.panel1.Controls.Add(this.lblObjetivo);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lblDataCriacao);
@@ -97,13 +99,13 @@ namespace MyReview.View
             this.panel1.Size = new System.Drawing.Size(1047, 231);
             this.panel1.TabIndex = 0;
             // 
-            // progressBarControl2
+            // pbrSuiteTeste
             // 
-            this.progressBarControl2.Location = new System.Drawing.Point(-1, 210);
-            this.progressBarControl2.Name = "progressBarControl2";
-            this.progressBarControl2.Size = new System.Drawing.Size(1048, 18);
-            this.progressBarControl2.TabIndex = 23;
-            this.progressBarControl2.EditValueChanged += new System.EventHandler(this.progressBarControl2_EditValueChanged);
+            this.pbrSuiteTeste.Location = new System.Drawing.Point(-1, 210);
+            this.pbrSuiteTeste.Name = "pbrSuiteTeste";
+            this.pbrSuiteTeste.Size = new System.Drawing.Size(1048, 18);
+            this.pbrSuiteTeste.TabIndex = 23;
+            this.pbrSuiteTeste.EditValueChanged += new System.EventHandler(this.progressBarControl2_EditValueChanged);
             // 
             // lblObjetivo
             // 
@@ -219,7 +221,8 @@ namespace MyReview.View
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.progressBarControl1);
+            this.panelControl1.Controls.Add(this.gridControl1);
+            this.panelControl1.Controls.Add(this.pbrCasoTeste);
             this.panelControl1.Controls.Add(this.label21);
             this.panelControl1.Controls.Add(this.label20);
             this.panelControl1.Controls.Add(this.label19);
@@ -230,7 +233,6 @@ namespace MyReview.View
             this.panelControl1.Controls.Add(this.label15);
             this.panelControl1.Controls.Add(this.label14);
             this.panelControl1.Controls.Add(this.label13);
-            this.panelControl1.Controls.Add(this.dataGridView1);
             this.panelControl1.Controls.Add(this.label11);
             this.panelControl1.Controls.Add(this.label12);
             this.panelControl1.Controls.Add(this.label9);
@@ -244,12 +246,27 @@ namespace MyReview.View
             this.panelControl1.Size = new System.Drawing.Size(1047, 341);
             this.panelControl1.TabIndex = 1;
             // 
-            // progressBarControl1
+            // gridControl1
             // 
-            this.progressBarControl1.Location = new System.Drawing.Point(474, 243);
-            this.progressBarControl1.Name = "progressBarControl1";
-            this.progressBarControl1.Size = new System.Drawing.Size(560, 10);
-            this.progressBarControl1.TabIndex = 22;
+            this.gridControl1.Location = new System.Drawing.Point(473, 48);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(561, 189);
+            this.gridControl1.TabIndex = 23;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            // 
+            // pbrCasoTeste
+            // 
+            this.pbrCasoTeste.Location = new System.Drawing.Point(474, 243);
+            this.pbrCasoTeste.Name = "pbrCasoTeste";
+            this.pbrCasoTeste.Size = new System.Drawing.Size(560, 10);
+            this.pbrCasoTeste.TabIndex = 22;
             // 
             // label21
             // 
@@ -352,24 +369,6 @@ namespace MyReview.View
             this.label13.TabIndex = 9;
             this.label13.Text = "Passos:";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Location = new System.Drawing.Point(474, 59);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(560, 178);
-            this.dataGridView1.TabIndex = 8;
-            // 
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -451,24 +450,6 @@ namespace MyReview.View
             this.lblCasoId.TabIndex = 0;
             this.lblCasoId.Text = "Caso #1";
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 618);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1048, 171);
-            this.dataGridView2.TabIndex = 18;
-            // 
             // label22
             // 
             this.label22.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -483,21 +464,37 @@ namespace MyReview.View
             // 
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Location = new System.Drawing.Point(882, 795);
+            this.simpleButton2.Location = new System.Drawing.Point(895, 795);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(165, 41);
             this.simpleButton2.TabIndex = 23;
             this.simpleButton2.Text = "Visualizar Caso de Teste";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // gridControl2
+            // 
+            this.gridControl2.Location = new System.Drawing.Point(13, 613);
+            this.gridControl2.MainView = this.gridView2;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.Size = new System.Drawing.Size(1046, 176);
+            this.gridControl2.TabIndex = 24;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.Name = "gridView2";
             // 
             // FrmExibicaoCasoTeste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1071, 756);
+            this.ClientSize = new System.Drawing.Size(1071, 848);
+            this.Controls.Add(this.gridControl2);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.label22);
-            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.panel1);
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("FrmExibicaoCasoTeste.IconOptions.Image")));
@@ -510,15 +507,18 @@ namespace MyReview.View
             this.Name = "FrmExibicaoCasoTeste";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Casos de Teste";
+            this.Load += new System.EventHandler(this.FrmExibicaoCasoTeste_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbrSuiteTeste.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbrCasoTeste.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -546,7 +546,6 @@ namespace MyReview.View
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label16;
@@ -557,10 +556,13 @@ namespace MyReview.View
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private DevExpress.XtraEditors.ProgressBarControl progressBarControl2;
-        private DevExpress.XtraEditors.ProgressBarControl progressBarControl1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private DevExpress.XtraEditors.ProgressBarControl pbrSuiteTeste;
+        private DevExpress.XtraEditors.ProgressBarControl pbrCasoTeste;
         private System.Windows.Forms.Label label22;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
     }
 }
