@@ -27,5 +27,22 @@ namespace MyReview.Model
 
         [OpcoesBase(UsarNoBanco = true, UsarParaBuscar = true)]
         public int? srv_usuarioInclusao { get; set; }
+
+        public new List<SuitesRevisao> Todos()
+        {
+            var suitesRevisao = new List<SuitesRevisao>();
+            foreach (var ibase in base.Todos())
+                suitesRevisao.Add((SuitesRevisao)ibase);
+
+            return suitesRevisao;
+        }
+        public new List<SuitesRevisao> Busca()
+        {
+            var suitesRevisao = new List<SuitesRevisao>();
+            foreach (var ibase in base.Busca())
+                suitesRevisao.Add((SuitesRevisao)ibase);
+
+            return suitesRevisao;
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace MyReview.Model
     class Casos_Passo : Base
     {
         [OpcoesBase(UsarNoBanco = true, ChavePrimaria =true,UsarParaBuscar =true)]
-        public int cps_indice { get; set; }
+        public int? cps_indice { get; set; }
 
         [OpcoesBase(UsarNoBanco = true)]
         public String cps_descricao { get; set; }
@@ -33,5 +33,26 @@ namespace MyReview.Model
 
         [OpcoesBase(UsarNoBanco = true)]
         public string cps_terminalUltimaAleracao { get; set; }
+
+        public new List<Casos_Passo> Todos()
+        {
+            var casos_Passo = new List<Casos_Passo>();
+            foreach (var ibase in base.Todos())
+            {
+                casos_Passo.Add((Casos_Passo)ibase);
+            }
+
+            return casos_Passo;
+        }
+        public new List<Casos_Passo> Busca()
+        {
+            var casos_Passo = new List<Casos_Passo>();
+            foreach (var ibase in base.Busca())
+            {
+                casos_Passo.Add((Casos_Passo)ibase);
+            }
+
+            return casos_Passo;
+        }
     }
 }

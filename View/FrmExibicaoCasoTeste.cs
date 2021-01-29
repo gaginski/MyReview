@@ -21,9 +21,6 @@ namespace MyReview.View
         public FrmExibicaoCasoTeste(int idExecucao, int logadoId)
         {
             InitializeComponent();
-            pbrCasoTeste.PerformStep();
-            pbrSuiteTeste.PerformStep();
-            pbrSuiteTeste.PerformStep();
 
             usuarioLogado.usu_id = logadoId;
             usuarioLogado = usuarioLogado.Busca()[0];
@@ -41,9 +38,6 @@ namespace MyReview.View
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            pbrCasoTeste.PerformStep();
-            pbrSuiteTeste.PerformStep();
-
         }
 
         private void FrmExibicaoCasoTeste_Load(object sender, EventArgs e)
@@ -52,12 +46,16 @@ namespace MyReview.View
         }
         public void atualizaBarrasProgresso()
         {
-            //if(CasoTesteExibindo.cts_id != null)
-            //{
-            pbrCasoTeste.EditValue = 0;
+            if(CasoTesteExibindo.cts_id != null)
+            {
+                Casos_Passo aux = new Casos_Passo();
+                aux.cps_cts_id = CasoTesteExibindo.cts_id;
+
+                pbrCasoTeste.EditValue = 0;
                 pbrCasoTeste.Properties.Minimum = 0;
-                pbrCasoTeste.Properties.Maximum = 110; // CasoTesteExibindo.Busca().Count();
-            //}
+                pbrCasoTeste.Properties.Maximum = aux.Busca().Count();
+              //  pbrCasoTeste.EditValue = 
+            }
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)

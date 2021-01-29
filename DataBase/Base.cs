@@ -164,7 +164,9 @@ namespace Database
                             chavePrimaria = pi.Name;
 
                         if (pOpcoesBase.UsarNoBanco && pOpcoesBase.UsarParaBuscar)
-                            if (pi.GetValue(this) != null)
+                            if (pi.PropertyType.Name.ToString().Equals("DateTime"))
+                                where.Add(pi.Name + " = '" + DateTime.Parse(pi.GetValue(this).ToString()).ToString("yyyy-MM-dd HH:mm:ss") + "'");
+                            else if (pi.GetValue(this) != null)
                                 where.Add(pi.Name + " = '" + pi.GetValue(this) + "'");
 
                     }

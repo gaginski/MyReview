@@ -46,6 +46,9 @@ namespace MyReview.View
                     new FrmAlerta("Salvo com sucesso!", usuLogado.usu_id).ShowDialog();
                     this.Close();
                 }
+                else
+                    limpaVinculos();
+
         }
 
         private void btnAdicionar_TarSia_Click(object sender, EventArgs e)
@@ -189,7 +192,7 @@ namespace MyReview.View
                 campos.Add("Descrição");
             if (cmbProjeto.EditValue.ToString() == "")
                 campos.Add("Projeto");
-            if (!sia && revAtual.rev_suite_Sia == null && gridView2.SelectedRowsCount == 0 )
+            if (!sia && revAtual.rev_suite_Sia == null && gridView2.SelectedRowsCount == 0)
                 campos.Add("Suite de Testes");
 
             if (sia)
@@ -231,15 +234,10 @@ namespace MyReview.View
             if (finalizado)
             {
                 if (editando) // deleta caso já exista vinculos. ATENÇÃO!! DEVE SER EDITADO APENAS SE AINDA NÃO TIVER INICIADO
-                {
-                    SuitesRevisao aux = new SuitesRevisao();
-                    aux.srv_rev_id = revAtual.rev_id;
-                    if (!aux.delete())
+                    if (!limpaVinculos())
                         return false;
-                }
 
-                // vai varrer e criar lista com todos os vinculos selecionados no grid
-                List<SuitesRevisao> listaVinculo = new List<SuitesRevisao>();
+                List<SuitesRevisao> listaVinculo = new List<SuitesRevisao>();// vai varrer e criar lista com todos os vinculos selecionados no grid
 
                 for (int i = 0; i < gridView2.RowCount; i++)
                     if (gridView2.IsRowSelected(i))
@@ -251,10 +249,51 @@ namespace MyReview.View
                         aux.srv_sts_id = int.Parse(gridView2.GetRowCellValue(i, "ID").ToString());
                         aux.srv_status = "F";
 
-                        listaVinculo.Add(aux);
+                        if (!aux.Salvar())
+                            return false;
+
+                        aux = aux.Busca()[0];
+
+                        CasoTeste casoAux = new CasoTeste();
+                        casoAux.cts_sts_id = int.Parse(gridView2.GetRowCellValue(i, "ID").ToString());
+
+                        foreach (CasoTeste cts in casoAux.Busca()) // cria vinculo no execucao_casos
+                        {
+                            Execucao_Caso auxExCaso = new Execucao_Caso();
+
+                            auxExCaso.ecs_cst_id = cts.cts_id;
+                            auxExCaso.ecs_rev_id = revAtual.rev_id;
+                            auxExCaso.ecs_status = "F";
+                            auxExCaso.ecs_srv_id = aux.srv_id;
+                            auxExCaso.ecs_dataFim = DateTime.Parse("1888-01-01 00:00:01");
+                            auxExCaso.ecs_dataInicio = DateTime.Parse("1888-01-01 00:00:01");
+
+                            if (!auxExCaso.Salvar())
+                                return false;
+                            auxExCaso = auxExCaso.Busca()[0];
+
+                            Casos_Passo passosAux = new Casos_Passo();
+                            passosAux.cps_cts_id = auxExCaso.ecs_cst_id;
+
+                            if (auxExCaso.ecs_cst_id == 54)
+                                MessageBox.Show("54");
+
+                            foreach (Casos_Passo cps in passosAux.Busca())
+                            {
+                                Execucao_Passo exePassos = new Execucao_Passo();
+
+                                exePassos.eps_rev_id = revAtual.rev_id;
+                                exePassos.eps_status = "F";
+                                exePassos.eps_cps_indice = cps.cps_indice;
+                                exePassos.eps_ecs_id = auxExCaso.ecs_id;
+                                
+                                if (!exePassos.Salvar())
+                                    return false;
+                            }
+                        }
                     }
 
-                if(revAtual.rev_suite_Sia != null && revAtual.rev_suite_Sia != 0)
+                if (revAtual.rev_suite_Sia != null && revAtual.rev_suite_Sia != 0) // tarefas do sia - vincula a suite
                 {
                     SuitesRevisao aux = new SuitesRevisao();
                     aux.srv_rev_id = revAtual.rev_id;
@@ -264,11 +303,14 @@ namespace MyReview.View
                     aux.srv_status = "F";
 
                     listaVinculo.Add(aux);
+
+                    if (!aux.Salvar())
+                        return false;
                 }
 
-                foreach (SuitesRevisao st in listaVinculo)
-                    if (!st.Salvar())
-                        return false;
+                // foreach (SuitesRevisao st in listaVinculo) implementado pra salvar dentro do forech
+                //  if (!st.Salvar())
+                //   return false;
             }
 
             return true;
@@ -278,6 +320,26 @@ namespace MyReview.View
         {
             if (cmbProjeto.EditValue.ToString() != "")
                 atualizaGrid(false, true);
+        }
+
+        private bool limpaVinculos()
+        {
+            SuitesRevisao auxSuite = new SuitesRevisao();
+            auxSuite.srv_rev_id = revAtual.rev_id;
+            if (!auxSuite.delete())
+                return false;
+
+            Execucao_Caso auxExCaso = new Execucao_Caso();
+            auxExCaso.ecs_rev_id = revAtual.rev_id;
+            if (!auxExCaso.delete())
+                return false;
+
+            Execucao_Passo auxExPasso = new Execucao_Passo();
+            auxExPasso.eps_rev_id = revAtual.rev_id;
+            if (!auxExPasso.delete())
+                return false;
+
+            return true;
         }
 
         private void FrmCadRevisao_Load(object sender, EventArgs e)

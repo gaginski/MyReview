@@ -130,6 +130,8 @@
     <Compile Include="Modelo\Config.cs" />
     <Compile Include="Model\Casos_Passo.cs" />
     <Compile Include="Model\CasoTeste.cs" />
+    <Compile Include="Model\Execucao_Passo.cs" />
+    <Compile Include="Model\Execucao_Caso.cs" />
     <Compile Include="Model\SuitesRevisao.cs" />
     <Compile Include="Model\SuiteTeste.cs" />
     <Compile Include="Model\Revisao.cs" />
