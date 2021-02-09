@@ -263,7 +263,7 @@ namespace MyReview.View
 
                             auxExCaso.ecs_cst_id = cts.cts_id;
                             auxExCaso.ecs_rev_id = revAtual.rev_id;
-                            auxExCaso.ecs_status = "F";
+                            auxExCaso.ecs_status = "P";
                             auxExCaso.ecs_srv_id = aux.srv_id;
                             auxExCaso.ecs_dataFim = DateTime.Parse("1888-01-01 00:00:01");
                             auxExCaso.ecs_dataInicio = DateTime.Parse("1888-01-01 00:00:01");
@@ -283,7 +283,7 @@ namespace MyReview.View
                                 Execucao_Passo exePassos = new Execucao_Passo();
 
                                 exePassos.eps_rev_id = revAtual.rev_id;
-                                exePassos.eps_status = "F";
+                                exePassos.eps_status = "P";
                                 exePassos.eps_cps_indice = cps.cps_indice;
                                 exePassos.eps_ecs_id = auxExCaso.ecs_id;
                                 

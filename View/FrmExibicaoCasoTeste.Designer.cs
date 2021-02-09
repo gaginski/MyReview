@@ -42,9 +42,9 @@ namespace MyReview.View
             this.label5 = new System.Windows.Forms.Label();
             this.lblAutor = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTituloSuite = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridPassosControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.pbrCasoTeste = new DevExpress.XtraEditors.ProgressBarControl();
             this.label21 = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@ namespace MyReview.View
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAlteraStatusCaso = new DevExpress.XtraEditors.SimpleButton();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -66,17 +66,17 @@ namespace MyReview.View
             this.lblDescricaoCasoTeste = new System.Windows.Forms.Label();
             this.lblCasoId = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.btnVisualizaCaso = new DevExpress.XtraEditors.SimpleButton();
+            this.gridCasosControl = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbrSuiteTeste.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPassosControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbrCasoTeste.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCasosControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +93,7 @@ namespace MyReview.View
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.lblAutor);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblTituloSuite);
             this.panel1.Location = new System.Drawing.Point(13, 13);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1047, 231);
@@ -105,7 +105,6 @@ namespace MyReview.View
             this.pbrSuiteTeste.Name = "pbrSuiteTeste";
             this.pbrSuiteTeste.Size = new System.Drawing.Size(1048, 18);
             this.pbrSuiteTeste.TabIndex = 23;
-            this.pbrSuiteTeste.EditValueChanged += new System.EventHandler(this.progressBarControl2_EditValueChanged);
             // 
             // lblObjetivo
             // 
@@ -207,28 +206,28 @@ namespace MyReview.View
             this.label2.TabIndex = 1;
             this.label2.Text = "Criado Por:";
             // 
-            // label1
+            // lblTituloSuite
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblTituloSuite.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1047, 83);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Aqui vai o título | Aqui vai o título  | Aqui vai o título | Aqui vai o título";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTituloSuite.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloSuite.Location = new System.Drawing.Point(0, 0);
+            this.lblTituloSuite.Name = "lblTituloSuite";
+            this.lblTituloSuite.Size = new System.Drawing.Size(1047, 83);
+            this.lblTituloSuite.TabIndex = 0;
+            this.lblTituloSuite.Text = "Aqui vai o título | Aqui vai o título  | Aqui vai o título | Aqui vai o título";
+            this.lblTituloSuite.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.gridControl1);
+            this.panelControl1.Controls.Add(this.gridPassosControl);
             this.panelControl1.Controls.Add(this.pbrCasoTeste);
             this.panelControl1.Controls.Add(this.label21);
             this.panelControl1.Controls.Add(this.label20);
             this.panelControl1.Controls.Add(this.label19);
             this.panelControl1.Controls.Add(this.label18);
             this.panelControl1.Controls.Add(this.label17);
-            this.panelControl1.Controls.Add(this.simpleButton1);
+            this.panelControl1.Controls.Add(this.btnAlteraStatusCaso);
             this.panelControl1.Controls.Add(this.label16);
             this.panelControl1.Controls.Add(this.label15);
             this.panelControl1.Controls.Add(this.label14);
@@ -246,19 +245,19 @@ namespace MyReview.View
             this.panelControl1.Size = new System.Drawing.Size(1047, 341);
             this.panelControl1.TabIndex = 1;
             // 
-            // gridControl1
+            // gridPassosControl
             // 
-            this.gridControl1.Location = new System.Drawing.Point(473, 48);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(561, 189);
-            this.gridControl1.TabIndex = 23;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridPassosControl.Location = new System.Drawing.Point(473, 48);
+            this.gridPassosControl.MainView = this.gridView1;
+            this.gridPassosControl.Name = "gridPassosControl";
+            this.gridPassosControl.Size = new System.Drawing.Size(561, 189);
+            this.gridPassosControl.TabIndex = 23;
+            this.gridPassosControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.gridPassosControl;
             this.gridView1.Name = "gridView1";
             // 
             // pbrCasoTeste
@@ -318,16 +317,15 @@ namespace MyReview.View
             this.label17.TabIndex = 11;
             this.label17.Text = "Alta";
             // 
-            // simpleButton1
+            // btnAlteraStatusCaso
             // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Location = new System.Drawing.Point(930, 282);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(104, 41);
-            this.simpleButton1.TabIndex = 13;
-            this.simpleButton1.Text = "Iniciar";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.btnAlteraStatusCaso.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlteraStatusCaso.Appearance.Options.UseFont = true;
+            this.btnAlteraStatusCaso.Location = new System.Drawing.Point(930, 282);
+            this.btnAlteraStatusCaso.Name = "btnAlteraStatusCaso";
+            this.btnAlteraStatusCaso.Size = new System.Drawing.Size(104, 41);
+            this.btnAlteraStatusCaso.TabIndex = 13;
+            this.btnAlteraStatusCaso.Text = "Iniciar";
             // 
             // label16
             // 
@@ -460,30 +458,29 @@ namespace MyReview.View
             this.label22.Text = "Casos de Teste";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // simpleButton2
+            // btnVisualizaCaso
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Location = new System.Drawing.Point(895, 795);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(165, 41);
-            this.simpleButton2.TabIndex = 23;
-            this.simpleButton2.Text = "Visualizar Caso de Teste";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.btnVisualizaCaso.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisualizaCaso.Appearance.Options.UseFont = true;
+            this.btnVisualizaCaso.Location = new System.Drawing.Point(895, 795);
+            this.btnVisualizaCaso.Name = "btnVisualizaCaso";
+            this.btnVisualizaCaso.Size = new System.Drawing.Size(165, 41);
+            this.btnVisualizaCaso.TabIndex = 23;
+            this.btnVisualizaCaso.Text = "Visualizar Caso de Teste";
             // 
-            // gridControl2
+            // gridCasosControl
             // 
-            this.gridControl2.Location = new System.Drawing.Point(13, 613);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1046, 176);
-            this.gridControl2.TabIndex = 24;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridCasosControl.Location = new System.Drawing.Point(13, 613);
+            this.gridCasosControl.MainView = this.gridView2;
+            this.gridCasosControl.Name = "gridCasosControl";
+            this.gridCasosControl.Size = new System.Drawing.Size(1046, 176);
+            this.gridCasosControl.TabIndex = 24;
+            this.gridCasosControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
             // gridView2
             // 
-            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.GridControl = this.gridCasosControl;
             this.gridView2.Name = "gridView2";
             // 
             // FrmExibicaoCasoTeste
@@ -492,8 +489,8 @@ namespace MyReview.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1071, 848);
-            this.Controls.Add(this.gridControl2);
-            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.gridCasosControl);
+            this.Controls.Add(this.btnVisualizaCaso);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.panel1);
@@ -514,10 +511,10 @@ namespace MyReview.View
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPassosControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbrCasoTeste.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCasosControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
 
@@ -528,7 +525,7 @@ namespace MyReview.View
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblAutor;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTituloSuite;
         private System.Windows.Forms.Label lblVersao;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblNomeProjeto;
@@ -550,7 +547,7 @@ namespace MyReview.View
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnAlteraStatusCaso;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
@@ -559,10 +556,10 @@ namespace MyReview.View
         private DevExpress.XtraEditors.ProgressBarControl pbrSuiteTeste;
         private DevExpress.XtraEditors.ProgressBarControl pbrCasoTeste;
         private System.Windows.Forms.Label label22;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraEditors.SimpleButton btnVisualizaCaso;
+        private DevExpress.XtraGrid.GridControl gridPassosControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.GridControl gridCasosControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
     }
 }
